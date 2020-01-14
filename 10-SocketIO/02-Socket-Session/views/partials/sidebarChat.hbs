@@ -1,0 +1,33 @@
+<div class="cont-side">
+    <div class="sidebar column txt-center">
+        <h1>Sidebar</h1>
+        <div class="itm">
+            <ul id="members">
+                <li>hsukrd</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    var socket = io()
+    var members = function (members) {
+        var li = document.createElement('li')
+        li.innerText = members
+        document.getElementById('members').appendChild(li)
+    }
+    socket.on('members', members )
+</script>
+
+<style>
+
+.cont-side {
+    border: solid 2px yellow;
+    position: fixed;
+    width: 15vh;
+    height: 80vh;
+    background-color: #65107f;
+}
+
+</style>

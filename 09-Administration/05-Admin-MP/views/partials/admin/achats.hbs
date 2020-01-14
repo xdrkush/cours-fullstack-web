@@ -1,0 +1,29 @@
+<div class="cont bdr-left">
+    <h3>Liste Des Achats</h3>
+    {{#each dbBuy}}
+    <div>
+        <div class="flx">
+            <div class="column">
+                <img class="itm img100" src="{{ imgArticle }}" alt="">
+            </div>
+            <div>
+                <div class="flx">
+                    <p class="itm">Nom : {{ name }}</p>
+                    <p class="itm">Prix : {{ price }} €</p>
+                    <p class="itm">Msg : {{ message }}</p>
+                </div>
+                <div class="flx">
+                    <p class="itm">Author : {{ author }}</p>
+                    <p class="itm">AuthorID : {{ authorId }} €</p>
+                </div>
+                <div class="flx">
+                    <p class="itm">isVerified : {{ isVerified }}</p>
+                </div>
+            </div>
+            <a href="/admin/delBuy/{{_id}}">
+                <button class="btn-primary bdr-radius">Supprimer</button>
+            </a>
+        </div>
+    </div>
+    {{/each}}
+</div>

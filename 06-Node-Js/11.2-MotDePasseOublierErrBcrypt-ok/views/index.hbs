@@ -1,0 +1,98 @@
+<h1>Test handlebars & MongoDB Local & Auth</h1>
+
+<h3>Formulaire Create 'Models'</h3>
+
+<form action="/api/createModel" method="post" enctype="application/x-www-form-urlencoded">
+    <input type="text" class="form-control" name="name" placeholder="Entrez votre nom !" />
+    <input type="email" class="form-control" name="email" placeholder="Entrez votre email !" />
+    <input type="submit" value="OK" />
+</form>
+
+<h3>Liste Models</h3>
+
+{{#each dbModel}}
+
+<div class="item-row">
+    <p class="item">Name: {{ name }}</p>
+    <p class="item">Email: {{ email }}</p>
+</div>
+
+<form action="/api/editModel/{{_id}}" method="post" enctype="application/x-www-form-urlencoded">
+    <input type="text" class="form-control" name="name" placeholder="Editer votre nom !" />
+    <input type="email" class="form-control" name="email" placeholder="Editer votre email !" />
+    <input type="text" class="form-control" name="_id" value="{{ _id }}">
+    <input type="submit" value="Éditer" />
+</form>
+
+<a href="/api/del/{{_id}}">
+    <button>Supprimer</button>
+</a>
+
+{{/each}}
+
+<h3>Liste Users</h3>
+{{!-- 
+    c'est ici que notre liste de nos utilisateur ce définit
+    Départ de la condition Handlebars en corélation avec notre DB
+    Défini lors de notre router.js ('.../api/router.js')
+    Quand on renvoit notre index on envoie aussi les data de notre DB
+ --}}
+{{#each dbUser}}
+{{!-- 
+    Ensuite meme principe que pour notre Model (Model)
+ --}}
+<div class="item-row">
+    <div class="flx-column">
+        <div class="flx">
+            <img class="img" src="{{ imgUser }}" alt="">
+            <p class="item">Pseudo : {{ pseudo }}</p>
+            <p class="item">Email : {{ email }}</p>
+            <p class="item">Status : {{ status }}</p>
+        </div>
+        <p class="item">Password : {{ password }}</p>
+        <div class="flx">
+            <p class="item">ID : {{ _id }}</p>
+            <p class="item">isVerified : {{ isVerified }}</p>
+        </div>
+        {{!-- 
+            Bouton de suppression
+         --}}
+        <a class="item" href="/auth/del/{{_id}}">
+            <button>Supprimer</button>
+        </a>
+    </div>
+</div>
+
+{{!-- 
+    Nous verrons plus tard comment modifier notre mot de passe dans les règle de l'art
+    C'est a dire avec envoie de mail avec un serveur SMTP
+    Grace au module ('Nodemailer') FreeOpenSource
+ --}}
+
+{{/each}}
+
+</br>
+
+<style>
+    .item-row {
+        display: flex;
+    }
+
+    .item {
+        margin: 10px;
+    }
+
+    .img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .flx {
+        display: flex;
+    }
+
+    .flx-column {
+        display: flex;
+        flex-direction: column;
+    }
+</style>

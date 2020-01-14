@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test Handlebars</title>
+</head>
+<body>
+
+    <h1>Test handlebars & MongoDB Cloud</h1>
+
+    {{!-- 
+        On crée une Boucle grace à la récupération des data dbModel depuis le nodeJS
+        La boucle est une fonction de Handlebars (allez voir la doc)
+     --}}
+    {{#each dbModel}}
+        {{!-- 
+            Récupération de nos variables name parmis les obj de dbModel
+         --}}
+        <p>name: {{ name }}</p>
+    {{/each}}
+
+</body>
+</html>

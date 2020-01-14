@@ -1,0 +1,23 @@
+@import "variables"
+
+$black: #000000
+$white: #ffffff
+$text-color: $black
+body
+  background-color: if($text-color == $black, $white, $black)
+
+// $black: #000000
+// $white: #ffffff
+// $lightgrey: #d3d3d3
+// $darkgrey: #545454
+// @mixin text-color($color)
+// @if ($color == $black)
+//   background-color: $white
+// @else if ($color == $white)
+//   background-color: $black
+// @else if ($color == $lightgrey)
+//   background-color: $black
+// @else
+//   background-color: $white
+// p
+//   @include text-color($lightgrey)

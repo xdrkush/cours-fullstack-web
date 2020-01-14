@@ -1,0 +1,44 @@
+<div class="cont">
+
+    <div class="cont bdr-left">
+        <h3>Liste Models</h3>
+
+        {{#each dbModel }}
+
+        <div class="flx">
+            <p class="itm">Name: {{ name }}</p>
+            <p class="itm">Email: {{ email }}</p>
+        </div>
+
+        {{#if ../isAdmin }}
+
+        <div class="flx">
+            <a class="btn-primary bdr-radius" href="/admin/delModel/{{_id}}">
+                Supprimer
+            </a>
+        </div>
+
+        {{/if}}
+
+        {{/each}}
+    </div>
+
+</div>
+
+<div class="cont">
+    <div class="cont bdr-left">
+        <h2>Écrire au Administrateur:</h2>
+        <form class="column middle" action="/api/createMpAdmin" method="post"
+            enctype="application/x-www-form-urlencoded">
+            <div class="flx itm">
+                <label for="">Sujet : </label>
+                <input type="text" class="form-control itm bdr-radius" name="subject" />
+            </div>
+            <div class="flx">
+                <textarea class="itm" name="message" cols="100" rows="10"
+                    placeholder="Ajouter votre message"></textarea>
+            </div>
+            <input class="bdr-radius btn-secondary" type="submit" value="OK" />
+        </form>
+    </div>
+</div>

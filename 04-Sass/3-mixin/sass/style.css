@@ -1,0 +1,23 @@
+h1 {
+  color: #192cd6;
+  font: Helvetica, sans-serif; }
+
+h2 {
+  color: #28c201;
+  font: Helvetica, sans-serif; }
+
+.gros-text-bleu {
+  font-family: Arial;
+  font-size: 25px;
+  font-weight: bold;
+  color: #0000ff; }
+
+.button-scope, .home-button, .back-button {
+  margin: 5px;
+  border-radius: 2px; }
+
+.home-button, .back-button {
+  background-color: #0a0052;
+  color: #ffffff; }
+
+/*# sourceMappingURL=style.css.map */

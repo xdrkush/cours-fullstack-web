@@ -1,0 +1,25 @@
+<div class="cont">
+    <div class="cont bdr-left">
+        <h3>Liste Articles</h3>
+        {{#each dbArticle}}
+        <div>
+            <div class="flx">
+                <div class="column">
+                    <img class="itm img100" src="{{ imgArticle }}" alt="">
+                    <a href="/article/{{_id}}" class="btn-primary bdr-radius">Voir +</a>
+                </div>
+                <div>
+                    <div class="flx">
+                        <p class="itm">Nom : {{ name }}</p>
+                        <p class="itm">Prix : {{ price }} €</p>
+                    </div>
+                    <div class="flx">
+                        <p class="itm">isVerified : {{ isVerified }}</p>
+                    </div>
+                    <p class="itm">Description : {{ description }}</p>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

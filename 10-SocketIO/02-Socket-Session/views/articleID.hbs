@@ -1,0 +1,87 @@
+<div class="cont">
+    <h1>ArticleID</h1>
+
+    <p>Nom: {{ dbArticle.name }} </p>
+    <p>ID: {{ dbArticle._id }} </p>
+
+    <div class="flx">
+        <div class="column">
+            <img class="itm img100" src="{{ dbArticle.imgArticle }}" alt="">
+        </div>
+        <div>
+            <div class="flx">
+                <p class="itm">Nom : {{ dbArticle.name }}</p>
+                <p class="itm">Prix : {{ dbArticle.price }} €</p>
+            </div>
+            <div class="flx">
+                <p class="itm">isVerified : {{ dbArticle.isVerified }}</p>
+                <p class="itm">isVerified : {{ dbArticle.isVerified }}</p>
+                <p class="itm">isVerified : {{ dbArticle.isVerified }}</p>
+            </div>
+            <p class="itm">Description : {{ dbArticle.description }}</p>
+        </div>
+
+        <form action="/shop/checkout/{{dbArticle._id}}" method="post">
+            <script src="https://checkout.stripe.com/checkout.js" data-customer="cus_GUcGDFdK1nRExy"
+                data-product="prod_GUaA97qUbfNcOS" data-key="pk_test_qtwqUpimEavd2p766TsJUnFi00R0Iso2kf"
+                data-currency="EUR" data-amount="4990" data-name="Drk" class="stripe-button">
+                </script>
+            {{!-- <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                data-key="pk_test_qtwqUpimEavd2p766TsJUnFi00R0Iso2kf" data-amount="5000" data-name="Drk"
+                data-description="Merci pour le paiment Drk" data-locale="auto" data-currency="EUR" data-product="prod_GUaA97qUbfNcOS"
+                data-label="Payez avec votre carte !">
+                </script> --}}
+        </form>
+
+    </div>
+</div>
+
+
+
+<div class="cont">
+    <h1>Commentaire</h1>
+
+    {{#each dbCommentary }}
+    <div class="flx">
+        <div class="column">
+            <img class="itm img100" src="{{ imgAuthor }}" alt="">
+        </div>
+        <div>
+            <div class="flx">
+                <p class="itm">De : {{ author }}</p>
+                <p class="itm">Le : {{ createDate }}</p>
+                <p class="itm">Ref : {{ articleID }}</p>
+            </div>
+            <p class="itm">{{ message }}</p>
+            <div class="flx">
+                <a class="btn-primary bdr-radius" href="/article/delCommentary/{{_id}}">
+                    Supprimer
+                </a>
+            </div>
+        </div>
+    </div>
+    {{/each }}
+
+</div>
+
+{{#if user }}
+
+<div class="cont bdr-left">
+    <h3>Ajouter un commentaire</h3>
+    <form class="column middle" action="/article/createCommentary" method="post"
+        enctype="application/x-www-form-urlencoded">
+        <div class="flx">
+            {{!-- <input type="text" class="form-control itm bdr-radius" name="author"/> --}}
+            {{!-- <input type="text" class="form-control itm bdr-radius" name="authorId" value="{{ sess.userId }}"/> --}}
+            {{!-- <input type="text" class="form-control itm bdr-radius" name="imgAuthor" value="{{ sess.imgUser }}" /> --}}
+            <input type="hidden" class="form-control itm bdr-radius" name="articleID" value="{{ dbArticle._id }}" />
+        </div>
+        <div class="flx">
+            <textarea class="itm" name="message" cols="100" rows="10"
+                placeholder="Ajouter votre commentaire"></textarea>
+        </div>
+        <input class="bdr-radius btn-secondary" type="submit" value="OK" />
+    </form>
+</div>
+
+{{/if }}

@@ -1,0 +1,66 @@
+{{!-- 
+    Page Index ('/')
+ --}}
+
+<h1>Test handlebars & MongoDB Local & Auth</h1>
+
+<h3>Formulaire Create 'Models'</h3>
+
+<form action="/api/createModel" method="post" enctype="application/x-www-form-urlencoded">
+    <input type="text" class="form-control" name="name" placeholder="Entrez votre nom !" />
+    <input type="email" class="form-control" name="email" placeholder="Entrez votre email !" />
+    <input type="submit" value="OK" />
+</form>
+
+<h3>Liste Models</h3>
+
+{{#each dbModel}}
+
+<div class="item-row">
+    <p class="item">Name: {{ name }}</p>
+    <p class="item">Email: {{ email }}</p>
+</div>
+
+<form action="/api/editModel/{{_id}}" method="post" enctype="application/x-www-form-urlencoded">
+    <input type="text" class="form-control" name="name" placeholder="Editer votre nom !" />
+    <input type="email" class="form-control" name="email" placeholder="Editer votre email !" />
+    <input type="text" class="form-control" name="_id" value="{{ _id }}">
+    <input type="submit" value="Éditer" />
+</form>
+
+<a href="/api/del/{{_id}}">
+    <button>Supprimer</button>
+</a>
+
+{{/each}}
+
+<h3>Liste Users</h3>
+
+{{#each dbUser}}
+
+<div class="item-row">
+    <img class="img" src="{{ imgUser }}" alt="">
+
+    <p class="item">Email: {{ email }}</p>
+    <p class="item">Password: {{ password }}</p>
+    <a class="item" href="/auth/del/{{_id}}">
+        <button>Supprimer</button>
+    </a>
+</div>
+
+{{/each}}
+
+<style>
+    .item-row {
+        display: flex;
+    }
+
+    .item {
+        margin: 10px;
+    }
+
+    .img {
+        width: 50px;
+        height: 50px;
+    }
+</style>

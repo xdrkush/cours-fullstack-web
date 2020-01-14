@@ -1,0 +1,122 @@
+<div class="cont bdr-left">
+    <h3>Message Privé Admin</h3>
+    <button class="accordionMp">Message reçu</button>
+    <div class="panel">
+        {{#each dbMpAdmin }}
+
+        <div class="bdr-left itm">
+            <div class="flx">
+                <p class="itm"><u>De la part de</u>: {{ author }} Pour: {{ dest }} <u>Le</u>: {{ createDate }}
+                    <u>Sujet</u>:
+                    {{ subject }} </p>
+            </div>
+
+            <div class="flx">
+                <a href="/api/delMp/{{_id}}">
+                    <button class="btn-primary bdr-radius">Supprimer</button>
+                </a>
+                <p>{{ message }}</p>
+            </div>
+        </div>
+
+        {{/each}}
+    </div>
+
+    {{!-- <button class="accordionMp">Message envoyer</button>
+    <div class="panel">
+        {{#each dbMpEnvoyerReverse }}
+
+        <div class="bdr-left itm">
+            <div class="flx">
+                <p class="itm"><u>De la part de</u>: {{ author }} Pour: {{ dest }} <u>Le</u>: {{ createDate }}
+                    <u>Sujet</u>:
+                    {{ subject }} </p>
+            </div>
+            <div class="flx">
+                <a href="/api/delMp/{{_id}}">
+                    <button class="btn-primary bdr-radius">Supprimer</button>
+                </a>
+                <p>{{ message }}</p>
+            </div>
+        </div>
+
+        {{/each}}
+    </div> --}}
+
+    <button class="accordionMp">Nouveau message</button>
+    <div class="panel">
+        <form class="column middle" action="/api/createMp" method="post" enctype="application/x-www-form-urlencoded">
+            <div class="flx">
+                <label for="">Sujet : </label>
+                <input type="text" class="form-control itm bdr-radius" name="subject" />
+                <label for="recipient-name" class="col-form-label">Pour : </label>
+
+                <select type="text" name="destId" class="form-control">
+                    {{#each dbUser }}
+                    <option value="{{ _id }}">
+                        <div class="row">
+                            {{pseudo}} ({{ _id }})
+                        </div>
+                    </option>
+                    {{/each}}
+                </select>
+            </div>
+            <div class="flx">
+                <textarea class="itm" name="message" cols="100" rows="10"
+                    placeholder="Ajouter votre commentaire"></textarea>
+            </div>
+            <input class="bdr-radius btn-secondary" type="submit" value="OK" />
+        </form>
+    </div>
+</div>
+
+<script>
+    /*
+     * Tuto W3C 
+     * https://www.w3schools.com/howto/howto_js_accordionMp.asp
+     */
+    var acc = document.getElementsByClassName("accordionMp");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    }
+</script>
+
+<style>
+    /*
+     * Tuto W3C 
+     * https://www.w3schools.com/howto/howto_js_accordionMp.asp
+     */
+    .accordionMp {
+        background-color: #eee;
+        color: #444;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        text-align: left;
+        border: none;
+        outline: none;
+        transition: 0.4s;
+    }
+
+    .active,
+    .accordionMp:hover {
+        background-color: #ccc;
+    }
+
+    .panel {
+        padding: 0 18px;
+        background-color: white;
+        display: none;
+        overflow: hidden;
+    }
+</style>

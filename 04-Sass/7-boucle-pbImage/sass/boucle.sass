@@ -1,0 +1,13 @@
+@import "variables.sass"
+
+@for $i from 1 through 4
+  .width-#{$i}
+    width: 10em + $i
+@for $i from 1 to 4
+  .height-#{$i}
+    height: 25em * $i
+
+// $list: dog cat bird dolphin
+// @each $i in $list
+//   .image-#{$i}
+//     background-image: url(‘/images/#{$i}.png’)

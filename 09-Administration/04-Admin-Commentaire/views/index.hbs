@@ -1,0 +1,26 @@
+<div class="cont">
+
+    <div class="cont bdr-left">
+        <h3>Liste Models</h3>
+
+        {{#each dbModel }}
+
+        <div class="flx">
+            <p class="itm">Name: {{ name }}</p>
+            <p class="itm">Email: {{ email }}</p>
+        </div>
+
+        {{#if ../isAdmin }}
+
+        <div class="flx">
+            <a class="btn-primary bdr-radius" href="/admin/delModel/{{_id}}">
+                Supprimer
+            </a>
+        </div>
+
+        {{/if}}
+
+        {{/each}}
+    </div>
+
+</div>

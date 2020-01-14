@@ -1,0 +1,39 @@
+{{!-- 
+    Formulaire de création de compte
+ --}}
+
+<div class="cont txt-center">
+    <h3>Créé un compte</h3>
+
+    <div class="ju-center">
+        <form class="column" action="/auth/createUser" method="post" enctype="application/x-www-form-urlencoded">
+            <div class="flx">
+                <div class="column">
+                    <label for="">Pseudo :</label>
+                    <input class="itm bdr-radius" type="text" class="form-control" name="pseudo"
+                        placeholder="Entrez votre Pseudo !" />
+                </div>
+                <div class="column">
+                    <label for="">Email :</label>
+                    <input class="itm bdr-radius" type="email" class="form-control" name="email"
+                        placeholder="Entrez votre email !" />
+                </div>
+            </div>
+            <div class="flx">
+                <div class="column">
+                    <label for="">Mot de passe :</label>
+                    <input class="itm bdr-radius" type="password" class="form-control" name="password"
+                        placeholder="Entrez votre mot de passe" />
+                </div>
+                <div class="column">
+                    <label for="">Confirmez mot de passe :</label>
+                    <input class="itm bdr-radius" type="password" class="form-control" name="passwordConfirm"
+                        placeholder="Confirmez votre mot de passe" />
+                </div>
+            </div>
+            <input class="btn-secondary bdr-radius" type="submit" value="OK" />
+
+        </form>
+    </div>
+
+</div>

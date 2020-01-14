@@ -1,0 +1,30 @@
+<div class="navbar bdr-bottom">
+    <ul class="row">
+        {{!-- 
+            Petite condition afin que notre lien 'Logout' sois visible que en cas de session valide
+         --}}
+        {{#if user }}
+
+        <li class="itm"><a href="/">Home</a></li>
+        <li class="itm"><a href="/verified">isVerified</a></li>
+        <li class="itm"><a href="/myaccount">Mon compte</a></li>
+        <li class="itm"><a href="/eshop">Shop</a></li>
+        <li class="itm"><a href="/chat">Chat</a></li>
+        <li class="itm"><a href="/auth/logout">logout</a></li>
+        
+        {{else}}
+
+        <li class="itm"><a href="/">Home</a></li>
+        <li class="itm"><a href="/login">Se Connecter</a></li>
+        <li class="itm"><a href="/create">Créé un compte</a></li>
+
+        {{/if }}
+
+        {{#if isAdmin }}
+
+        <li class="itm"><a href="/admin">Admin</a></li>
+
+        {{/if}}
+
+    </ul>
+</div>

@@ -1,0 +1,13 @@
+{{!-- 
+   C'est la page de redirection en cas d'authentification avec succès
+ --}}
+
+<div class="cont">
+   <h1>Success</h1>
+
+   {{!--
+      C'est ici que nous choisisson de récupré notre session pour attribuer
+      Notre Bravo + le nom d'utilisateur Logué lors de l'authentification
+   --}}
+   <h2>Bravo <u>{{ sess.pseudo }}</u></h2>
+</div>

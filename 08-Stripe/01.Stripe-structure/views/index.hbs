@@ -1,0 +1,93 @@
+<div class="cont">
+    <div class="cont bdr-left">
+
+        <h3>Formulaire Create 'Models'</h3>
+
+        <form class="column middle" action="/api/createModel" method="post" enctype="application/x-www-form-urlencoded">
+            <div class="flx">
+                <input type="text" class="form-control itm bdr-radius" name="name" placeholder="Entrez votre nom !" />
+                <input type="email" class="form-control itm bdr-radius" name="email"
+                    placeholder="Entrez votre email !" />
+                <input class="bdr-radius" type="submit" value="OK" />
+            </div>
+        </form>
+    </div>
+
+    <div class="cont bdr-left">
+        <h3>Liste Models</h3>
+
+        {{#each dbModel}}
+
+        <div class="flx">
+            <p class="itm">Name: {{ name }}</p>
+            <p class="itm">Email: {{ email }}</p>
+        </div>
+
+        <form class="column middle" action="/api/editModel/{{_id}}" method="post"
+            enctype="application/x-www-form-urlencoded">
+            <div class="flx">
+                <input type="text" class="form-control itm bdr-radius" name="name" placeholder="Editer votre nom !"
+                    value="{{ name }}" />
+                <input type="email" class="form-control itm bdr-radius" name="email" placeholder="Editer votre email !"
+                    value="{{ email }}" />
+                <input type="text" class="form-control itm bdr-radius" name="_id" value="{{ _id }}" />
+                <input class="btn-primary bdr-radius" type="submit" value="Éditer" />
+            </div>
+            <div class="flx">
+                <a class="btn-primary bdr-radius" href="/api/del/{{_id}}">
+                    Supprimer
+                </a>
+            </div>
+        </form>
+
+        {{/each}}
+    </div>
+
+    <div class="cont bdr-left">
+        <h3>Liste Users</h3>
+        {{!-- 
+    c'est ici que notre liste de nos utilisateur ce définit
+    Départ de la condition Handlebars en corélation avec notre DB
+    Défini lors de notre router.js ('.../api/router.js')
+    Quand on renvoit notre index on envoie aussi les data de notre DB
+ --}}
+        {{#each dbUser}}
+        {{!-- 
+    Ensuite meme principe que pour notre Model (Model)
+ --}}
+        <div>
+            <div class="flx">
+                <img class="itm img100" src="{{ imgUser }}" alt="">
+                <div>
+                    <div class="flx">
+                        <p class="itm">Pseudo : {{ pseudo }}</p>
+                        <p class="itm">Email : {{ email }}</p>
+                    </div>
+                    <div class="flx">
+                        <p class="itm">Status : {{ status }}</p>
+                        <p class="itm">isVerified : {{ isVerified }}</p>
+                        <p class="itm">isAdmin : {{ isAdmin }}</p>
+                        <p class="itm">isModo : {{ isModo }}</p>
+                    </div>
+                    <p class="itm">Password : {{ password }}</p>
+                    <p class="itm">ID : {{ _id }}</p>
+                </div>
+                {{!-- 
+                    Bouton de suppression
+                --}}
+                <a href="/auth/del/{{_id}}">
+                    <button class="btn-primary bdr-radius">Supprimer</button>
+                </a>
+            </div>
+        </div>
+
+        {{!-- 
+    Nous verrons plus tard comment modifier notre mot de passe dans les règle de l'art
+    C'est a dire avec envoie de mail avec un serveur SMTP
+    Grace au module ('Nodemailer') FreeOpenSource
+ --}}
+
+        {{/each}}
+    </div>
+
+</div>

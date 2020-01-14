@@ -1,0 +1,95 @@
+<div class="cont bdr-left">
+    <h3>Website</h3>
+    
+    <button class="accordionWebsite">Header</button>
+    <div class="panel">
+        <form class="column middle" action="/admin/editHeader/{{dbWebsiteID._id}}" method="post" enctype="application/x-www-form-urlencoded">
+        {{!-- <form class="column middle" action="/admin/createHeader" method="post"
+            enctype="application/x-www-form-urlencoded"> --}}
+            <div class="column">
+                <label for="">Titre: </label>
+                <input type="text" class="form-control itm bdr-radius" name="title" value="{{ header.title }}" />
+
+                <label for="">Sous-titre 1: </label>
+                <input type="text" class="form-control itm bdr-radius" name="stitle1" value="{{ sTitle1 }}" />
+                <label for="">Sous-titre 2: </label>
+                <input type="text" class="form-control itm bdr-radius" name="stitle2" value="{{ sTitle2 }}" />
+                <label for="">Sous-titre 3: </label>
+                <input type="text" class="form-control itm bdr-radius" name="stitle3" value="{{ sTitle3 }}" />
+
+            </div>
+            <input class="bdr-radius btn-secondary" type="submit" value="OK" />
+        </form>
+    </div>
+    <button class="accordionWebsite">Section</button>
+    <div class="panel">
+        <form class="column middle" action="/admin/editsection/{{dbWebsiteID._id}}" method="post" enctype="application/x-www-form-urlencoded">
+        {{!-- <form class="column middle" action="/admin/createHeader" method="post"
+            enctype="application/x-www-form-urlencoded"> --}}
+            <div class="column">
+                <label for="">Titre: </label>
+                <input type="text" class="form-control itm bdr-radius" name="titleSection" value="{{ section.title }}" />
+
+                <label for="">Sous-titre 1: </label>
+                <input type="text" class="form-control itm bdr-radius" name="stitleSection1" value="{{ sTitleSection1 }}" />
+                <label for="">Sous-titre 2: </label>
+                <input type="text" class="form-control itm bdr-radius" name="stitleSection2" value="{{ sTitleSection2 }}" />
+                <label for="">Sous-titre 3: </label>
+                <input type="text" class="form-control itm bdr-radius" name="stitleSection3" value="{{ sTitleSection3 }}" />
+
+            </div>
+            <input class="bdr-radius btn-secondary" type="submit" value="OK" />
+        </form>
+    </div>
+</div>
+
+<script>
+    /*
+     * Tuto W3C 
+     * https://www.w3schools.com/howto/howto_js_accordionWebsite.asp
+     */
+    var acc = document.getElementsByClassName("accordionWebsite");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    }
+</script>
+
+<style>
+    /*
+     * Tuto W3C 
+     * https://www.w3schools.com/howto/howto_js_accordionWebsite.asp
+     */
+    .accordionWebsite {
+        background-color: #eee;
+        color: #444;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        text-align: left;
+        border: none;
+        outline: none;
+        transition: 0.4s;
+    }
+
+    .active,
+    .accordionWebsite:hover {
+        background-color: #ccc;
+    }
+
+    .panel {
+        padding: 0 18px;
+        background-color: white;
+        display: none;
+        overflow: hidden;
+    }
+</style>

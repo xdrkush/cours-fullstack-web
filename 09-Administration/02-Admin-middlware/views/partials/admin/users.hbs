@@ -1,0 +1,29 @@
+<div class="cont bdr-left">
+    <h3>Liste Users</h3>
+
+    {{#each dbUser}}
+    <div>
+        <div class="flx">
+            <img class="itm img100" src="{{ imgUser }}" alt="">
+            <div>
+                <div class="flx">
+                    <p class="itm">Pseudo : {{ pseudo }}</p>
+                    <p class="itm">Email : {{ email }}</p>
+                </div>
+                <div class="flx">
+                    <p class="itm">Status : {{ status }}</p>
+                    <p class="itm">isVerified : {{ isVerified }}</p>
+                    <p class="itm">isAdmin : {{ isAdmin }}</p>
+                    <p class="itm">isModo : {{ isModo }}</p>
+                </div>
+                <p class="itm">Password : {{ password }}</p>
+                <p class="itm">ID : {{ _id }}</p>
+            </div>
+            <a href="/auth/del/{{_id}}">
+                <button class="btn-primary bdr-radius">Supprimer</button>
+            </a>
+        </div>
+    </div>
+    {{/each}}
+    
+</div>

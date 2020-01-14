@@ -1,0 +1,42 @@
+{{!-- 
+    Page de notre chat
+ --}}
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    var socket = io()
+    var send = function() {
+        var text = document.getElementById('m').value
+        socket.emit('chat message', text)
+    }
+    var receive = function(msg) {
+        var li = document.createElement('li')
+        li.innerText = msg
+        document.getElementById('messages').appendChild(li)
+    }
+    socket.on('chat message', receive)
+</script>
+
+<div class="cont txt-center">
+    <h3>Chat</h3>
+    <ul id="messages"></ul>
+    <div class="send-mess bdr-top">
+        <input class="input-mess" id='m' /> <button onclick="send()"> Send </button>
+    </div>
+</div>
+
+<style>
+.send-mess {
+    background-color: #65107f;
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.input-mess {
+    margin: 10px;
+    width: 80%;
+    height: 30x;
+}
+</style>

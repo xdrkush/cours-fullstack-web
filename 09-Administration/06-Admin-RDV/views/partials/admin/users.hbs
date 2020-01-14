@@ -1,0 +1,115 @@
+<div class="cont bdr-left">
+    <h3>Liste Users</h3>
+
+    {{#each dbUser}}
+    <div>
+        <div class="flx">
+            <img class="itm img100" src="{{ imgUser }}" alt="">
+            <div>
+                <div class="flx">
+                    <p class="itm">Pseudo : {{ pseudo }}</p>
+                    <p class="itm">Email : {{ email }}</p>
+                </div>
+                <div class="flx">
+                    <p class="itm">Status : {{ status }}</p>
+                    <p class="itm">isVerified : {{ isVerified }}</p>
+                    <p class="itm">isAdmin : {{ isAdmin }}</p>
+                    <p class="itm">isModo : {{ isModo }}</p>
+                    <p class="itm">isBan : {{ isBan }}</p>
+                </div>
+                <p class="itm">Password : {{ password }}</p>
+                <p class="itm">ID : {{ _id }}</p>
+            </div>
+            <a href="/admin/delUser/{{_id}}">
+                <button class="btn-primary bdr-radius">Supprimer</button>
+            </a>
+        </div>
+    </div>
+    <button class="accordionUser">Éditer le profil de {{ pseudo }}: {{ _id }}</button>
+    <form class="column middle panel" action="/admin/editUser/{{_id}}" method="post"
+        enctype="application/x-www-form-urlencoded">
+        <div class="flx">
+            <p>Nommer <u>{{ pseudo }}</u> en tant que Administrateur :</p>
+            <input type="radio" name="isAdmin" value="false">
+            <label for="false">Non</label>
+            <input type="radio" name="isAdmin" value="true">
+            <label for="true">Oui</label>
+        </div>
+        <div class="flx">
+            <p>Voulez vous Bannir <u>{{ pseudo }}</u>:</p>
+            <input type="radio" name="isBan" value="false">
+            <label for="false">Non</label>
+            <input type="radio" name="isBan" value="true">
+            <label for="true">Oui</label>
+        </div>
+        <div class="flx">
+            <p>Nommer <u>{{ pseudo }}</u> en tant que Modérateur :</p>
+            <input type="radio" name="isModo" value="false">
+            <label for="false">Non</label>
+            <input type="radio" name="isModo" value="true">
+            <label for="true">Oui</label>
+        </div>
+        <div class="flx">
+            <p>Le status de <u>{{ pseudo }}</u> :</p>
+            <input type="radio" name="status" value="bot">
+            <label for="bot">Bot</label>
+            <input type="radio" name="status" value="user">
+            <label for="user">User</label>
+        </div>
+        <input class="btn-secondary bdr-radius" type="submit" value="Éditer" />
+
+    </form>
+    {{/each}}
+
+</div>
+
+<script>
+    /*
+     * Tuto W3C 
+     * https://www.w3schools.com/howto/howto_js_accordionUser.asp
+     */
+    var acc = document.getElementsByClassName("accordionUser");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    }
+</script>
+
+<style>
+    /*
+     * Tuto W3C 
+     * https://www.w3schools.com/howto/howto_js_accordionUser.asp
+     */
+    .accordionUser {
+        background-color: #eee;
+        color: #444;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        text-align: left;
+        border: none;
+        outline: none;
+        transition: 0.4s;
+    }
+
+    .active,
+    .accordionUser:hover {
+        background-color: #ccc;
+    }
+
+    .panel {
+        padding: 0 18px;
+        background-color: white;
+        display: none;
+        overflow: hidden;
+    }
+</style>

@@ -1,0 +1,38 @@
+<div class="cont">
+    <h1>ArticleID</h1>
+
+    <p>Nom: {{ dbArticle.name }} </p>
+    <p>ID: {{ dbArticle._id }} </p>
+
+    <div class="flx">
+        <div class="column">
+            <img class="itm img100" src="{{ dbArticle.imgArticle }}" alt="">
+        </div>
+        <div>
+            <div class="flx">
+                <p class="itm">Nom : {{ dbArticle.name }}</p>
+                <p class="itm">Prix : {{ dbArticle.price }} €</p>
+            </div>
+            <div class="flx">
+                <p class="itm">isVerified : {{ dbArticle.isVerified }}</p>
+                <p class="itm">isVerified : {{ dbArticle.isVerified }}</p>
+                <p class="itm">isVerified : {{ dbArticle.isVerified }}</p>
+            </div>
+            <p class="itm">Description : {{ dbArticle.description }}</p>
+        </div>
+
+        <form action="/shop/checkout/{{dbArticle._id}}" method="post">
+            <script src="https://checkout.stripe.com/checkout.js" data-customer="cus_GUcGDFdK1nRExy" data-product="prod_GUaA97qUbfNcOS"
+                data-key="pk_test_qtwqUpimEavd2p766TsJUnFi00R0Iso2kf" data-currency="EUR" data-amount="4990"
+                data-name="Drk" class="stripe-button"
+            >
+            </script>
+            {{!-- <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                data-key="pk_test_qtwqUpimEavd2p766TsJUnFi00R0Iso2kf" data-amount="5000" data-name="Drk"
+                data-description="Merci pour le paiment Drk" data-locale="auto" data-currency="EUR" data-product="prod_GUaA97qUbfNcOS"
+                data-label="Payez avec votre carte !">
+                </script> --}}
+        </form>
+
+    </div>
+</div>

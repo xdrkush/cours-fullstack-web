@@ -1,0 +1,267 @@
+/* Text-color */
+.txt-green {color: green}
+.txt-red {color: red}
+.txt-blue {color: blue}
+.txt-yellow {color: yellow}
+.txt-purple {color: rgba(128, 0, 128, 1)}
+.txt-cyan {color: cyan}
+
+/* Border */
+.bdr-green {border: solid 2px green}
+.bdr-red {border: solid 2px red}
+.bdr-blue {border: solid 2px blue}
+.bdr-yellow {border: solid 2px yellow}
+.bdr-purple {border: solid 2px rgba(128, 0, 128, 1)}
+.bdr-cyan {border: solid 2px cyan}
+
+/* Background */
+.bg-green {background-color: green}
+.bg-red {background-color: red}
+.bg-blue {background-color: blue}
+.bg-yellow {background-color: yellow}
+.bg-purple {background-color: rgba(128, 0, 128, 0.8)}
+.bg-cyan {background-color: cyan}
+.bg-pink {background-color: pink}
+
+/* Body */
+body {margin: 0;padding: 0;background-color: #777;}
+a {margin: 0;text-decoration: none;}
+ul {margin: 0;padding: 0;}
+li {list-style: none;}
+.cont {border-radius: 10px;padding: 5px 50px 5px 50px;}
+
+/* Area - Item */
+/* Navbar */
+.navbar {
+  grid-area: header;
+  width: 95%;
+  position: fixed;
+  padding: 0 10px 0 10px;
+  height: 6vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Welcome */
+.welcome {
+  grid-area: welcome;
+}
+
+/* Sidebar */
+.sidebar {
+  grid-area: sidebar;
+  position: fixed;
+  border-radius: 10px;
+  padding: 5px;
+  top: 10vh;
+  left: -16vh;
+  min-width: 20vh;
+  z-index: 1;
+  transition: 1s;
+}
+
+.drop-sidebar:hover {
+  transform: translateX(16vh);
+  transition: 1s;
+}
+
+.list-itm-sidebar {
+  width: 100%;
+  height: 90%;
+}
+
+/* Main */
+.main {
+  grid-area: main;
+}
+
+/* Newslater */
+.newslater {
+  grid-area: news;
+}
+
+.list-news {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.card-news {
+  margin: 5px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+/* Contact */
+.contact {
+  grid-area: contact;
+}
+
+.form-contact {
+  margin: 5px;
+  padding: 5px;
+}
+
+.map-contact {
+  margin: 5px;
+  padding: 5px;
+}
+
+/* Footer */
+.footer {
+  grid-area: footer;
+}
+
+/* Area */
+.cont-area-gap {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 10vh auto auto 10vh;
+  grid-template-rows: 60px 90vh auto auto auto 100px;
+  grid-template-areas: " header header header header "
+    " welcome welcome welcome welcome "
+    " sidebar main main . "
+    " news news news news "
+    " contact contact contact contact "
+    " footer footer footer footer ";
+  grid-column-gap: 10px;
+  grid-row-gap: 15px;
+}
+
+/* Justify-content */
+.jus-ctnt-start {
+  display: grid;
+  justify-items: start;
+}
+
+.jus-ctnt-end {
+  display: grid;
+  justify-items: end;
+}
+
+.jus-ctnt-center {
+  display: grid;
+  justify-items: center;
+}
+
+.jus-ctnt-stretch {
+  display: grid;
+  justify-items: stretch;
+}
+
+/* Align-item */
+.al-itm-start {
+  align-items: start;
+}
+
+.al-itm-end {
+  align-items: end;
+}
+
+.al-itm-center {
+  align-items: center;
+}
+
+.al-itm-stretch {
+  align-items: stretch;
+}
+
+/* Module */
+.btn {
+  padding: 5px;
+  margin: 5px;
+}
+
+.btn-icon-right {
+  display: grid;
+  padding: 5px;
+  margin: 5px;
+  grid-template-columns: 5fr 1fr;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.btn-icon-left {
+  display: grid;
+  padding: 5px;
+  margin: 5px;
+  grid-template-columns: 1fr 5fr;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.txt-center {
+  text-align: center;
+}
+
+.ratio {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.middle {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.btn-social-4 {
+  display: inline-flex;
+  font-size: 30px;
+}
+
+.icon-social {
+  margin: 5px;
+}
+
+/* Responcive */
+@media screen and (max-width: 960px) {
+
+  .cont-area-gap {
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 10vh auto auto 10vh;
+    grid-template-rows: 60px 90vh auto auto auto 100px;
+    grid-template-areas: " header header header header "
+                         " welcome welcome welcome welcome "
+                         " news news news news "
+                         " sidebar main main . "
+                         " contact contact contact contact "
+                         " footer footer footer footer ";
+    grid-column-gap: 10px;
+    grid-row-gap: 15px;
+  }
+  .list-news {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+  }
+  .middle {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  /* Sidebar */
+.sidebar {
+  grid-area: sidebar;
+  position: fixed;
+  border-radius: 10px;
+  padding: 5px;
+  top: 60vh;
+  left: -16vh;
+  min-width: 20vh;
+  z-index: 1;
+  transition: 1s;
+}
+}
+@media screen and (max-width: 640px) {
+  .list-news {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 1fr;
+  }
+}

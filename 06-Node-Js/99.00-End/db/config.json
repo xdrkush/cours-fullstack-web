@@ -1,0 +1,4 @@
+{
+    "keyDbLocal": "mongodb://localhost/test",
+    "keyDbCloud": "mongodb+srv://drk:drk$@cluster0-z5xrj.mongodb.net/tuto?retryWrites=true&w=majority"
+}

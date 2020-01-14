@@ -1,0 +1,72 @@
+{{!-- 
+    Page de notre chat
+ --}}
+ 
+<script src="/socket.io/socket.io.js"></script>
+
+{{> sidebarChat }}
+
+<div class="cont txt-center cont-chat">
+    <h3>Chat</h3>
+    <div class="window-chat column ju-space-between">
+        <h5>Fils de discussion</h5>
+        <ul id="messages"></ul>
+        <div class="send-mess bdr-top">
+            <input class="input-mess" id='m' />
+            <button onclick="send()"> Send </button>
+        </div>
+    </div>
+    <h2>Members</h2>
+    <ul id="members">
+        <li>hsukrd</li>
+    </ul>
+</div>
+
+<script>
+    var socket = io()
+    var send = () => {
+            const text = document.getElementById('m').value
+            socket.emit('chat message', text)
+        },
+        receive = (msg) => {
+            const li = document.createElement('li')
+            li.innerText = msg
+            document.getElementById('messages').appendChild(li)
+        },
+        listUser = (userlist) => {
+            var pseudo = 'bruno'
+            const li = document.createElement('li')
+            li.innerText = pseudo
+            document.getElementById('members').appendChild(li)
+        }
+    socket.on('chat message', receive)
+    socket.on('new user', listUser)
+</script>
+
+<style>
+    .cont-chat {
+        margin-left: 18vh;
+    }
+
+    .window-chat>ul {
+        overflow: auto;
+        border: solid 2px yellow;
+        min-height: 20vh;
+        max-height: 20vh;
+    }
+
+    .send-mess {
+        background-color: #65107f;
+        position: relative;
+        width: 100%;
+        height: 50px;
+        left: 0;
+        bottom: 0;
+    }
+
+    .input-mess {
+        margin: 10px;
+        width: 80%;
+        height: 30x;
+    }
+</style>

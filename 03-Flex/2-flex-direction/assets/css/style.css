@@ -1,0 +1,80 @@
+/* Text-color */
+.txt-green {color: green}
+.txt-red {color: red}
+.txt-blue {color: blue}
+.txt-yellow {color: yellow}
+.txt-purple {color: rgba(128, 0, 128, 1)}
+.txt-cyan {color: cyan}
+
+/* Border */
+.bdr-green {border: solid 2px green}
+.bdr-red {border: solid 2px red}
+.bdr-blue {border: solid 2px blue}
+.bdr-yellow {border: solid 2px yellow}
+.bdr-purple {border: solid 2px rgba(128, 0, 128, 1)}
+.bdr-cyan {border: solid 2px cyan}
+
+/* Background */
+.bg-green {background-color: green}
+.bg-red {background-color: red}
+.bg-blue {background-color: blue}
+.bg-yellow {background-color: yellow}
+.bg-purple {background-color: rgba(128, 0, 128, 0.8)}
+.bg-cyan {background-color: cyan}
+.bg-pink {background-color: pink}
+
+/* Body */
+body {margin: 0;padding: 0;background-color: #777;}
+
+a {margin: 0;text-decoration: none;}
+
+ul {margin: 0;padding: 0;}
+
+li {list-style: none;}
+
+/* Flex */
+.cont-flex {
+    display: flex;
+}
+
+.cont-row {
+    display: flex;
+    flex-direction: row
+}
+.cont-row-reverse {
+    display: flex;
+    flex-direction: row-reverse
+}
+.cont-column {
+    display: flex;
+    flex-direction: column
+}
+.cont-column-reverse {
+    display: flex;
+    flex-direction: column-reverse
+}
+
+.item-1 {
+    width: 25%;
+    height: 100px;
+    margin: 5px;
+    padding: 5px;
+}
+.item-2 {
+    width: 25%;
+    height: 100px;
+    margin: 5px;
+    padding: 5px;
+}
+.item-3 {
+    width: 25%;
+    height:100px;
+    margin: 5px;
+    padding: 5px;
+}
+.item-4 {
+    width: 25%;
+    height: 100px;
+    margin: 5px;
+    padding: 5px;
+}

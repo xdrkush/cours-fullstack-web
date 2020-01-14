@@ -1,0 +1,30 @@
+@import "variables.sass"
+
+@mixin big-blue-text
+  font-family: Arial
+  font-size: 25px
+  font-weight: bold
+  color: #0000ff
+
+h1
+  color: $primary-color
+  font: $primary-font
+
+h2
+  color: $secondary-color
+  font: $primary-font
+
+.gros-text-bleu
+  @include big-blue-text
+
+.button-scope
+  margin: 5px
+  border-radius: 2px
+
+.home-button
+  @extend .button-scope
+  background-color: $bg-dark
+  color: $white
+
+.back-button
+  @extend .home-button

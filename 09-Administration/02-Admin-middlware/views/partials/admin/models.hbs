@@ -1,0 +1,43 @@
+<div class="cont bdr-left">
+
+        <h3>Formulaire Create 'Models'</h3>
+
+        <form class="column middle" action="/api/createModel" method="post" enctype="application/x-www-form-urlencoded">
+            <div class="flx">
+                <input type="text" class="form-control itm bdr-radius" name="name" placeholder="Entrez votre nom !" />
+                <input type="email" class="form-control itm bdr-radius" name="email"
+                    placeholder="Entrez votre email !" />
+                <input class="bdr-radius" type="submit" value="OK" />
+            </div>
+        </form>
+    </div>
+
+<div class="cont bdr-left">
+    <h3>Liste Models</h3>
+
+    {{#each dbModel}}
+
+    <div class="flx">
+        <p class="itm">Name: {{ name }}</p>
+        <p class="itm">Email: {{ email }}</p>
+    </div>
+
+    <form class="column middle" action="/api/editModel/{{_id}}" method="post"
+        enctype="application/x-www-form-urlencoded">
+        <div class="flx">
+            <input type="text" class="form-control itm bdr-radius" name="name" placeholder="Editer votre nom !"
+                value="{{ name }}" />
+            <input type="email" class="form-control itm bdr-radius" name="email" placeholder="Editer votre email !"
+                value="{{ email }}" />
+            <input type="text" class="form-control itm bdr-radius" name="_id" value="{{ _id }}" />
+            <input class="btn-primary bdr-radius" type="submit" value="Éditer" />
+        </div>
+        <div class="flx">
+            <a class="btn-primary bdr-radius" href="/api/del/{{_id}}">
+                Supprimer
+            </a>
+        </div>
+    </form>
+
+    {{/each}}
+</div>

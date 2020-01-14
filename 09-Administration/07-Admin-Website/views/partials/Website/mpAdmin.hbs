@@ -1,0 +1,22 @@
+<div class="cont pd-bt-50">
+    <div class="cont bdr-left">
+        <h2>Écrire au Administrateur:</h2>
+        <form class="column middle" action="/api/createMpAdmin" method="post"
+            enctype="application/x-www-form-urlencoded">
+            <div class="flx itm">
+                <label for="">Sujet : </label>
+                <input type="text" class="form-control itm bdr-radius" name="subject" />
+            </div>
+            <div class="flx">
+                <textarea class="itm" name="message" cols="100" rows="10"
+                    placeholder="Ajouter votre message"></textarea>
+            </div>
+            <input class="bdr-radius btn-secondary" type="submit" value="OK" />
+        </form>
+    </div>
+</div>
+<style>
+    .pd-bt-50 {
+        padding-bottom: 50px;
+    }
+</style>

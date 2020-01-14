@@ -1,0 +1,45 @@
+<h1>Test handlebars & MongoDB Local & CRUD</h1>
+
+<h3>Formulaire Create 'Models'</h3>
+
+<form action="/api/createModel" method="post" enctype="application/x-www-form-urlencoded">
+    <input type="text" class="form-control" name="name" placeholder="Entrez votre nom !" />
+    <input type="email" class="form-control" name="email" placeholder="Entrez votre email !" />
+    <input type="submit" value="OK" />
+</form>
+
+<h3>Liste Models</h3>
+
+    {{!-- 
+        On crée une Boucle grace à la récupération des data dbModel depuis le nodeJS
+        La boucle est une fonction de Handlebars (allez voir la doc)
+    --}}
+
+{{#each dbModel}}
+
+    {{!-- 
+        Récupération de nos variables name parmis les obj de dbModel
+    --}}
+    <p>name: {{ name }}</p>
+
+    <p>email: {{ email }}</p>
+
+    {{!-- 
+        Ceci est le Formulaire pour éditer les Model
+    --}}
+
+    <form action="/api/editModel/{{_id}}" method="post" enctype="application/x-www-form-urlencoded" required/>
+        <input type="text" class="form-control" name="name" placeholder="Editer votre nom !" required/>
+        <input type="email" class="form-control" name="email" placeholder="Editer votre email !" required/>
+        <input type="text" class="form-control" name="_id" value="{{ _id }}">
+        <input type="submit" value="Éditer" />
+    </form>
+
+    {{!-- 
+        Ceci est le bouton pour supprimer le Model
+    --}}
+    <a href="/api/del/{{_id}}">
+        <button>Supprimer</button>
+    </a>
+
+{{/each}}

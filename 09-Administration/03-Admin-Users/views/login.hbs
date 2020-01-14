@@ -1,0 +1,33 @@
+{{!-- 
+    Page de notre formulaire de connexion
+ --}}
+
+<div class="cont txt-center">
+    <h3>Se connecter</h3>
+
+    <div class="ju-center">
+        <form class="column half" action="/auth/authentification" method="post"
+            enctype="application/x-www-form-urlencoded">
+            <label for="">Email :</label>
+            <input class="itm bdr-radius" type="email" class="form-control" name="email"
+                placeholder="Entrez votre email !" />
+            <label for="">Mot de passe :</label>
+            <input class="itm bdr-radius" type="password" class="form-control" name="password"
+                placeholder="Entrez votre mot de passe" />
+            <input class="btn-secondary bdr-radius" type="submit" value="OK" />
+            <a class="btn-primary bdr-radius" href="/auth/lostPassword">Mot de passe oublié ?</a>
+        </form>
+    </div>
+
+    <a class="google-btn" href="/auth/google">Google+</a>
+
+</div>
+
+<style>
+.google-btn {
+    padding: 5px;
+    margin: 5px;
+    background-color: #dd4b39;
+    border-radius: 5px;
+}
+</style>

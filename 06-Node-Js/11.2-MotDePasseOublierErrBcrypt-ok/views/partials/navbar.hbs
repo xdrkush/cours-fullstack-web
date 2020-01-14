@@ -1,0 +1,16 @@
+<div class="navbar">
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/login">Se Connecter</a></li>
+        <li><a href="/create">Créé un compte</a></li>
+        {{!-- 
+            Petite condition afin que notre lien 'Logout' sois visible que en cas de session valide
+         --}}
+        
+        {{#if user }}
+        <li><a href="/verified">isVerified</a></li>
+        <li><a href="/myaccount">Mon compte</a></li>
+        {{/if }}
+        <li><a href="/auth/logout">logout</a></li>
+    </ul>
+</div>

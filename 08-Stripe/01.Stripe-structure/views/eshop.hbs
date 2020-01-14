@@ -1,0 +1,123 @@
+<div class="cont">
+    <div class="cont bdr-left">
+
+        <h3>Formulaire Create 'Article'</h3>
+
+        <form class="column middle" action="/shop/createArticle" method="post"
+            enctype="application/x-www-form-urlencoded">
+            <div class="flx">
+                <input type="text" class="form-control itm bdr-radius" name="name" placeholder="Nom de l'article" />
+                <input type="number" class="form-control itm bdr-radius" name="price"
+                    placeholder="Prix de l'article !" />
+                <input type="text" class="form-control itm bdr-radius" name="imgArticle"
+                    placeholder="Mettre liens d'une image" />
+            </div>
+            <div class="flx">
+                <textarea class="itm" name="description" cols="100" rows="10"
+                    placeholder="Description de vôtre article ..."></textarea>
+            </div>
+            <input class="bdr-radius btn-secondary" type="submit" value="OK" />
+        </form>
+    </div>
+
+    <div class="cont bdr-left">
+        <h3>Liste Articles</h3>
+        {{#each dbArticle}}
+        <div>
+            <div class="flx">
+                <div class="column">
+                    <img class="itm img100" src="{{ imgArticle }}" alt="">
+                    <a href="/article/{{_id}}" class="btn-primary bdr-radius">Voir +</a>
+                </div>
+                <div>
+                    <div class="flx">
+                        <p class="itm">Nom : {{ name }}</p>
+                        <p class="itm">Prix : {{ price }} €</p>
+                    </div>
+                    <div class="flx">
+                        <p class="itm">isVerified : {{ isVerified }}</p>
+                    </div>
+                    <p class="itm">Description : {{ description }}</p>
+                </div>
+                <a href="/shop/del/{{_id}}">
+                    <button class="btn-primary bdr-radius">Supprimer</button>
+                </a>
+            </div>
+        </div>
+        <button class="accordion">Éditer Article: {{ _id }}</button>
+        <form class="column middle panel" action="/shop/editArticle/{{_id}}" method="post"
+            enctype="application/x-www-form-urlencoded">
+            <div class="flx">
+                <input type="text" class="form-control itm bdr-radius" name="name" value="{{ name }}"
+                    placeholder="Nom de l'article" />
+                <input type="number" class="form-control itm bdr-radius" name="price" value="{{ price }}"
+                    placeholder="Prix de l'article !" />
+                <input type="text" class="form-control itm bdr-radius" name="imgArticle" value="{{ imgArticle }}"
+                    placeholder="Mettre liens d'une image" />
+            </div>
+            <div class="flx">
+                <textarea class="itm" name="description" cols="100" rows="10"
+                    placeholder="Description de vôtre article ..."></textarea>
+            </div>
+            <div class="flx">
+                <p>Vérifier L'article :</p>
+                <input type="radio" name="isVerified" value="false">
+                <label for="false">Non Vérifier</label>
+                <input type="radio" name="isVerified" value="true">
+                <label for="true">Vérifier</label>
+                <input class="btn-secondary bdr-radius" type="submit" value="Éditer" />
+            </div>
+        </form>
+
+        {{/each}}
+    </div>
+</div>
+
+<script>
+    /*
+     * Tuto W3C 
+     * https://www.w3schools.com/howto/howto_js_accordion.asp
+     */
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    }
+</script>
+
+<style>
+    /*
+     * Tuto W3C 
+     * https://www.w3schools.com/howto/howto_js_accordion.asp
+     */
+    .accordion {
+        background-color: #eee;
+        color: #444;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        text-align: left;
+        border: none;
+        outline: none;
+        transition: 0.4s;
+    }
+    .active,
+    .accordion:hover {
+        background-color: #ccc;
+    }
+    .panel {
+        padding: 0 18px;
+        background-color: white;
+        display: none;
+        overflow: hidden;
+    }
+</style>

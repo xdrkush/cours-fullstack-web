@@ -1,0 +1,10 @@
+@import "variables.sass"
+
+body
+  background-color: mix($primary-color, $secondary-color, 50%)
+
+$column-count: 12
+@function column-width($num)
+  @return $num * 100% / $column-count
+.three-columns
+  width: column-width(3)

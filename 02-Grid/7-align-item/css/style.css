@@ -1,0 +1,106 @@
+.bdr-green { border: solid 2px green}
+.bdr-red { border: solid 2px red}
+.bdr-blue { border: solid 2px blue}
+.bdr-yellow { border: solid 2px yellow}
+.bdr-purple { border: solid 2px purple}
+.bdr-cyan { border: solid 2px cyan}
+
+.bg-green { background-color: green}
+.bg-red { background-color: red}
+.bg-blue { background-color: blue}
+.bg-yellow { background-color: yellow}
+.bg-purple { background-color: purple}
+.bg-cyan { background-color: cyan}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container{
+  display: grid;
+  grid-template-columns: 2fr 8fr 2fr;
+  grid-template-rows: 10vh;
+}
+
+.container2{
+  display: grid;
+  grid-template-columns: 20% 10% 60% 10%;
+  grid-template-rows: 60px 20vh;
+}
+
+.container-repeat{
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: 60px 20vh 30vh;
+}
+
+/* Area */
+
+.item-a{
+  grid-area: header;
+}
+.item-b{
+  grid-area: main;
+}
+.item-c{
+  grid-area: sidebar;
+}
+.item-d{
+  grid-area: footer;
+}
+
+.cont-area{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: 60px 20vh 100px;
+  grid-template-areas: "header header header header"
+                       "main main . sidebar"
+                       "footer footer footer footer";
+}
+
+.cont-area-gap{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 20vh auto auto 20vh;
+  grid-template-rows: 60px 30vh 100px;
+  grid-template-areas: "header header header header"
+                       "main main . sidebar"
+                       "footer footer footer footer";
+  grid-column-gap: 10px;
+  grid-row-gap: 15px;
+  /* grid-gap: 10px 15px; */
+}
+
+/* Justify-content */
+.jus-ctnt-start {
+  display: grid;
+  justify-items: start;
+}
+.jus-ctnt-end {
+  display: grid;
+  justify-items: end;
+}
+.jus-ctnt-center {
+  display: grid;
+  justify-items: center;
+}
+.jus-ctnt-stretch {
+  display: grid;
+  justify-items: stretch;
+}
+
+/* Align-item */
+.al-itm-start {
+  align-items: start;
+}
+.al-itm-end {
+  align-items: end;
+}
+.al-itm-center {
+  align-items: center;
+}
+.al-itm-stretch {
+  align-items: stretch;
+}

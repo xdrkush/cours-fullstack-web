@@ -1,0 +1,76 @@
+<div class="cont">
+    <div class="cont bdr-left">
+        <h3>Liste Articles</h3>
+        {{#each dbArticle}}
+        <div>
+            <div class="flx">
+                <div class="column">
+                    <img class="itm img100" src="{{ imgArticle }}" alt="">
+                    <a href="/article/{{_id}}" class="btn-primary bdr-radius">Voir +</a>
+                </div>
+                <div>
+                    <div class="flx">
+                        <p class="itm">Nom : {{ name }}</p>
+                        <p class="itm">Prix : {{ price }} €</p>
+                    </div>
+                    {{#if isAdmin }}
+                    <div class="flx">
+                        <p class="itm">isVerified : {{ isVerified }}</p>
+                    </div>
+                    {{/if }}
+                    <p class="itm">Description : {{ description }}</p>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+
+<script>
+    /*
+     * Tuto W3C 
+     * https://www.w3schools.com/howto/howto_js_accordion.asp
+     */
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    }
+</script>
+
+<style>
+    /*
+     * Tuto W3C 
+     * https://www.w3schools.com/howto/howto_js_accordion.asp
+     */
+    .accordion {
+        background-color: #eee;
+        color: #444;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        text-align: left;
+        border: none;
+        outline: none;
+        transition: 0.4s;
+    }
+    .active,
+    .accordion:hover {
+        background-color: #ccc;
+    }
+    .panel {
+        padding: 0 18px;
+        background-color: white;
+        display: none;
+        overflow: hidden;
+    }
+</style>

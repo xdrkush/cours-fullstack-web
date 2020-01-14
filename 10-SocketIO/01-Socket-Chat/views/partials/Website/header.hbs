@@ -1,0 +1,16 @@
+<header class="header">
+  <div class="cont txt-center">
+    <h1><u>{{ header.title }}</u></h1>
+
+    {{#each header.stitle}}
+    <p> {{this}} </p>
+    {{/each}}
+
+  </div>
+</header>
+<style>
+  .header {
+    padding-top: 20vh;
+    height: 60vh;
+  }
+</style>
