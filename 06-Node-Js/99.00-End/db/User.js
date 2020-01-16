@@ -3,8 +3,8 @@
  * Model de 'User'
  ******************************/
 
-const bcrypt = require('bcrypt')
-    , mongoose = require('mongoose')
+const bcrypt = require('bcrypt'),
+    mongoose = require('mongoose')
 
 const UserSchema = new mongoose.Schema({
     pseudo: {
@@ -45,7 +45,7 @@ const UserSchema = new mongoose.Schema({
     }
 })
 
-UserSchema.pre('save', function (next) {
+UserSchema.pre('save', function(next) {
     const user = this
     bcrypt.hash(user.password, 10, (error, encrypted) => {
         user.password = encrypted
