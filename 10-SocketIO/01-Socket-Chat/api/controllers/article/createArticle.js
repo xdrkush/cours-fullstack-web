@@ -3,21 +3,13 @@
  * Controller /api/createModel
  *****************************/
 
-const express = require('express')
-    , app = express()
-    , router = express.Router()
-    , Article = require('../../../db/Article')
+const Article = require('../../../db/Article')
 
 // Create Model
-router.post('/createArticle', async (req, res, next) => {
-    console.log(req.body);
-    
-    Article.create(
-        {
+module.exports = async(req, res, next) => {
+    Article.create({
             ...req.body
         },
         res.redirect('/eshop')
     )
-})
-
-module.exports = router
+}

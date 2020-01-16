@@ -3,26 +3,21 @@
  * Controller /api/editModel
  ***************************/
 
-const express = require('express')
-    , app = express()
-    , router = express.Router()
-    , User = require('../../../db/User')
+const User = require('../../../db/User')
 
-// Update Model
-router.post('/editUser/:id', async (req, res) => {
+// Update User
+module.exports = async(req, res) => {
     const dbUser = await User.findById(req.params.id)
     let query = { _id: req.params.id }
     console.log('test Édition / ' + req.params.id + '\n' + req.body.name + " / " + req.body.email)
     User.findOneAndUpdate(
-        query,
-        {
+        query, {
             isAdmin: req.body.isAdmin,
             isModo: req.body.isModo,
             isBan: req.body.isBan,
             status: req.body.status
-        },
-        { useFindAndModify: false },
-        function (error, post) {
+        }, { useFindAndModify: false },
+        function(error, post) {
             if (error) {
                 console.log(error)
                 User.create({
@@ -37,6 +32,4 @@ router.post('/editUser/:id', async (req, res) => {
             }
         }
     )
-})
-
-module.exports = router
+}

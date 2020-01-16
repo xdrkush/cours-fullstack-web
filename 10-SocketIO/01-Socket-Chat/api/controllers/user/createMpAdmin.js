@@ -3,24 +3,18 @@
  * Controller /api/createModel
  *****************************/
 
-const express = require('express')
-    , app = express()
-    , router = express.Router()
-    , Mp = require('../../../db/Mp')
-    , User = require('../../../db/User')
+const Mp = require('../../../db/Mp'),
+    User = require('../../../db/User')
 
-    // Format date 
-    , dateFormat = require('dateformat')
-    , now = new Date()
-    , date = Date.now()
+// Format date 
+, dateFormat = require('dateformat'), now = new Date(), date = Date.now()
 
 // Create Model
-router.post('/createMpAdmin', async (req, res, next) => {
+module.exports = async(req, res, next) => {
     const sess = req.session
-    
+
     console.log(req.body);
-    Mp.create(
-        {
+    Mp.create({
             ...req.body,
             author: sess.pseudo,
             authorId: sess.userId,
@@ -37,6 +31,4 @@ router.post('/createMpAdmin', async (req, res, next) => {
         },
         res.redirect('/')
     )
-})
-
-module.exports = router
+}

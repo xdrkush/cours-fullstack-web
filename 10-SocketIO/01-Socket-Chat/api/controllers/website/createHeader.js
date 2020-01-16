@@ -3,15 +3,11 @@
  * Controller /api/createWebsite
  *****************************/
 
-const express = require('express')
-    , app = express()
-    , router = express.Router()
-    , Website = require('../../../db/Website')
+const Website = require('../../../db/Website')
 
 // Create Website
-router.post('/createHeader', async (req, res, next) => {
-    Website.create(
-        {
+module.exports = async(req, res, next) => {
+    Website.create({
             ...req.body,
             header: {
                 title: req.body.title,
@@ -24,6 +20,4 @@ router.post('/createHeader', async (req, res, next) => {
         },
         res.redirect('/admin')
     )
-})
-
-module.exports = router
+}

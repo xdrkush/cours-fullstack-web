@@ -3,24 +3,18 @@
  * Controller /api/createModel
  *****************************/
 
-const express = require('express')
-    , app = express()
-    , router = express.Router()
-    , Mp = require('../../../db/Mp')
-    , User = require('../../../db/User')
-    , Rdv = require('../../../db/Rdv')
+const Mp = require('../../../db/Mp'),
+    User = require('../../../db/User'),
+    Rdv = require('../../../db/Rdv')
 
-    // Format date 
-    , dateFormat = require('dateformat')
-    , now = new Date()
-    , date = Date.now()
+// Format date 
+, dateFormat = require('dateformat'), now = new Date(), date = Date.now()
 
 // Create Model
-router.post('/createRdv', async (req, res, next) => {
-    const sess = req.session
-        , dest = await User.findById({ _id: req.body.destId })
-    Rdv.create(
-        {
+module.exports = async(req, res, next) => {
+    const sess = req.session,
+        dest = await User.findById({ _id: req.body.destId })
+    Rdv.create({
             ...req.body,
             author: sess.pseudo,
             authorId: sess.userId,
@@ -38,6 +32,4 @@ router.post('/createRdv', async (req, res, next) => {
         },
         res.redirect('back')
     )
-})
-
-module.exports = router
+}

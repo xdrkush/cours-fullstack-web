@@ -3,32 +3,27 @@
  * Controller /api/editModel
  ***************************/
 
-const express = require('express')
-    , app = express()
-    , router = express.Router()
-    , Article = require('../../../db/Article')
+const Article = require('../../../db/Article')
 
 // Update Model
-router.post('/editArticle/:id', async (req, res) => {
+module.exports = async(req, res) => {
     const dbArticle = await Article.findById(req.params.id)
     let query = { _id: req.params.id }
     console.log('test Édition / ' + req.params.id + '\n' + req.body.name + " / " + req.body.email)
     Article.findOneAndUpdate(
-        query,
-        {
+        query, {
             name: req.body.name,
             price: req.body.price,
             imgArticle: req.body.imgArticle,
             description: req.body.description,
             isVerified: req.body.isVerified
-        },
-        { useFindAndModify: false },
-        function (error, post) {
+        }, { useFindAndModify: false },
+        function(error, post) {
             if (error) {
                 console.log(error)
                 Article.create({
-                    ...req.body
-                },
+                        ...req.body
+                    },
                     (error, post) => {
                         console.log('err 1')
                         res.redirect('/')
@@ -39,6 +34,4 @@ router.post('/editArticle/:id', async (req, res) => {
             }
         }
     )
-})
-
-module.exports = router
+}

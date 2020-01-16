@@ -3,23 +3,16 @@
  * Controller /api/createModel
  *****************************/
 
-const express = require('express')
-    , app = express()
-    , router = express.Router()
-    , Commentary = require('../../../db/Commentary')
+const Commentary = require('../../../db/Commentary')
 
-    // Format date 
-    , dateFormat = require('dateformat')
-    , now = new Date()
-    , date = Date.now()
+// Format date 
+, dateFormat = require('dateformat'), date = Date.now()
 
 // Create Model
-router.post('/createCommentary', async (req, res, next) => {
+module.exports = async(req, res, next) => {
     const sess = req.session
-    
-    console.log(req.body);
-    Commentary.create(
-        {
+
+    Commentary.create({
             ...req.body,
             author: sess.pseudo,
             authorId: sess.userId,
@@ -32,6 +25,4 @@ router.post('/createCommentary', async (req, res, next) => {
         },
         res.redirect('back')
     )
-})
-
-module.exports = router
+}

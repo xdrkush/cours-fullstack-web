@@ -2,34 +2,29 @@
  *
  * routes /auth
  ******************************/
-
-const express = require('express')
-    , router = express.Router()
-    , path = require('path')
+const express = require('express'),
+    router = express.Router()
 
 /*
  * Middleware
  ************/
- const auth = require('../middleware/auth'),
-      isVerified = require('../middleware/isVerified')
+const auth = require('../middleware/auth'),
+    isVerified = require('../middleware/isVerified')
 
 /*
  *  Import Controllers Auth
  ***************************/
-
-const createUser = require('./controllers/admin/createUser'),
-      authentification = require('./controllers/auth/authentification'),
-      lostPassword = require('./controllers/auth/lostPassword'),
-      formMailNewPassword = require('./controllers/auth/formMailNewPassword'),
-      logout = require('./controllers/auth/logout'),
-      googleAuth = require('./controllers/auth/googleAuth')
+const createUser = require('./controllers/auth/createUser'),
+    authentification = require('./controllers/auth/authentification'),
+    lostPassword = require('./controllers/auth/lostPassword'),
+    formMailNewPassword = require('./controllers/auth/formMailNewPassword'),
+    logout = require('./controllers/auth/logout'),
+    googleAuth = require('./controllers/auth/googleAuth')
 
 /*
  *  Import Page Auth
  *********************/
-
-const
-      mailNewPassword = require('./controllers/pages/mailNewPassword')
+const mailNewPassword = require('./controllers/pages/mailNewPassword')
 
 // Création de compte
 router.post('/createUser', createUser)
@@ -47,7 +42,7 @@ router.get('/mailNewPassword/:id', mailNewPassword)
 router.post('/formMailNewPassword', formMailNewPassword)
 
 // Se déconnecter
-router.get('/logout', logout)
+router.get('/logout', auth, logout)
 
 // PassportJS Google+
 router.use('/google', googleAuth)

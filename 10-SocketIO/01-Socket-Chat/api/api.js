@@ -2,25 +2,21 @@
  *
  * routes /api
  ******************************/
-const express = require('express')
-    , app = express()
-    , router = express.Router()
-    , Mp = require('../db/Mp')
+const express = require('express'),
+    router = express.Router()
 
 /*
  *  Middleware
  *************/
 const auth = require('../middleware/auth')
-    , isVerified = require('../middleware/isVerified')
-    , isAdmin    = require('../middleware/isAdmin')
 
 /*
  *
  *  Import Controllers Mp
  *************************/
-const createMp = require('./controllers/user/createMp')
-    , deleteMp = require('./controllers/user/deleteMp')
-    , createMpAdmin = require('./controllers/user/createMpAdmin')
+const createMp = require('./controllers/user/createMp'),
+    deleteMp = require('./controllers/user/deleteMp'),
+    createMpAdmin = require('./controllers/user/createMpAdmin')
 
 /*
  *

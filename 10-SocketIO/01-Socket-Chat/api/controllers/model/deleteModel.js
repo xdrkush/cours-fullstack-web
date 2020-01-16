@@ -3,17 +3,13 @@
  * Controller /api/del/:id
  *************************/
 
-const express = require('express')
-    , app = express()
-    , router = express.Router()
-    , Model = require('../../../db/Model')
+const Model = require('../../../db/Model')
 
 // Delete Model
-router.get('/delModel/:id', (req, res) => {
+module.exports = (req, res) => {
     Model.findByIdAndRemove(
-        req.params.id,
-        { useFindAndModify: false },
-        function (err) {
+        req.params.id, { useFindAndModify: false },
+        function(err) {
             if (!err) {
                 console.log('del ok')
             } else {
@@ -21,6 +17,4 @@ router.get('/delModel/:id', (req, res) => {
             }
         })
     res.redirect('/')
-})
-
-module.exports = router
+}
