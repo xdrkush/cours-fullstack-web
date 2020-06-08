@@ -17,24 +17,6 @@ body {
   padding: 0;
 }
 
-.container{
-  display: grid;
-  grid-template-columns: 2fr 8fr 2fr;
-  grid-template-rows: 10vh;
-}
-
-.container2{
-  display: grid;
-  grid-template-columns: 20% 10% 60% 10%;
-  grid-template-rows: 60px 20vh;
-}
-
-.container-repeat{
-  display: grid;
-  grid-template-columns: repeat(4, 25%);
-  grid-template-rows: 60px 20vh 30vh;
-}
-
 /* Area */
 
 .item-a{
@@ -63,8 +45,9 @@ body {
 .cont-area-gap{
   width: 100%;
   display: grid;
-  grid-template-columns: 20vh auto auto 20vh;
-  grid-template-rows: 60px 30vh 100px;
+  /* Bien utilisé des 'fr' pour ne pas créé d'overflow */
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 60px 20vh 100px;
   grid-template-areas: "header header header header"
                        "main main . sidebar"
                        "footer footer footer footer";

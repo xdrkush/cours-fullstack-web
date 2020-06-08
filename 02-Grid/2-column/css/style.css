@@ -13,11 +13,13 @@
 .bg-cyan { background-color: cyan}
 
 .container{
+  padding: 10px;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
 }
 
 .container2{
+  padding: 10px;
   display: grid;
   grid-template-columns: 20% 20% 50% 10%;
 }
