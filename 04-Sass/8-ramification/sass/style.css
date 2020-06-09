@@ -1,0 +1,117 @@
+.btn {
+  padding: 50px;
+  margin: 50px;
+  border-radius: 10px;
+  border: solid 2px #28c201;
+}
+.btn:hover {
+  background-color: #28c201;
+}
+
+a {
+  color: #192cd6;
+}
+a:visited {
+  color: #c20101;
+}
+a:hover {
+  color: #28c201;
+}
+
+body {
+  background-color: #6e176c;
+}
+
+.three-columns {
+  width: 25%;
+}
+
+.width-1 {
+  width: 11em;
+}
+
+.width-2 {
+  width: 12em;
+}
+
+.width-3 {
+  width: 13em;
+}
+
+.width-4 {
+  width: 14em;
+}
+
+.height-1 {
+  height: 25em;
+}
+
+.height-2 {
+  height: 50em;
+}
+
+.height-3 {
+  height: 75em;
+}
+
+.image-dog {
+  height: 500px;
+  background-image: url("../images/dog.png");
+}
+
+.image-cat {
+  height: 500px;
+  background-image: url("../images/cat.png");
+}
+
+.image-bird {
+  height: 500px;
+  background-image: url("../images/bird.png");
+}
+
+.image-dolphin {
+  height: 500px;
+  background-image: url("../images/dolphin.png");
+}
+
+body {
+  background-color: #ffffff;
+}
+
+body {
+  background-color: #ffffff;
+}
+
+h1 {
+  color: #192cd6;
+  font: Helvetica, sans-serif;
+}
+
+h2 {
+  color: #c20101;
+  font: Helvetica, sans-serif;
+}
+
+.gros-text-bleu {
+  font-family: Arial;
+  font-size: 25px;
+  font-weight: bold;
+  color: #0000ff;
+}
+
+.button-scope, .home-button, .back-button {
+  margin: 5px;
+  border-radius: 2px;
+}
+
+.home-button, .back-button {
+  background-color: #0a0052;
+  color: #ffffff;
+}
+
+.dog {
+  height: 500px;
+  background-image: url("../images/dog.png");
+}
+
+/*# sourceMappingURL=style.css.map */

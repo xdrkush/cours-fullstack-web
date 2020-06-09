@@ -3,14 +3,21 @@
 $black: #000000
 $white: #ffffff
 $text-color: $black
+
 body
   background-color: if($text-color == $black, $white, $black)
+
+// !!! 
+// Attention si vous décommenter le code en dessous vous devez mettre en commentaire de la ligne 3 à 8 
+// !!!
 
 // $black: #000000
 // $white: #ffffff
 // $lightgrey: #d3d3d3
 // $darkgrey: #545454
+
 // @mixin text-color($color)
+
 // @if ($color == $black)
 //   background-color: $white
 // @else if ($color == $white)
