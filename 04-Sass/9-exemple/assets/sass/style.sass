@@ -1,0 +1,259 @@
+/* Text-color */
+.txt-green
+  color: rgba(44, 135, 13, 1)
+.txt-red
+  color: rgba(213, 28, 21, 1)
+.txt-blue
+  color: rgba(29, 13, 135, 1)
+.txt-yellow
+  color: rgba(135, 112, 13, 1)
+.txt-purple
+  color: rgba(128, 0, 128, 1)
+.txt-cyan
+  color: rgba(13, 129, 135, 1)
+
+/* Border */
+.bdr-green
+  border: 2px solid rgba(44, 135, 13, 1)
+.bdr-red
+  border: 2px solid rgba(213, 28, 21, 1)
+.bdr-blue
+  border: 2px solid rgba(29, 13, 135, 1)
+.bdr-yellow
+  border: 2px solid rgba(135, 112, 13, 1)
+.bdr-purple
+  border: 2px solid rgba(128, 0, 128, 1)
+.bdr-cyan
+  border: 2px solid rgba(13, 129, 135, 1)
+
+/* Background */
+.bg-green
+  background-color: rgba(44, 135, 13, 1)
+.bg-red
+  background-color: rgba(213, 28, 21, 1)
+.bg-blue
+  background-color: rgba(29, 13, 135, 1)
+.bg-yellow
+  background-color: rgba(135, 112, 13, 1)
+.bg-purple
+  background-color: rgba(128, 0, 128, 0.8)
+.bg-cyan
+  background-color: rgba(13, 129, 135, 1)
+.bg-pink
+  background-color: rgba(135, 13, 114, 1)
+
+/* Body */
+body
+  margin: 0 
+  padding: 0 
+  background-color: #777 
+a
+  margin: 0 
+  text-decoration: none 
+ul
+  margin: 0 
+  padding: 0 
+li
+  list-style: none 
+.cont
+  padding:5px
+  margin: 5vh 
+
+/* Flex */
+.flex
+  display: flex 
+
+/* Flex-Direction */
+.row
+  display: flex
+  flex-direction: row
+.row-reverse
+  display: flex
+  flex-direction: row-reverse
+.column
+  display: flex
+  flex-direction: column
+.column-reverse
+  display: flex
+  flex-direction: column-reverse
+
+/* Flex-Wrap */
+.nowrap
+  display: flex
+  flex-wrap: nowrap
+.wrap
+  display: flex
+  flex-wrap: wrap
+.wrap-reverse
+  display: flex
+  flex-wrap: wrap-reverse
+
+/* Flex-Flow */
+.flow1
+  display: flex
+  flex-flow: row wrap
+.flow2
+  display: flex
+  flex-flow: column-reverse wrap-reverse
+
+/* Justify-content */
+.flx-start
+  justify-content: flex-start 
+.flx-end
+  justify-content: flex-end
+.flx-center
+  justify-content: center 
+.flx-space-between
+  justify-content: space-between 
+.flx-space-around
+  justify-content: space-around
+
+/* align-items */
+.al-start
+  align-items: flex-start 
+.al-end
+  align-items: flex-end 
+.al-center
+  align-items: center 
+.al-baseline
+  align-items: baseline 
+.al-stretch
+  align-items: stretch 
+
+/* align-content */
+.al-ctnt-start
+  display: flex
+  flex-wrap: wrap
+  align-content: flex-start
+.al-ctnt-end
+  display: flex
+  flex-wrap: wrap
+  align-content: flex-end 
+.al-ctnt-center
+  display: flex
+  flex-wrap: wrap
+  align-content: center 
+.al-ctnt-space-between
+  display: flex
+  flex-wrap: wrap
+  align-content: space-between 
+.al-ctnt-space-around
+  display: flex
+  flex-wrap: wrap
+  align-content: space-around 
+
+/* Items */
+.navbar 
+    top: 0 
+    width: 100% 
+    position: fixed 
+    height: 6vh 
+    display: grid 
+    grid-template-columns: 1fr 1fr 
+
+
+/* Welcome */
+.welcome 
+    min-height: 90vh 
+    margin-top: 8vh 
+
+
+/* Sidebar */
+.sidebar 
+    position: fixed 
+    position: fixed 
+    border-radius: 10px 
+    padding: 5px 
+    top: 10vh 
+    left: -16vh 
+    min-width: 20vh 
+    z-index: 1 
+    transition: 1s 
+
+.drop-sidebar:hover 
+  transform: translateX(16vh) 
+  transition: 1s 
+
+.list-itm-sidebar 
+  width: 100% 
+  height: 90% 
+
+
+/* Main */
+.main 
+    min-height: 100px
+
+
+/* Newslater */
+.newslater 
+    min-height: 40vh 
+
+.list-news 
+    width: 100% 
+    display: grid 
+    grid-template-columns: repeat(6, 1fr) 
+
+.card-news 
+    width: 20vh 
+    margin: 5px 
+    padding: 5px 
+    border-radius: 5px 
+
+
+/* Contact */
+.contact 
+    min-height: 40vh 
+
+
+.form-contact 
+    margin: 5px 
+    padding: 5px 
+
+
+.map-contact 
+    margin: 5px 
+    padding: 5px 
+
+
+/* Footer */
+.footer 
+    min-height: 100px 
+
+
+/* Module */
+.btn 
+    padding: 5px 
+    margin: 5px 
+
+.btn-icon-right 
+    display: grid 
+    padding: 5px 
+    margin: 5px 
+    grid-template-columns: 5fr 1fr 
+    border-radius: 5px 
+    text-align: center 
+
+.btn-icon-left 
+    display: grid 
+    padding: 5px 
+    margin: 5px 
+    grid-template-columns: 1fr 5fr 
+    border-radius: 5px 
+    text-align: center 
+
+.btn-social-4 
+    display: inline-flex 
+    font-size: 30px 
+
+.icon-social 
+    margin: 5px 
+
+
+.txt-center 
+    text-align: center 
+
+.ratio 
+    width: 100% 
+    height: 100% 
+    padding: 0 
+    margin: 0 
