@@ -81,18 +81,23 @@ li {list-style: none;}
 
 /* Justify-content */
 .cont-flx-start {
+    display: flex;
     justify-content: flex-start 
 }
 .cont-flx-end {
+    display: flex;
     justify-content: flex-end
 }
 .cont-flx-center {
+    display: flex;
     justify-content: center 
 }
 .cont-flx-space-between {
+    display: flex;
     justify-content: space-between 
 }
 .cont-flx-space-around {
+    display: flex;
     justify-content: space-around
 }
 

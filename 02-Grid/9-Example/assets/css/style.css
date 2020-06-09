@@ -34,7 +34,7 @@ li {list-style: none;}
 /* Navbar */
 .navbar {
   grid-area: header;
-  width: 95%;
+  width: 97%;
   position: fixed;
   padding: 0 10px 0 10px;
   height: 6vh;
