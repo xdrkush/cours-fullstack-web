@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tuto JS-Dom</title>
+</head>
+<body>
+  <!-- Ici nous déclarons une balise <a> -->
+  <a></a>
+
+  <!-- Notre script JS -->
+  <script>
+    /*
+     * On déclare une variable link 
+     * qui est =
+     * à la récupération dans la page (document)
+     * gràce à l'outil querySelector
+     * nous venons selectioner a (<a>)
+     **********************************/
+    var link = document.querySelector('a');
+
+    link.textContent = 'Mozilla Developer Network';
+    link.href = 'https://developer.mozilla.org';
+    link.target = '_blank';
+  </script>
+
+</body>
+</html>
