@@ -6,23 +6,28 @@
   <title>Tuto JS-Dom</title>
 </head>
 <body>
-  <!-- Ici nous déclarons une balise <a> -->
-  <a></a>
+  <!-- Ici nous déclarons une balise <div> avec un id "idTest"-->
+  <div id='idTest'></div>
 
   <!-- Notre script JS -->
   <script>
     /*
-     * On déclare une variable link 
-     * qui est =
-     * à la récupération dans la page (document)
-     * gràce à l'outil querySelector
-     * nous venons selectioner a (<a>)
-     **********************************/
-    var link = document.querySelector('a');
+     * On déclare nos variables
+     ***************************/
+    var idTest = document.getElementById('idTest');
+    var para = document.createElement('p')
 
-    link.textContent = 'Mozilla Developer Network';
-    link.href = 'https://developer.mozilla.org';
-    link.target = '_blank';
+    // On execute nos actions
+    para.textContent = 'Mon super paragraphe !'
+    idTest.appendChild(para)
+
+    // On déclare d'autre variable
+    // Important !! il faut bien déclaré ces variables apprès l'execution sinon notre querySelector('p') ne trouvera pas son selecteur
+    var text = document.createTextNode(' - La suite de mon super paragraphe !')
+    var linkPara = document.querySelector('p')
+    
+    linkPara.appendChild(text)
+    
   </script>
 
 </body>
