@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tuto JS-Dom</title>
+</head>
+<body>
+
+  <!-- 
+    Ici nous déclarons une balise <a> et <p>
+    Que nous allons utilisé dans le script juste en dessous
+  -->
+  <a></a>
+  <p></p>
+
+  <!-- Notre script JS -->
+  <script>
+    /*
+     * On déclare une variable link 
+     * qui est =
+     * à la récupération dans la page (document)
+     * gràce à l'outil querySelector
+     * nous venons selectioner a (<a>)
+     **********************************/
+     var link = document.querySelector('a');
+     var para = document.querySelector('p');
+
+    // On demande a notre variable link de s'alimenter (href, textContent, className, ...) 
+    // Ici entre les quotes '' on appel ça une chaine de charactère (oui c'est une phrase)
+    // Une chaine de charactère peux contenir des lettres, numéro, symbol, ... 
+    link.textContent = 'Mozilla Developer Network';
+    link.href = 'https://developer.mozilla.org';
+    link.target = '_blank';
+
+    // Attention un numéro dans une chaine de charactère ne peux pas etre calculer
+    var a = '1', b = '2'
+    // Ici nous demandons a notre paragraphe d'afficher un texte
+    // le text est la concaténation de a + b
+    para.textContent = a + b
+
+    // Si l'on regarde dans notre inspecteur de notre navigateur dans l'onglet console
+    // L'on pourra voir les console.log (F12 dans votre navigateur internet, Chromium, Mozilla, ...)
+    console.log('Hello World !')
+    alert('Hello Wolrd !!')
+
+    // À partir du prochain cours nous allons plus utiliser le terminal afin de gagné en rapidité d'apprentissage
+    // Si nous voulons calculé et le faire afficher dans notre page ce sera grace au DOM
+    // Le dom c'est quoi ??
+    // https://developer.mozilla.org/fr/docs/Web/API/Document_Object_Model/Introduction#:~:text=Le%20Document%20Object%20Model%20(DOM,son%20style%20et%20son%20contenu.&text=Celui%2Dci%20peut%20%C3%AAtre%20affich%C3%A9,de%20son%20code%20source%20HTML.
+
+  </script>
+
+</body>
+</html>
