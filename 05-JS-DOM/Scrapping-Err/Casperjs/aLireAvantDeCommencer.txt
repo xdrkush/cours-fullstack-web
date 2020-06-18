@@ -1,0 +1,37 @@
+/*
+ * Avant de commencer :
+ *
+ * - installer NodeJs
+ * - installer NPM
+ * - Installer CasperJS
+ * - installer phantomJS
+ *
+ * ( à vous de trouver comment les télécharger et installer )
+ *
+ */
+
+L'exercice ce compose de plusieurs modules, pour commencer :
+
+    > Base
+
+- Création d'un fichier JSON avec un script JS 
+--- ( pushData.js / pushObj.js)
+- Lecture d'un fichier JSON via un script JS
+--- ( readObj.js )
+
+    > Itermédiaire
+
+- Création d'un script JS avec Casperjs pour récupéré des datas sur le net
+--- ( linkObj.js )
+- Création d'un tableau avec les data obtenu du script js (casperjs)
+--- ( scrapArray.js, articleObj.js )
+- Création d'un fichier JSON avec les data obtenu grâce au script JS (casperjs)
+--- ( articlePushObj.js )
+
+    > Finalisation
+
+- Création d'une page web avec les datas obtenu
+--- ( dossier website )
+
+À Vous de jouer ! et bon courage ;)
+
