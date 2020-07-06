@@ -126,6 +126,7 @@ li {list-style: none;}
         width: 20%;
         height: auto;
         margin: 5px;
+        background-color: aqua;
         padding: 5px;
     }
 
@@ -134,6 +135,7 @@ li {list-style: none;}
         width: 20%;
         height: auto;
         margin: 5px;
+        background-color: aqua;
         padding: 5px;
     }
 
@@ -142,6 +144,7 @@ li {list-style: none;}
         width: 20%;
         height: auto;
         margin: 5px;
+        background-color: aqua;
         padding: 5px;
     }
 
@@ -150,6 +153,7 @@ li {list-style: none;}
         width: 20%;
         height: auto;
         margin: 5px;
+        background-color: aqua;
         padding: 5px;
     }
 
@@ -157,6 +161,7 @@ li {list-style: none;}
         min-width: 50%;
         width: auto;
         height: auto;
+        background-color: aqua;
         margin: 5px;
         padding: 5px;
     }
