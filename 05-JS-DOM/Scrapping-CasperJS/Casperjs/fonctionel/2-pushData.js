@@ -17,7 +17,7 @@
 const
     fs = require('fs'),
     ObjPush = {
-            'name': 'Il faut sauver willy',
+            'name': 'Le Royaliste',
             'date': '26 Aout 2019',
             'title': 'Le media pour tous',
             'test': 'test'
@@ -31,7 +31,7 @@ const
 
         // la function writeFile du module fs est demander d'executer
         // on choisit l'endroit ou stocker ce json, avec la function data, et err
-        fs.writeFile('../Json/mediaDataPushTest.json', data, (err) => {
+        fs.writeFile('../Json/2-push.json', data, (err) => {
             // En cas d'err il nous les LOG
             // Quand les function sont très courte et sur la meme ligne on est pas obliger de mettre les {}
             if(err) console.log(err)

@@ -4,7 +4,7 @@ const
 const
     myJson = function () {
         const
-            urlJSON = 'http://localhost:5500/website/assets/js/json/mediaDataPush.json',
+            urlJSON = '/assets/js/json/getData.json',
             req     = new XMLHttpRequest()
 
         req.open('GET', urlJSON)

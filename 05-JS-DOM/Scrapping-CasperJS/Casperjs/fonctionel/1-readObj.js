@@ -13,9 +13,10 @@
 // Ce qui nous permet de rechercher d'autre fichier dans notre arborescence
 // Import de Json
 // Qui es notre fichier contenant nos data a récupérer
+
 const
     fs = require('fs'),
-    Json = fs.readFileSync('../Json/mediaDataPushTest.json')
+    Json = fs.readFileSync('../Json/1-read.json')
 
 // Création d'une variable qui est la récupération de nos data dans notre json
 let

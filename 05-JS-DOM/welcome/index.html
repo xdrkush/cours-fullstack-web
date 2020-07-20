@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <!-- Ici nous déclarons la/les variable grâce à prompt-->
+  <script>
+    var name = prompt('Quels es votre nom ?')
+
+    if (name) {
+      console.log(name)
+      alert('Bienvenu' + ' ' + name)
+    }
+  </script>
+  <!-- / Script -->
+
+  <h1>Coucou</h1>
+
+  <!-- Ici nous allons pouvoir observer les modification sur notre variable name -->
+  <h3>Name Défault:
+    <u style="color: #777">
+      <script text="javascript">
+        document.write(name)
+      </script>
+    </u>
+  </h3>
+
+  <!-- Ici nous créons un bouton popup -->
+  <button onclick='alert("Coucou")'>Open Coucou</button>
+
+  <button onclick='myFunction()'>Open myFunction</button>
+  <script>
+    function myFunction() {
+      alert('Coucou !')
+    }
+  </script>
+
+  <!-- Ici nous embarquon notre variable name dans notre boutton -->
+  <button onclick='welcome()'>Welcome
+    <script text="javascript">
+      document.write(name)
+    </script>
+  </button>
+  <script>
+    function welcome(name) {
+      alert('Welcome to JS ' + name + ' !')
+    }
+  </script>
+
+  <!-- Ici nous éditons notre variable name dans un prompt -->
+  <button onclick='editNamePrompt()'>Éditer le name</button>
+  <script>
+    function editNamePrompt() {
+      let name = prompt('Quels es votre nom ?')
+
+      if (name) {
+        console.log(name)
+        alert('Bienvenu' + ' ' + name)
+      }
+    }
+  </script>
+
+  <!-- Ici nous éditons notre variable name dans le input -->
+  <h3>New Name</h3>
+  <input type="text" onchange="editName()" id='myInput'/>
+  <script>
+    function editName() {
+      var name = document.getElementById("myInput").value
+      console.log(name)
+      alert('Bienvenu' + ' ' + name)
+    }
+  </script>
+
+</body>
+
+</html>

@@ -26,4 +26,4 @@ let
     data = JSON.stringify([ObjPush], null, 2)
 
 // Les JSON sont dans ../Json
-fs.writeFileSync('../Json/test.json', data)
+fs.writeFileSync('../Json/3-push.json', data)
