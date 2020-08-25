@@ -1,0 +1,50 @@
+* {
+    margin:0;
+    padding:0;
+}
+a {
+    text-decoration: none;
+    color: gray;
+}
+a:hover {
+    color: silver;
+}
+body { margin: 20px; }
+#hint {
+    font-size: .75em;
+    color: gray;
+}
+table { 
+    background-color: lightskyblue;
+    border-collapse: collapse;
+    border: 1px solid darkblue;
+}
+
+input[type="button"] {
+    width: 30px;
+    height: 30px;
+}
+
+td {
+    padding: 2px;
+    text-align: center;
+}
+
+#top {
+    padding: 5px;
+}
+#term{
+    
+    text-align: right;
+    margin: 5px auto 5px auto;
+}
+    
+.ok { 
+    border-color: darkgreen;
+    background-color: palegreen;
+}
+
+.notok { 
+    border-color: red;
+    background-color: lavenderblush;
+}
