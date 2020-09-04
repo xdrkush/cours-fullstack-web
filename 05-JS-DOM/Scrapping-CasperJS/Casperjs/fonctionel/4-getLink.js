@@ -6,7 +6,7 @@
  * 
  * Récupérer (GET) des datas sur un site pour pouvoir les exploitées
  * 
- * Lancer le script : casperjs linkObj.js
+ * Lancer le script : casperjs 4-getLink.js
  *
  */
 
