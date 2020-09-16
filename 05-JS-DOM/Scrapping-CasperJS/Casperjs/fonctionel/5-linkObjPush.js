@@ -48,10 +48,10 @@ function pushDataJson() {
 function getDataArticle() {
 
   var arrayArticle = [],
-   articles = document.querySelectorAll('div.wrap-content div.kleo-masonry article');
+   articles = document.querySelectorAll('div.wrap-content article.type-post');
 
   for (var i = 0, article; article = articles[i]; i++) {
-    var link = article.querySelector('div.post-content div.post-header h3.post-title a'),
+    var link = article.querySelector('h2.article-title a'),
         linkObj = {}
 
     linkObj['link'] = link.getAttribute('href')

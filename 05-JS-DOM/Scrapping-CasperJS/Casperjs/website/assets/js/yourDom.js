@@ -1,71 +1,87 @@
 const
-    articleMedia = document.getElementById('articleMedia')
+  articleMedia = document.getElementById('articleMedia')
 
 const
-    myJson = function () {
-        const
-            urlJSON = '/assets/js/json/getData.json',
-            req     = new XMLHttpRequest()
+  myJson = function () {
+    const
+      urlJSON = '/assets/js/json/getData.json',
+      req = new XMLHttpRequest()
 
-        req.open('GET', urlJSON)
-        req.responseType = 'json'
-        req.send()
-        req.onload = function() {
-            const
-                articleMedia = req.response
-            showArticle(articleMedia)
-        }
-        console.log(req)
-    },
-    showArticle = function (jsonObj) {
-        const article = jsonObj
+    req.open('GET', urlJSON)
+    req.responseType = 'json'
+    req.send()
+    req.onload = function () {
+      const
+        articleMedia = req.response
+      showArticle(articleMedia)
+    }
+    console.log(req)
+  },
+  showArticle = function (jsonObj) {
+    const article = jsonObj
 
-        // Boucle de récupération du Json pour l'affichage dans le html
-        for (var i = 0; i < article.length; i++) {
-          // Création de nouvelle élément
-          const
-            myArticle  = document.createElement('div'),
-            myTitle    = document.createElement('h5'),
-            myDate     = document.createElement('p'),
-            myLink     = document.createElement('a'),
-            myImg      = document.createElement('img'),
-            myCard     = document.createElement('div'),
-            myCardBody = document.createElement('div')
+    // Boucle de récupération du Json pour l'affichage dans le html
+    for (var i = 0; i < article.length; i++) {
+      // Création de nouvelle élément
+      const
+        myArticle = document.createElement('div'),
+        myTitle = document.createElement('h5'),
+        myLink = document.createElement('a'),
+        myContent = document.createElement('p'),
+        myCard = document.createElement('div'),
+        myCardBody = document.createElement('div')
 
-          // Attribution de class
-          const
-            classCard     = document.createAttribute("class"),
-            classImg      = document.createAttribute("class"),
-            classColMd4   = document.createAttribute("class"),
-            classCardBody = document.createAttribute("class")
-          
-          // Récupération des Clef / Valeur | (key / value)
-          myTitle.textContent = article[i].title
-          myLink.href         = article[i].link
-          myDate.textContent  = article[i].date
-          myImg.src           = article[i].img
+      // Attribution de class
+      const
+        classCard = document.createAttribute("class"),
+        classContent = document.createAttribute("class"),
+        classColMd4 = document.createAttribute("class"),
+        classCardBody = document.createAttribute("class")
 
-          // Définition des class à utiliser
-          classColMd4.value   = "col-md-4"
-          classImg.value      = "bd-placeholder-img card-img-top"
-          classCard.value     = "card mb-4 text-center shadow-sm"
-          classCardBody.value = "card-body"
+      // Définition du contenu des éléments Valeur | (key / value)
+      myTitle.textContent = article[i].title
+      myLink.href = article[i].link
+      myContent.textContent = article[i].content
 
-          // Affichage des Elements avec leur variable (Parent => Enfant)
-          articleMedia.appendChild(myArticle)
-          myArticle.setAttributeNode(classColMd4)
-          myArticle.appendChild(myCard)
-          myCard.setAttributeNode(classCard)
-          myCard.appendChild(myLink)
-          myLink.appendChild(myImg)
-          myImg.setAttributeNode(classImg)
-          myCard.appendChild(myCardBody)
-          myCardBody.setAttributeNode(classCardBody)
-          myCardBody.appendChild(myTitle)
-          myCardBody.appendChild(myDate)
+      // Définition des class à utiliser
+      classColMd4.value = "col-md-4"
+      classContent.value = "col-md-12"
+      classCard.value = "card mb-4 text-center shadow-sm"
+      classCardBody.value = "card-body"
 
-        }
-      }
+      /*
+       * Affichage des Elements avec leur variable (Parent => Enfant)
+       ***************************************************************/
+
+      // articleMedia créé un enfant (=>) qui est myArticle
+      articleMedia.appendChild(myArticle)
+
+      // myArticle définit (=) ses class (classColMd4)
+      myArticle.setAttributeNode(classColMd4)
+      // myArticle => myCard
+      myArticle.appendChild(myCard)
+
+      // myCard => myLink
+      myCard.appendChild(myLink)
+      // myArticle = (classCard)
+      myCard.setAttributeNode(classCard)
+
+      // myLink => myContent
+      myLink.appendChild(myTitle)
+
+      // myContent = (classContent)
+      myContent.setAttributeNode(classContent)
+
+      // myCard => (myCardBody)
+      myCard.appendChild(myCardBody)
+
+      // myCardBody => myTitle
+      myCardBody.appendChild(myContent)
+      // myCardBody = (classCardBody)
+      myCardBody.setAttributeNode(classCardBody)
+
+    }
+  }
 
 /*
  * 
@@ -74,4 +90,4 @@ const
  */
 
 myJson()
-showArticle()
+showArticle() 

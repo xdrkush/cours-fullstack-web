@@ -25,7 +25,7 @@ const
   url = 'https://lemediapourtous.fr/category/vincent-lapierre/'
 
 function getLinks() {
-  var links = document.querySelectorAll('div.wrap-content article.post-item div.post-content div.post-header h3.post-title a')
+  var links = document.querySelectorAll('div.wrap-content article.type-post h2.article-title a')
 
   return Array.prototype.map.call(links, function(e) {
       return e.getAttribute('href');

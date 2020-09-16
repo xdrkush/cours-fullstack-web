@@ -1,98 +1,82 @@
 [
   {
-    "date": "4 juin 2020",
-    "img": "https://lemediapourtous.fr/wp-content/uploads/2020/06/person-counting-money-with-smartphones-in-front-on-desk-210990-480x270.jpg?x47389",
+    "content": "Vous êtes des milliers à laisser des commentaires sous chacune de nos vidéos. Aujourd’hui, Vincent Lapierre répond à vos commentaires ! C’est la rentrée, l’occasion pour nous de faire aussi le point sur les nouveautés et les projets du Média pour Tous. Encore une fois, merci à tous pour votre...",
+    "link": "https://lemediapourtous.fr/vincent-lapierre-commente-vos-commentaires-youtube-%f0%9f%98%85/",
+    "title": "Vincent Lapierre commente vos commentaires Youtube ! 😅"
+  },
+  {
+    "content": "Selon les estimations, les frais bancaires coûteraient près de 25 milliards d’euros aux usagers français, dont 6,7 milliards liés à des incidents de paiement. Il vous est peut-être déjà arrivé de rencontrer ce que les banques appellent un « incident de paiement ». Découvert, rejet de prélèvement ou chèque sans provision,...",
     "link": "https://lemediapourtous.fr/milliards-ponctionnes-scandale-frais-bancaires/",
     "title": "6.7 milliards par an pris aux Français : le scandale des frais bancaires"
   },
   {
-    "date": "23 mai 2020",
-    "img": "https://lemediapourtous.fr/wp-content/uploads/2020/05/vignette-soral-VDEF-VC-min-480x270.jpg?x47389",
+    "content": "Couillonavirus ou couillonasoral ? Dans cette vidéo pleine de surprises, Vincent Lapierre analyse “l’analyse” d’Alain Soral sur le coronavirus, à la lumière de son expérience personnelle vécue au sein de son organisation. Et ça pique.",
     "link": "https://lemediapourtous.fr/vincent-lapierre-soral-sur-le-coronavirus-remarques-sur-les-defaillances-dun-travail-critique/",
     "title": "Vincent Lapierre – Soral sur le coronavirus : remarques sur les défaillances d’un travail critique"
   },
   {
-    "date": "13 mai 2020",
-    "img": "https://lemediapourtous.fr/wp-content/uploads/2020/05/Lemédia-pour-tous-480x270.jpg?x47389",
+    "content": "Source : L’observatoire du journalisme Si on parle de crise des médias en général, les nouveaux formats prolifèrent : mooks, podcasts audio, abonnements croisés comme dans le club de la presse, vidéos favorisant les longs reportages, etc. Nous avons rencontré Vincent Lapierre, le fondateur d’un “relativement” nouveau venu, le...",
     "link": "https://lemediapourtous.fr/vers-une-souverainete-mediatique-entretien-avec-vincent-lapierre-par-lobservatoire-du-journalisme/",
     "title": "Vers une souveraineté médiatique : entretien avec Vincent Lapierre, par l’Observatoire du journalisme"
   },
   {
-    "date": "21 mars 2020",
-    "img": "https://lemediapourtous.fr/wp-content/uploads/2020/03/CONFINEMMENT-VIGNETTE-VC-min-480x270.jpg?x47389",
+    "content": "La pandémie frappe et les français se confinent pour se protéger du Coronavirus. Vincent Lapierre est allé prendre la température dans les rues désertes de Paris. Encore une fois, merci à tous pour votre soutien, et merci à nos contributeurs qui nous permettent, concrètement, de rémunérer une équipe de...",
     "link": "https://lemediapourtous.fr/coronavirus-immersion-dans-un-paris-confine-reportage/",
     "title": "Coronavirus : immersion dans un Paris confiné [REPORTAGE]"
   },
   {
-    "date": "14 février 2020",
-    "img": "https://lemediapourtous.fr/wp-content/uploads/2020/02/brexit-vignette-VC-480x270.jpg?x47389",
+    "content": "Ce 31 janvier 2020 était une journée historique, pour la première fois de l’histoire de l’Union Européenne, un des plus grands pays membres s’éclipsait, laissant loin derrière lui les affres de la Commission Européenne. Alors que le Brexit était célébré partout au Royaume-Uni, en France, François Asselineau et l’UPR...",
     "link": "https://lemediapourtous.fr/du-brexit-au-frexit-le-debut-dune-alliance/",
     "title": "Du Brexit au Frexit : le début d’une alliance ?"
   },
   {
-    "date": "10 février 2020",
-    "img": "https://lemediapourtous.fr/wp-content/uploads/2020/02/2020-02-10-15.29.00-480x270.jpg?x47389",
+    "content": "Rendez-vous sur : https://www.editions-jeanne.fr/",
     "link": "https://lemediapourtous.fr/vincent-lapierre-a-une-annonce-a-vous-faire/",
     "title": "Vincent Lapierre a une annonce à vous faire !"
   },
   {
-    "date": "28 décembre 2019",
-    "img": "https://lemediapourtous.fr/wp-content/uploads/2019/12/VIGNETTE-DOUCE-FRANCE-BRIANCON-v2-480x270.jpg?x47389",
+    "content": "Dans ce second numéro de Douce France, nous partons à la découverte de Briançon, petit ville médiévale des Hautes-Alpes nichée au cœur des fortifications de Vauban. Vincent Lapierre et l’équipe du Média pour Tous sont allés à la rencontre de ceux qui font vivre cette France éternelle. “La France...",
     "link": "https://lemediapourtous.fr/a-la-decouverte-de-briancon-douce-france/",
     "title": "À la découverte de Briançon – Douce France"
   },
   {
-    "date": "12 décembre 2019",
-    "img": "https://lemediapourtous.fr/wp-content/uploads/2019/12/37019748692_fa3e0c3fa2_c-480x320.jpg?x47389",
+    "content": "Il y a une semaine, le 5 décembre dernier, notre équipe de reportage était chassée de la manifestation contre la réforme des retraites à coup de jets de pavés par un petit groupe d’individus masqués voulant faire « la chasse aux fachos ».  Pourtant, la réforme des retraites est...",
     "link": "https://lemediapourtous.fr/pas-de-convergence-des-luttes-lultragauche-toujours-au-service-de-loligarchie/",
     "title": "Pas de convergence des luttes : “l’ultragauche” toujours au service de l’oligarchie"
   },
   {
-    "date": "2 décembre 2019",
-    "img": "https://lemediapourtous.fr/wp-content/uploads/2019/12/41986187395_d65143c88b_k-480x320.jpg?x47389",
+    "content": "Comme vous l’avez constaté lors de nos reportages, le journalisme de terrain en France est une activité à risque ! C’est pour cette raison que nous recherchons activement des personnes compétentes et motivées pour assurer la sécurité de Vincent Lapierre et des membres de l’équipe du Média Pour Tous...",
     "link": "https://lemediapourtous.fr/le-media-pour-tous-recherche-des-personnes-motivees-pour-assurer-la-securite-de-ses-equipes-lors-des-reportages/",
     "title": "Le Média pour Tous recherche des personnes motivées pour assurer la sécurité de ses équipes lors des reportages"
   },
   {
-    "date": "21 novembre 2019",
-    "img": "https://lemediapourtous.fr/wp-content/uploads/2019/11/GJ-1-AN-VC-480x270.jpg?x47389",
+    "content": "Merci à tous nos contributeurs qui rendent ce grand projet possible, à savoir concurrencer les médias du système sur leur terrain de prédilection : le reportage. Votre contribution vous donne accès à la version intégrale du reportage (de 26 minutes), pour cela cliquez sur “Je me connecte” en haut...",
     "link": "https://lemediapourtous.fr/les-1-an-des-gilets-jaunes-reportages/",
     "title": "Les 1 an des Gilets Jaunes (REPORTAGE)"
   },
   {
-    "date": "6 novembre 2019",
-    "img": "https://lemediapourtous.fr/wp-content/uploads/2019/11/Sans-titre-1-480x270.png?x47389",
+    "content": "Le 4 novembre dernier, Sibeth Ndiaye était l’invitée d’une émission de France Culture à la Maison de la Radio où elle a pu faire part aux auditeurs de sa définition très restrictive du journalisme : elle s’est notamment demandée si RT France était réellement un “média”. Le monde à...",
     "link": "https://lemediapourtous.fr/sibeth-ndiaye-se-demande-si-rt-france-est-bien-un-media-elle-veut-un-conseil-de-deontologie-pour-en-etre-sure/",
     "title": "Sibeth Ndiaye se demande si RT France est bien un média, elle veut un conseil de déontologie pour en être sûre"
   },
   {
-    "date": "25 septembre 2019",
-    "img": "https://lemediapourtous.fr/wp-content/uploads/2019/09/2019-09-25-16.08.16-480x270.jpg?x47389",
+    "content": "Pour visionner la version intégrale de ce reportage, rejoignez-nous, ou si vous êtes déjà contributeurs : connectez-vous (en haut à droite de cette page) ! Merci pour votre soutien ! Les Gilets Jaunes battaient le pavé ce samedi 21 septembre 2019 à l’occasion du 45eme acte du mouvement. Black...",
     "link": "https://lemediapourtous.fr/le-retour-des-gilets-jaunes-sur-les-champs-elysees-acte-45/",
     "title": "Le retour des Gilets jaunes sur les Champs Elysées : Acte 45"
   },
   {
-    "date": "29 juillet 2019",
-    "img": "https://lemediapourtous.fr/wp-content/uploads/2019/07/Bilderberg-VC-480x270.jpg?x47389",
+    "content": "Le Bilderberg, c'est quoi ? Un groupe d'hommes et de femmes puissants qui se réunissent chaque année en huit clos pour \"discuter\". Spécificité : les invités doivent garder le secret absolu sur ce qui se dit lors des réunions. Les médias, quant à eux, regardent ailleurs et ne parlent...",
     "link": "https://lemediapourtous.fr/le-bilderberg-les-reportages-de-vincent-lapierre/",
     "title": "LE BILDERBERG – Les Reportages de Vincent Lapierre"
   },
   {
-    "date": "11 juillet 2019",
-    "img": "https://lemediapourtous.fr/wp-content/uploads/2019/07/FAQ-2-480x270.jpg?x47389",
+    "content": "Pour les 1 an du Média pour Tous, Vincent Lapierre fait le point. Dans cette FAQ n°2, Vincent Lapierre revient sur quelques points d'actualité ainsi que sur le développement du Média pour Tous : - Nouvelle émission ! - Cyberhaine et lutte contre les propos haineux - Polémiques futiles - Position politique - Gilets...",
     "link": "https://lemediapourtous.fr/vincent-lapierre-fait-le-point/",
     "title": "VINCENT LAPIERRE FAIT LE POINT !"
   },
   {
-    "date": "24 juin 2019",
-    "img": "https://lemediapourtous.fr/wp-content/uploads/2019/06/La-forge-VC-480x270.jpg?x47389",
+    "content": "Tristan modèle, sculpte, transforme la Matière. Bienvenue à la Maison Esnault, lieu d’excellence en matière de forge et de coutellerie. Quels sont les secrets de cet artisanat millénaire ? C'est ce que Vincent Lapierre et son équipe du Média pour Tous sont venus découvrir sur place, faisant face aux enclumes, un marteau...",
     "link": "https://lemediapourtous.fr/la-forge-les-reportages-de-vincent-lapierre/",
     "title": "LA FORGE – Les Reportages de Vincent Lapierre"
-  },
-  {
-    "date": "19 mai 2019",
-    "img": "https://lemediapourtous.fr/wp-content/uploads/2019/05/ELECTIONS-EUROPEENNES-VC-480x270.jpg?x47389",
-    "link": "https://lemediapourtous.fr/les-europeennes-les-reportages-de-vincent-lapierre/",
-    "title": "LES EUROPÉENNES – Les Reportages de Vincent Lapierre"
   }
 ]

@@ -10,7 +10,6 @@
  *
  */
 
-
 // Déclaration des variables
 // Import de utils : https://www.npmjs.com/package/utils
 // Import de casperJS : https://www.npmjs.com/package/casper
@@ -42,24 +41,22 @@ function pushDataJson() {
     arrayArticle = this.evaluate(getDataArticle),
     valueArrayArticles = JSON.stringify(arrayArticle, null, 2)
 
-  fs.write('./assets/js/json/getData.json', valueArrayArticles)
+  fs.write('json/getData.json', valueArrayArticles)
 }
 
 function getDataArticle() {
 
   var arrayArticle = [],
-    articles = document.querySelectorAll('div.wrap-content div.kleo-masonry article');
+    articles = document.querySelectorAll("div.wrap-content article.type-post");
 
   for (var i = 0, article; article = articles[i]; i++) {
-    var link = article.querySelector('div.post-content div.post-header h3.post-title a'),
-      date = article.querySelector('div.post-content div.post-header span.post-meta small a.post-time time.entry-date'),
-      img = article.querySelector('div.post-content div.post-image a.element-wrap img'),
+    var link = article.querySelector(' h2.article-title a'),
+      content = article.querySelector('.article-content p'),
       articleObj = {}
 
     articleObj['link'] = link.getAttribute('href')
-    articleObj['date'] = date.innerText
+    articleObj['content'] = content.innerText
     articleObj['title'] = link.innerText
-    articleObj['img'] = img.getAttribute('src')
 
     arrayArticle.push(articleObj)
   }
