@@ -65,10 +65,7 @@ function getDataArticle() {
 }
 
 casper.start(url)
-
 casper.then(processPage, 5000)
-
 casper.then(pushDataJson)
-
 // Et casper s'execute
 casper.run(logFinish)

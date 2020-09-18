@@ -15,16 +15,19 @@
 // Import de casperJS : https://www.npmjs.com/package/casper
 
 const
-  utils = require('utils'),
+  // fs nous permettra de parcourir notre arborescence pour allez chercher des fichiers, ...
   fs = require('fs'),
+
   // Petite config de casper afin de créé notre server casperjs
   casper = require("casper").create({
     // On définit les paramètres
     pageSettings: {
       // On assigne un user-agent a notre casper
+      // user-agent: https://www.institut-pandore.com/hacking/comprendre-analyser-user-agent/
       userAgent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.8; rv:23.0) Gecko/20130404 Firefox/23.0"
     }
   }),
+
   // on définit l'url ou lancer notre scrap
   url = 'https://lemediapourtous.fr/category/vincent-lapierre/';
 
