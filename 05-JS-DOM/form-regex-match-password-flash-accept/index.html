@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>regex / match / flash</title>
+
+</head>
+
+<body>
+
+    <h1 id='title'> Mon Super titre</h1>
+
+    <!-- Formulaire -->
+    <form id='form' onsubmit="checkForm(event)" style="display: flex; flex-direction: column;" enctype="application/x-www-form-urlencoded">
+
+        <!-- Condition du formulaire -->
+        <h4>Le mot de passe doit contenir minimum 8 character dont:</h4>
+        <ul>
+            <li> 1 numéro</li>
+            <li> 1 majuscule</li>
+            <li> 1 minuscule</li>
+            <li> 1 caracthère spécial</li>
+        </ul>
+
+        <!-- Ici sera affiché l'erreur -->
+        <div id="flash"></div>
+
+        <!-- Mot de passe -->
+        <label for="password">Mot de passe</label>
+        <input type="password" name="password" id='password' required>
+
+        <label for="password">Confirm Mot de passe</label>
+        <input type="password" name="passwordConfirm" id='passwordConfirm' required>
+
+        <!-- Accept condition -->
+        <div style='display: flex;'>
+            <input type="checkbox" name="accept" id='accept'>
+            <label for="accept">Acceptez les conditions</label>
+        </div>
+
+        <!-- Boutton submit form -->
+        <button> Valider </button>
+
+    </form>
+
+    <!-- Import du script -->
+    <script src="index.js"></script>
+
+</body>
+
+</html>

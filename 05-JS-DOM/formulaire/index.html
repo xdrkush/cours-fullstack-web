@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Change Title</title>
+
+</head>
+
+<body>
+
+    <h1 id='title'> Mon Super titre</h1>
+
+    <!-- Formulaire -->
+    <form id='form' style="display: flex; flex-direction: column;" enctype="application/x-www-form-urlencoded">
+
+        <!-- Input text classique -->
+        <label for="text">Text</label>
+        <input type="text" name="text">
+
+        <!-- Input select with option -->
+        <label for="list">Liste</label>
+        <select name="pets" id="list">
+            <option value="">--Please choose an option--</option>
+            <option value="dog">Dog</option>
+            <option value="cat">Cat</option>
+        </select>
+
+        <!-- Input checkbox -->
+        <div style='display: flex'>
+            <label for="checkin">Checkin</label>
+            <input type="checkbox" name="checkin" value="checkin">
+
+            <label for="checkout">Checkout</label>
+            <input type="checkbox" name="checkout" value="checkout">
+        </div>
+
+        <!-- TextArea -->
+        <label for="textarea">Textarea</label>
+        <textarea name="textarea" cols="30" rows="10"></textarea>
+
+        <!-- Couleur -->
+        <label for="color">Couleur</label>
+        <input type="color" name="color">
+
+        <!-- Date -->
+        <label for="date">Date:</label>
+        <input type="date" name="date">
+
+        <!-- Fichier -->
+        <label for="file">Choisir un fichier</label>
+        <input type="file" name="file">
+
+        <!-- Mot de passe -->
+        <div style='display: flex;'>
+            <label for="password">Mot de passe</label>
+            <input type="password" onchange='checkPassword()' name="password" id='password'>
+            <label for="password">Confirmer Mot de passe</label>
+            <input type="password" onchange='checkPassword()' name="passwordConfirm" id='passwordConfirm'>
+        </div>
+
+        <!-- Numero de téléphone -->
+        <label for="tel">Numéro de téléphone</label>
+        <input type="tel" name="tel" required>
+
+        <!-- Input Radio -->
+        <div style='display: flex'>
+            <label for="edit">Editer</label>
+            <input type="radio" name="radio1" value="edit">
+
+            <label for="add">Ajouter</label>
+            <input type="radio" name="radio1" value="add">
+        </div>
+
+        <!-- Boutton submit form -->
+        <button onclick="checkForm(event)"> Valider </button>
+
+    </form>
+
+    <script src="index.js"></script>
+
+</body>
+
+</html>
