@@ -1,0 +1,178 @@
+/* Text-color */
+.txt-green {color: #026782}
+.txt-red {color: red}
+.txt-blue {color: blue}
+.txt-yellow {color: #f7cd50}
+.txt-purple {color: rgba(128, 0, 128, 1)}
+.txt-cyan {color: cyan}
+
+/* Border */
+.bdr-green {border: solid 2px #026782}
+.bdr-red {border: solid 2px red}
+.bdr-blue {border: solid 2px blue}
+.bdr-yellow {border: solid 2px #f7cd50}
+.bdr-purple {border: solid 2px rgba(128, 0, 128, 1)}
+.bdr-cyan {border: solid 2px cyan}
+
+/* Background */
+.bg-green {background-color: #026782}
+.bg-red {background-color: red}
+.bg-blue {background-color: blue}
+.bg-yellow {background-color: #f7cd50}
+.bg-purple {background-color: rgba(128, 0, 128, 0.8)}
+.bg-cyan {background-color: cyan}
+.bg-pink {background-color: pink}
+
+/* Text align */
+.txt-center { text-align: center; }
+.txt-right { text-align: right; }
+.txt-left { text-align: left; }
+
+
+/* Body */
+body {margin: 0;padding: 0;background-color: #052632; color: #ffffff;}
+a {margin: 0;text-decoration: none;}
+ul {margin: 0;padding: 0;}
+li {list-style: none;}
+
+/* Container */
+.cont {padding: 10px;}
+.ex {padding: 10px; min-height: 110vh;}
+/* Flex */
+.flex { display: flex; }
+
+.row { display: flex; flex-direction: row; }
+.row-reverse { display: flex; flex-direction: row-reverse; }
+.column { display: flex; flex-direction: column; }
+.column-reverse { display: flex; flex-direction: column-reverse; }
+
+/* Flex-Wrap */
+.nowrap { display: flex; flex-wrap: nowrap; }
+.wrap { display: flex; flex-wrap: wrap; }
+.wrap-reverse { display: flex; flex-wrap: wrap-reverse; }
+/* Flex-Flow */
+.flow1 { display: flex; flex-flow: row wrap; }
+.flow2 { display: flex; flex-flow: row-reverse wrap-reverse; }
+
+/* Justify-content */
+.flx-start { display: flex; justify-content: flex-start; }
+.flx-end { display: flex; justify-content: flex-end; }
+.flx-center { display: flex; justify-content: center; }
+.flx-space-between { display: flex; justify-content: space-between; }
+.flx-space-around { display: flex; justify-content: space-around; }
+
+
+/* align-items */
+/* Il faut que la div soit intancier avec flex (nous cumulons row plus al-xxxx dans nos exemples) */
+.al-start { display: flex; align-items: flex-start; }
+.al-end { display: flex; align-items: flex-end; }
+.al-center { display: flex; align-items: center; }
+.al-baseline { display: flex; align-items: baseline; }
+.al-stretch { display: flex; align-items: stretch; }
+
+/* align-content */
+.al-ctnt-start { flex-wrap: wrap; align-content: flex-start }
+.al-ctnt-end { flex-wrap: wrap; align-content: flex-end; }
+.al-ctnt-center { flex-wrap: wrap; align-content: center; }
+.al-ctnt-space-between { flex-wrap: wrap; align-content: space-between; }
+.al-ctnt-space-around { flex-wrap: wrap; align-content: space-around; }
+
+/* Item */
+.item-1 {
+    width: 20%;
+    height:  auto;
+    padding: 5px;
+}
+.item-2 {
+    width: 20%;
+    height:  auto;
+    padding: 5px;
+}
+.item-3 {
+    width: 20%;
+    height: auto;
+    padding: 5px;
+}
+.item-4 {
+    width: 20%;
+    height:  auto;
+    padding: 5px;
+}
+.item-5 {
+    width: 20%;
+    height:  auto;
+    padding: 5px;
+}
+/* Responcive */
+/*
+ * Pour gèré le responcive de Flex il faut jouer avec la function Wrap et la taille des items
+ *
+ * Contrairement à grid nous ne sommes pas obligé de geré les media query pour les contents
+ *
+ */
+
+@media screen and (max-width: 1240px) {
+    .item-1 {
+        width: 100%;
+        height: auto;
+        background-color: lime;
+    }
+
+    .item-2 {
+        width: 45%;
+        height: auto;
+        background-color: lime;
+    }
+
+    .item-3 {
+        width: 45%;
+        height: auto;
+        background-color: lime;
+    }
+
+    .item-4 {
+        width: 70%;
+        height: auto;
+        background-color: lime;
+    }
+
+    .item-5 {
+        width: 50%;
+        width: auto;
+        height: auto;
+        background-color: lime;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .item-1 {
+        width: 100vh;
+        height: auto;
+        background-color: aqua;
+    }
+
+    .item-2 {
+        width: 45%;
+        height: auto;
+        background-color: aqua;
+    }
+
+    .item-3 {
+        width: 45%;
+        height: auto;
+        background-color: aqua;
+    }
+
+    .item-4 {
+        width: 100%;
+        height: auto;
+        background-color: aqua;
+    }
+
+    .item-5 {
+        width: 50%;
+        width: auto;
+        height: auto;
+        background-color: aqua;
+    }
+}

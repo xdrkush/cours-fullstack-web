@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>(Flex) 1-Display</title>
+    <!-- Import style.css -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <div class="cont">
+        <h1>Disclaimer: </h1>
+        <p>Désolé si les couleur ne sont pas très design, mais l'objectif est de bien voir les délimitations des boxs
+        </p>
+        <p>!!! <strong class="txt-yellow">Petit conseil:</strong> </p>
+        <p> - Pour les débutants/es rajouter des bordures sur vos boxs afin de bien comprendre le comportement des boxs</p>
+        <p> - Utiliser l'inspecteur de div en faisant click droit et le petit icone en haut a gauche (sinon le racourcie sur chrome ctrl + shift + c)
+            <a class="txt-cyan" href="https://developer.mozilla.org/fr/docs/Tools/Accessibility_inspector#s%C3%A9lecteur_d'accessibilit%C3%A9"> >> ICI << </a> </p>
+
+        <p><strong class="txt-yellow">Doc: </strong> Regarder dans le fichier README.md en racine de chaque dossier vous
+            y trouverez des liens. </p>
+
+        <p>PS: désolé d'avance pour les fautes d'orthographe</p>
+
+        <h1>1- Display</h1>
+
+        <p>Ici nous voyons comment réagit un container flex, flex va nous servir à gérer <strong
+                class="txt-yellow">l'alignement</strong> et <strong class="txt-yellow">le positionnement</strong> de nos
+            boxs dans les boxs et comprendre <strong class="txt-yellow">l'héritage parent => enfant</strong></p>
+    </div>
+
+    <div class="cont">
+        <h3>Sans flex (par Défaut)</h3>
+        <p>Par défault les box seront toujour en <strong class="txt-yellow">column</strong></p>
+    </div>
+    <!-- Div Par Défault -->
+    <div class="bg-green cont">
+        <div class="item-1 bg-purple bdr-yellow">
+            <h2>Item1</h2>
+        </div>
+        <div class="item-2 bg-purple bdr-yellow">
+            <h2>Item2</h2>
+        </div>
+        <div class="item-3 bg-purple bdr-yellow">
+            <h2>Item3</h2>
+        </div>
+        <div class="item-4 bg-purple bdr-yellow">
+            <h2>Item4</h2>
+        </div>
+    </div>
+
+    </br>
+    <div class="cont">
+        <h3>Container Flex</h3>
+        <p>Ici pour pouvoir gerer notre box avec ses items en <strong class="txt-yellow">rangé (row)</strong> il nous
+            faut appliquer <strong class="txt-yellow">"display: flex"</strong> à notre box parent pour qu'elle gère les
+            item en ranger à l'intérieur ! Ce qui est gérer par la classe <strong class="txt-yellow">cont-flex</strong>
+        </p>
+    </div>
+    <!-- Div cont-FLex -->
+    <div class="cont-flex bg-green">
+        <div class="item-1 bg-purple bdr-yellow">
+            <h2>Item1</h2>
+        </div>
+        <div class="item-2 bg-purple bdr-yellow">
+            <h2>Item2</h2>
+        </div>
+        <div class="item-3 bg-purple bdr-yellow">
+            <h2>Item3</h2>
+        </div>
+        <div class="item-4 bg-purple bdr-yellow">
+            <h2>Item4</h2>
+        </div>
+    </div>
+
+    </br>
+
+    <div class="cont">
+        <p>Et à partir d'ici nous voyons comment interagit un container flex dans un container flex</p>
+        <p>Ps: c'est un peu le bordel mais c'est vraiment pour comprendre le principe nous y reviendront plus tard</p>
+
+        <h3>Sans flex (par Défaut)</h3>
+    </div>
+    <!-- Div parDéfault | parDefault & cont-flex -->
+    <div class="bg-green cont">
+        <h3>Sans flex</h3>
+        <div class="item-1 bg-purple bdr-yellow">
+            <div class="item-1 bg-purple bdr-yellow">
+                <h2>Item1</h2>
+            </div>
+            <div class="item-2 bg-purple bdr-yellow">
+                <h2>Item2</h2>
+            </div>
+            <div class="item-3 bg-purple bdr-yellow">
+                <h2>Item3</h2>
+            </div>
+            <div class="item-4 bg-purple bdr-yellow">
+                <h2>Item4</h2>
+            </div>
+        </div>
+        <h3>Avec Flex</h3>
+        <div class="item-1 cont-flex bg-purple bdr-yellow">
+            <div class="item-1 bg-purple bdr-yellow">
+                <h2>Item1</h2>
+            </div>
+            <div class="item-2 bg-purple bdr-yellow">
+                <h2>Item2</h2>
+            </div>
+            <div class="item-3 bg-purple bdr-yellow">
+                <h2>Item3</h2>
+            </div>
+            <div class="item-4 bg-purple bdr-yellow">
+                <h2>Item4</h2>
+            </div>
+        </div>
+    </div>
+
+    </br>
+
+    <div class="cont">
+        <h3>Container Flex</h3>
+    </div>
+    <!-- Div cont-flex | parDéfault & cont-flex -->
+    <div class="cont-flex bg-green">
+        <!-- Ici la div vide nous permet de casser l'héritage de flex nous avons bien nos 2 box en flex -->
+        <!-- se qui nous permet d'avoir l'interieur de nos box en column -->
+        <!-- Box1 -->
+        <div>
+            <h3>Sans flex</h3>
+            <div class="item-1 bg-purple bdr-yellow">
+                <div class="item-1 bg-purple bdr-yellow">
+                    <h2>Item1</h2>
+                </div>
+                <div class="item-2 bg-purple bdr-yellow">
+                    <h2>Item2</h2>
+                </div>
+                <div class="item-3 bg-purple bdr-yellow">
+                    <h2>Item3</h2>
+                </div>
+                <div class="item-4 bg-purple bdr-yellow">
+                    <h2>Item4</h2>
+                </div>
+            </div>
+        </div>
+        <!-- Box2 -->
+        <div>
+            <h3>Avec flex</h3>
+            <div class="item-1 cont-flex bg-purple bdr-yellow">
+                <div class="item-1 bg-purple bdr-yellow">
+                    <h2>Item1</h2>
+                </div>
+                <div class="item-2 bg-purple bdr-yellow">
+                    <h2>Item2</h2>
+                </div>
+                <div class="item-3 bg-purple bdr-yellow">
+                    <h2>Item3</h2>
+                </div>
+                <div class="item-4 bg-purple bdr-yellow">
+                    <h2>Item4</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

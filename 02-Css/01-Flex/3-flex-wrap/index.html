@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>(Flex) 3-Flex-wrap</title>
+    <!-- Import style.css -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <div class="cont">
+        <h1>3- Flex-wrap</h1>
+        <p>Ici <strong class="txt-yellow">Wrap</strong> va nous servir de <strong class="txt-yellow">délimiter la largeur</strong> de nos box, et <strong class="txt-yellow">son comportement</strong>. Si l'on veux qu'il <strong class="txt-yellow">depasse</strong> de la <strong class="txt-yellow">box parent</strong> ou au contraire qu'il <strong class="txt-yellow">passe a la ligne</strong> quand <strong class="txt-yellow">l'enfant </strong> touche le bord de la div </p>
+        <p>Afin de recentrer les elements à l'intérieur de notre box devront utiliser <strong class="txt-yellow">justify-content</strong>, <strong class="txt-yellow">align-items</strong> ou <strong class="txt-yellow">align-content</strong> suivant nos besoin, nous les aborderons par la suite. </p>
+        <p><strong class="txt-yellow">PS: </strong>Jouer avec la taille de votre fenêtre pour bien comprendre comment cela fonctionne ! </p>
+        <p><strong class="txt-yellow">Doc: </strong> Regarder dans le fichier README.md en racine de chaque dossier vous y trouverez des liens. </p>
+    </div>
+
+    <div class="cont">
+        <h3>Container no-wrap</h3>
+        <p>Ici on utilise <strong class="txt-yellow">"flex-wrap: nowrap"</strong> pour ne pas limiter la taille de nos enfants en rapport avec le parent. </p>
+    </div>
+    <!-- Div cont-row -->
+    <div class="cont-nowrap bg-green">
+        <div class="item-1 bg-purple bdr-yellow">
+            <h2>Item1</h2>
+        </div>
+        <div class="item-2 bg-purple bdr-yellow">
+            <h2>Item2</h2>
+        </div>
+        <div class="item-3 bg-purple bdr-yellow">
+            <h2>Item3</h2>
+        </div>
+        <div class="item-4 bg-purple bdr-yellow">
+            <h2>Item4</h2>
+        </div>
+        <div class="item-1 bg-purple bdr-yellow">
+            <h2>Item1</h2>
+        </div>
+        <div class="item-2 bg-purple bdr-yellow">
+            <h2>Item2</h2>
+        </div>
+        <div class="item-3 bg-purple bdr-yellow">
+            <h2>Item3</h2>
+        </div>
+        <div class="item-4 bg-purple bdr-yellow">
+            <h2>Item4</h2>
+        </div>
+    </div>
+
+    </br>
+    <div class="cont">
+        <h3>Container wrap</h3>
+        <p>Ici on utilise <strong class="txt-yellow">"flex-wrap: wrap"</strong> pour faire en sorte que notre ranger d'enfant prenne plusieurs ligne si la taille de l'écran ne peux pas acceuillir tous nos items. </p>
+    </div>
+    <!-- Div cont-wrap -->
+    <div class="cont-wrap bg-green">
+        <div class="item-1 bg-purple bdr-yellow">
+            <h2>Item1</h2>
+        </div>
+        <div class="item-2 bg-purple bdr-yellow">
+            <h2>Item2</h2>
+        </div>
+        <div class="item-3 bg-purple bdr-yellow">
+            <h2>Item3</h2>
+        </div>
+        <div class="item-4 bg-purple bdr-yellow">
+            <h2>Item4</h2>
+        </div>
+        <div class="item-1 bg-purple bdr-yellow">
+            <h2>Item5</h2>
+        </div>
+        <div class="item-2 bg-purple bdr-yellow">
+            <h2>Item6</h2>
+        </div>
+        <div class="item-3 bg-purple bdr-yellow">
+            <h2>Item7</h2>
+        </div>
+        <div class="item-4 bg-purple bdr-yellow">
+            <h2>Item8</h2>
+        </div>
+    </div>
+
+    </br>
+    <div class="cont">
+        <h3>Container wrap-reverse</h3>
+        <p>Ici on utilise <strong class="txt-yellow">"flex-wrap: wrap-reverse"</strong> pour faire en sorte que notre ranger d'enfant prenne plusieurs ligne si la taille de l'écran ne peux pas acceuillir tous nos items en <strong class="txt-yellow">inversant l'ordre</strong>. </p>
+    </div>
+    <!-- Div cont-wrap-reverse -->
+    <div class="cont-wrap-reverse bg-green">
+        <div class="item-1 bg-purple bdr-yellow">
+            <h2>Item1</h2>
+        </div>
+        <div class="item-2 bg-purple bdr-yellow">
+            <h2>Item2</h2>
+        </div>
+        <div class="item-3 bg-purple bdr-yellow">
+            <h2>Item3</h2>
+        </div>
+        <div class="item-4 bg-purple bdr-yellow">
+            <h2>Item4</h2>
+        </div>
+        <div class="item-1 bg-purple bdr-yellow">
+            <h2>Item5</h2>
+        </div>
+        <div class="item-2 bg-purple bdr-yellow">
+            <h2>Item6</h2>
+        </div>
+        <div class="item-3 bg-purple bdr-yellow">
+            <h2>Item7</h2>
+        </div>
+        <div class="item-4 bg-purple bdr-yellow">
+            <h2>Item8</h2>
+        </div>
+    </div>
+
+</body>
+
+</html>
