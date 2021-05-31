@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>(Grid) 1- display</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <h1>Grid</h1>
+
+    <div class="cont">
+        <h1>Disclaimer: </h1>
+        <p>Désolé si les couleur ne sont pas très design, mais l'objectif est de bien voir les délimitations des boxs
+        </p>
+        <p>!!! <strong class="txt-yellow">Petit conseil:</strong> </p>
+        <p> - Pour les débutants/es rajouter des bordures sur vos boxs afin de bien comprendre le comportement des boxs
+        </p>
+        <p> - Utiliser l'inspecteur de div en faisant click droit et le petit icone en haut a gauche (sinon le racourcie
+            sur chrome ctrl + shift + c)
+            <a class="txt-cyan"
+                href="https://developer.mozilla.org/fr/docs/Tools/Accessibility_inspector#s%C3%A9lecteur_d'accessibilit%C3%A9">
+                >> ICI << </a>
+        </p>
+        <p><strong class="txt-yellow">Doc: </strong> Regarder dans le fichier README.md en racine de chaque dossier vous
+            y trouverez des liens. </p>
+        <p>PS: désolé d'avance pour les fautes d'orthographe</p>
+
+        <h1>1- Display</h1>
+        <p>Ici nous voyons comment réagit un container grid, grid va nous servir à gérer <strong
+                class="txt-yellow">l'alignement</strong> et <strong class="txt-yellow">le positionnement</strong> de nos
+            boxs dans les boxs et comprendre <strong class="txt-yellow">l'héritage parent => enfant</strong></p>
+        <p>Comme son nom l'indique grid va nous permetre de réaliser une grille !</p>
+    </div>
+
+
+    <div class="cont">
+        <h3>Display grid</h3>
+        <p>Ici on gère notre container avec <strong class="txt-yellow">"display: grid"</strong> seulement les espaces
+            entre nos box grâce à:</p>
+        <p> - <strong class="txt-yellow">"grid-row-gap: 10px;"</strong> pour l'inter-espècement entre les rangées (row)
+        </p>
+        <p> - <strong class="txt-yellow">"grid-column-gap: 10px;"</strong> pour l'inter-espècement entre les columns
+            (column) (que nous ne pouvons pas voir ici)</p>
+    </div>
+    <!-- Column -->
+    <div class="cont bg-green grid-1">
+        <div class="item bg-purple bdr-yellow">ITEM 1</div>
+        <div class="item bg-purple bdr-yellow">ITEM 2</div>
+        <div class="item bg-purple bdr-yellow">ITEM 3</div>
+    </div>
+
+    </br>
+    <div class="cont">
+        <h3>Grid template</h3>
+        <p>Ici on gère nos espacement en faisant une structure de base comprenant 3 column</p>
+        <p>On utilise <strong class="txt-yellow">"grid-template-columns: 1fr 3fr 1fr;"</strong> ce qui divise notre page en 3 column proportionel</p>
+        <p> - La première fait <strong class="txt-yellow">1fr</strong> donc 1 x 1</p>
+        <p> - La deuxième fait <strong class="txt-yellow">3fr</strong> donc 3 x 1</p>
+        <p> - La troisieme fait <strong class="txt-yellow">1fr</strong> donc 1 x 1</p>
+    </div>
+    <!-- Row -->
+    <div class="cont bg-green grid-1-3-1">
+        <div class="item bg-purple bdr-yellow">ITEM 1</div>
+        <div class="item bg-purple bdr-yellow">ITEM 2</div>
+        <div class="item bg-purple bdr-yellow">ITEM 3</div>
+    </div>
+
+</body>
+
+</html>

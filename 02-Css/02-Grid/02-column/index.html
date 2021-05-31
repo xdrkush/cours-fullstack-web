@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>(Grid) 2-Column</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="cont">
+        <h1>2-Grid-Column</h1>
+        <p>Ici nous voir comment gérer nos column en grid</p>
+    </div>
+
+    <div class="cont">
+        <h3>3 colonne -- 1fr / 2fr / 1fr</h3>
+        <p>Ici nous calculons en fraction on aurait très bien pu utilisé fr, %, vh, ...</p>
+        <p> - La première fait <strong class="txt-yellow">1fr</strong> donc 1 x 1</p>
+        <p> - La deuxième fait <strong class="txt-yellow">4fr</strong> donc 4 x 1</p>
+        <p> - La troisieme fait <strong class="txt-yellow">1fr</strong> donc 1 x 1</p>
+    </div>
+
+    <div class="cont grid-1-2-1 bg-green">
+        <div class="item bg-purple bdr-yellow">ITEM 1</div>
+        <div class="item bg-purple bdr-yellow">ITEM 2</div>
+        <div class="item bg-purple bdr-yellow">ITEM 3</div>
+    </div>
+
+    </br>
+
+    <div class="cont">
+        <h3>4 colonne -- 2fr / 2fr / 5fr / 1fr</h3>
+        <p>Ici nous calculons en fraction on aurait très bien pu utilisé fr, %, vh, ...</p>
+        <p> - La première fait <strong class="txt-yellow">2fr</strong> donc 2 x 1</p>
+        <p> - La deuxième fait <strong class="txt-yellow">3fr</strong> donc 2 x 1</p>
+        <p> - La troisieme fait <strong class="txt-yellow">5fr</strong> donc 5 x 1</p>
+        <p> - La quatrieme fait <strong class="txt-yellow">1fr</strong> donc 1 x 1</p>
+    </div>
+    <div class="cont grid-2-2-5-1 bg-green">
+        <div class="item bg-purple bdr-yellow bg-purple">ITEM 1</div>
+        <div class="item bg-purple bdr-yellow bg-purple">ITEM 2</div>
+        <div class="item bg-purple bdr-yellow bg-purple">ITEM 3</div>
+        <div class="item bg-purple bdr-yellow bg-purple">ITEM 4</div>
+    </div>
+
+</body>
+
+</html>
