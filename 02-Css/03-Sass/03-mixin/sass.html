@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>(SASS) 03 Mixin</title>
+    <!-- Import style.css -->
+    <link rel="stylesheet" href="sass/style.css">
+</head>
+
+<body>
+
+    <div class="cont">
+        <h1>03 Les mixins</h1>
+        <h3 class="gros-text-bleu">Comment sa marche ?</h3>
+        <p> Alors une mixin est comme une classe css mais qui n'en ai pas une, je m'explique:</p>
+        <p>Cela ressemble plus à un <strong class="txt-yellow">composant</strong> deja pré-enregisterer afin de rendre
+            notre
+            css plus <strong class="txt-yellow">modulaire</strong>, homogène et armonieux, que l'on va ensuite attribuer
+            à
+            une classe, id, une balise ...</p>
+        <p>Exemple on va enregistrer un <strong class="txt-yellow">comportement</strong> par default d'un boutton
+            (mixin)
+        </p>
+        <pre class="bg-primary">
+        @mixin btn </br>
+            border-radius: 25px</br>
+            padding: 10px</br>
+            min-width: 100px</br>
+            &:hover</br>
+                border: solid 2px $white</br>
+                box-shadow: 1px 1px 2px $secondary-color, 0 0 25px $secondary-color, 0 0 5px $secondary-color
+        </pre>
+        <p>Dans notre exemple on va faire <strong class="txt-yellow">utiliser</strong> ce comportement par <strong
+                class="txt-yellow">une classe</strong> (.btn):</p>
+        <pre class="bg-primary">
+        .btn
+            @include btn
+    </pre>
+        <p>Ce qui nous donne se boutton:</p>
+
+        <button class="btn">home</button>
+
+        <p>Ensuite on pourrais personalisez un peu plus notre boutton, voici 2 exemple: </p>
+    <pre class="bg-primary">
+        .btn-success
+            background: $green
+            color: $secondary-color
+            &:hover
+                background: $green-dark
+      
+        .btn-canceled
+            background: $red
+            color: $secondary-color
+            &:hover
+                background: $red-dark
+    </pre>
+
+        <button class="btn btn-success">SUCCESS</button>
+        <button class="btn btn-canceled">CANCELED</button>
+
+        <h3 class="gros-text-bleu">Dans la même catégory on pourrais aussi utiliser les extensions <strong
+                class="txt-yellow">"extend"</strong> ?</h3>
+        <p>Ceci est <strong class="txt-yellow">une classe</strong> que l'on va pouvoir <strong class="txt-yellow">étendre à une autre</strong>:</p>
+        <p>Par exemple: </p>
+        <pre class="bg-green">
+        <span class="txt-yellow">.bg-green</span>
+            background-color: $green
+
+        .btn-success
+            <span class="txt-yellow">@extend .bg-green</span>
+            color: $secondary-color
+            &:hover
+                background: $green-dark
+        </pre>
+
+    </div>
+
+
+</body>
+
+</html>

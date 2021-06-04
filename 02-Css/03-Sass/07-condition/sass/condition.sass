@@ -1,0 +1,51 @@
+// $bg-color: $light
+
+// body
+//   background-color: if($bg-color == $light, $dark, $green)
+//   color: if($bg-color == $light, $light, $dark)
+//   h1, h2, h3, h4, h5, h6
+//     color: if($bg-color == $light, $green, $light)
+//   .dark-mode
+//     background-color: $dark
+//     color: $light
+//     h1, h2, h3, h4, h5, h6
+//       color: $green
+//     .bg-primary
+//       box-shadow: 1px 1px 2px $light, 0 0 25px $light, 0 0 5px $light
+//   .light-mode
+//     background-color: $green
+//     color: $dark
+//     h1, h2, h3, h4, h5, h6
+//       color: $yellow
+//     .bg-primary
+//       box-shadow: 1px 1px 2px $dark, 0 0 25px $dark, 0 0 5px $dark
+
+@mixin mode($color)
+  @if ($color == $dark)
+    background-color: $dark
+    color: $light
+    h1, h2, h3, h4, h5, h6
+      color: $yellow
+  @else
+    background-color: $green
+    color: $dark
+    h1, h2, h3, h4, h5, h6
+      color: $dark
+
+body
+  @include mode($color: $dark)
+
+.dark-mode
+  background-color: $dark
+  color: $light
+  .bg-primary
+    box-shadow: 1px 1px 2px $light, 0 0 25px $light, 0 0 5px $light
+
+
+.light-mode
+  background-color: $green
+  color: $dark
+  .bg-primary
+    box-shadow: 1px 1px 2px $dark, 0 0 25px $dark, 0 0 5px $dark
+
+

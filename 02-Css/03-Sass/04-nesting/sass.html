@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>(SASS) 04 Nesting</title>
+    <!-- Import style.css -->
+    <link rel="stylesheet" href="sass/style.css">
+
+</head>
+
+<body>
+    <div class="cont">
+
+        <h1>Les nestings</h1>
+        <h3 class="gros-text-bleu">Comment sa marche ?</h3>
+
+        <p>Les nestings en sass on la meme propriétié que en css classque il n'y a que la façon de l'écrire qui est
+            différente</p>
+        <p>Par exemple:</p>
+
+        <div class="row">
+            <div class="w-50 mx-10">
+                <h4 class="txt-center">SASS</h4>
+                <pre class="bg-primary bdr-radius">
+
+                .parent
+                    color: $blue
+                    .child
+                        color: $purple
+
+                .child
+                    color: $red
+
+                </pre>
+            </div>
+            <div class="w-50 mx-10">
+                <h4 class="txt-center">CSS</h4>
+                <pre class="bg-primary bdr-radius">
+
+                    .parent {
+                        color: #4B65E9;
+                    }
+                    .parent .child {
+                        color: #710F77;
+                    }
+                    .child {
+                        color: #E32020;
+                    }
+
+                </pre>
+            </div>
+        </div>
+
+        <p>Ce qui nous donne:</p>
+
+        <div class="parent">
+            <p>Mon text parent !</p>
+            <div class="child">
+                <p>Mon text enfant dans le parent !</p>
+            </div>
+        </div>
+
+        <div class="child">
+            <p>Mon text enfant seul !</p>
+        </div>
+
+        <div class="row">
+            <div class="w-50 mx-10">
+                <h4 class="txt-center">SASS</h4>
+                <pre class="bg-primary bdr-radius">
+
+                .error
+                    .btn
+                      background-color: $red
+                      strong
+                        color: $white
+                    strong
+                      color: $purple
+                  
+                  .success
+                    .btn
+                      background-color: $green
+
+                </pre>
+            </div>
+            <div class="w-50 mx-10">
+                <h4 class="txt-center">CSS</h4>
+                <pre class="bg-primary bdr-radius">
+
+                    .error .btn {
+                        background-color: #E32020;
+                    }
+                    .error .btn strong {
+                        color: #E32020;
+                    }
+                    .error strong {
+                        color: #710F77;
+                    }
+                    .success .btn {
+                        background-color: #026782;
+                    }
+
+                </pre>
+            </div>
+        </div>
+
+        <p>Ce qui nous donne:</p>
+
+        <!-- Parent -->
+        <div class="error">
+            <!-- Enfant -->
+            <button class="btn">
+                <!-- Petit-enfant -->
+                <strong>ERROR</strong>
+            </button>
+            <strong>COULOOR</strong>
+        </div>
+
+        <strong>fzefz</strong>
+
+        <div class="success">
+            <button class="btn">Success</button>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+// La fonction mix est native dans sass, ce qui nous permet de faire une moyenne
+// 60% de $primary-color // 40% de $secondary-color
+body
+  background-color: mix($primary-color, $secondary-color, 60%)
+
+// On definit le nombre de column de notre width total
+$column-count: 12
+// On declare notre fonction qui prend en parametre un nombre
+@function column-width($num)
+  // On retourne la valeur de la taille de notre container
+  @return $num * 100% / $column-count
+
+.col-2
+  width: column-width(2)
+
+.col-4
+  width: column-width(4)
+
+.col-6
+  width: column-width(6)
+
+.col-8
+  width: column-width(8)
+
+.col-10
+  width: column-width(10)
+
+.col-12
+  width: column-width(12)
+
+// On définit notre fonction qui prend 2 argument (la couleur, et l'instensité)
+@function inverted($color, $amount: 100%)
+  // On viens définir la variable de notre nouvelle couleur
+  $inverse: change-color($color, $hue: hue($color) + 180)
+  // Et on retourne notre nouvelle couleur (le return sera la valeur de la fonction)
+  @return mix($inverse, $color, $amount)
+
+// On definit notre header
+header
+  // La couleur utiliser sera l'inverse de $primary-color
+  background-color: inverted($primary-color, 80%)

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>(Sass) 05 fonctions</title>
+    <!-- Import style.css -->
+    <link rel="stylesheet" href="sass/style.css">
+</head>
+
+<body>
+
+    <header class="cont">
+        <h1>04 Les fonctions</h1>
+        <p>!!! Sortez l'inspecteur pour mieux comprendre !!!</p>
+        <p>ctrl + shift + c</p>
+    </header>
+
+    <div class="cont">
+        <h2>Comment sa marche ?</h2>
+        <p>Les fonctions marche sur le même principe quand JS (javascript) bon si vous en êtes ici c'est que vous n'avez
+            peut être pas encore vue JS</p>
+        <p>Ce n'est pas très compliquer, dans un premier tant on déclare notre fonction avec <strong
+                class="txt-yellow">"@function nomDeLaFunction(parametre1, parametre2)"</strong></p>
+        <p>Ensuite on va lui demander de realiser une tache avec nos parametre <strong class="txt-yellow">parametre1 *
+                parametre2</strong></p>
+        <p>d'ailleur on pourrait stocker la valeur de la multiplication dans une variable <strong
+                class="txt-yellow">$result: parametre1 * parametre2</strong></p>
+        <p>Pour finit on demandera à notre fonction de retourner un résultat que l'on pourrait écrire de plusieurs
+            manières</p>
+        <p> Solution 1: <strong class="txt-yellow">"return parametre1 * parametre2"</strong> ou Solution 2: <strong
+                class="txt-yellow">"return $result"</strong></p>
+        <p>Ce qui donnerais une fonctions de ce type</p>
+        <div class="w-50 mx-10">
+            <h4 class="txt-center">SASS</h4>
+            <pre class="bg-primary bdr-radius">
+
+            @function nomDeLaFonction($params1, $params2)
+                $result: $params1 * $params2
+                @return $result
+
+            </pre>
+        </div>
+    </div>
+
+    <div class="cont">
+        <h2>Petit cas pratique ?</h2>
+        <p>Vous avez certainement remarquer que les couleurs avait changer depuis le dernier tuto et bien cela à été fait avec un fonction sass</p>
+        <div class="row">
+            <div class="w-50 mx-10">
+                <h4 class="txt-center">le Body</h4>
+                <pre class="bg-primary bdr-radius">
+    
+      // La fonction mix est native dans sass, elle nous permet de faire une moyenne
+      // 60% de $primary-color // 40% de $secondary-color
+
+      body
+          background-color: mix($primary-color, $secondary-color, 60%)
+    
+                </pre>
+            </div>
+            <div class="w-50 mx-10">
+                <h4 class="txt-center">le Header</h4>
+                <pre class="bg-primary bdr-radius">
+    
+      // On définit notre fonction qui prend 2 argument (la couleur, et l'instensité)
+      @function inverted($color, $amount: 100%)
+          // On viens définir la variable de notre nouvelle couleur
+          $inverse: change-color($color, $hue: hue($color) + 180)
+          // Et on retourne notre couleur (le return sera la valeur de la fonction)
+          @return mix($inverse, $color, $amount)
+                    
+      // On definit notre header
+      header
+          // La couleur utiliser sera l'inverse de $primary-color
+          background-color: inverted($primary-color, 80%)
+                </pre>
+            </div>
+        </div>
+
+        <h2>Ici une petite logique de container</h2>
+        <p>Nous allons les creer dans une boucle dans l'exercice d'après pour que ce soit encore plus modulaire mais pour le moment voici comment sa fonctionne.</p>
+        <p>Par la suite vous allez surment utiliser des framework du style Bootstrap, Semantic UI, Materialize, ou autre voici un petit avant gout de comment cela es conçu</p>
+        <p>Pour faire un bref apercu voici la logique, le <strong class="txt-yellow">width: 100% est égale à 12 column</strong> donc si nous voulons un container qui fassent <strong class="txt-yellow">la moitier</strong> de notre écran et nous faut appliquer la classe <strong class="txt-yellow">col-6</strong></p>
+        <div class="row">
+            <div class="w-50 mx-10">
+                <h4 class="txt-center">la function col-x</h4>
+                <pre class="bg-primary bdr-radius">
+    
+        // On definit le nombre de column de notre width total
+        $column-count: 12
+        // On declare notre fonction qui prend en parametre un nombre
+        @function column-width($num)
+            // On retourne la valeur de la taille de notre container
+            @return $num * 100% / $column-count
+
+        .col-2
+            width: column-width(2)
+          
+        .col-4
+            width: column-width(4)
+          
+        .col-6
+            width: column-width(6)
+          
+        .col-8
+            width: column-width(8)
+          
+        .col-10
+            width: column-width(10)
+          
+        .col-12
+            width: column-width(12)    
+
+                </pre>
+            </div>
+            <div class="w-50 mx-10">
+                <h4 class="txt-center">les classe col-x en CSS</h4>
+                <pre class="bg-primary bdr-radius">
+    
+                .col-2 {
+                    width: 16.6666666667%;
+                }
+                      
+                .col-4 {
+                    width: 33.3333333333%;
+                }
+                      
+                .col-6 {
+                    width: 50%;
+                }
+                    
+                .col-8 {
+                    width: 66.6666666667%;
+                }
+                      
+                .col-10 {
+                    width: 83.3333333333%;
+                }
+                      
+                .col-12 {
+                    width: 100%;
+                }
+
+                </pre>
+            </div>
+        </div>
+    </div>
+
+    <div class="cont">
+        <div class="col-2 txt-center">
+            <div class="bdr-yellow">col-2</div>
+        </div>
+        <div class="col-4 txt-center">
+            <div class="bdr-yellow">col-4</div>
+        </div>
+        <div class="col-6 txt-center">
+            <div class="bdr-yellow">col-6</div>
+        </div>
+        <div class="col-8 txt-center">
+            <div class="bdr-yellow">col-8</div>
+        </div>
+        <div class="col-10 txt-center">
+            <div class="bdr-yellow">col-10</div>
+        </div>
+        <div class="col-12 txt-center">
+            <div class="bdr-yellow">col-12</div>
+        </div>
+    </div>
+
+    <div class="cont">
+        <div class="row txt-center">
+            <div class="col-6 bdr-yellow">col-6</div>
+            <div class="col-4 bdr-yellow">col-4</div>
+            <div class="col-2 bdr-yellow">col-2</div>
+        </div>
+    </div>
+
+</body>
+
+</html>

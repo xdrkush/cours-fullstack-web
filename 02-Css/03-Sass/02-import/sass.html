@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>(SASS) 02 Import</title>
+    <!-- Import style.css -->
+    <link rel="stylesheet" href="sass/style.css">
+</head>
+
+<body>
+
+    <div class="cont">
+        <h1 class="txt-white">02- Les imports</h1>
+        <h2 class="txt-secondary">Comment sa fonctionne ?</h2>
+
+        <p>Les import en sass sont très utile afin de rendre nos fichiers et notre architecture plus lisible et simple à ce retrouver</p>
+        <p>Plutot que d'avoir un fichier de 1000 ligne de css on va pouvoir de retrouver avec plusieurs fichier avec <strong class="txt-yellow">un role bien définit</strong></p>
+
+        <p>Voici comment on écrit un import <strong class="txt-yellow">"@import lefichier"</strong></p>
+
+        <p>Par exemple si vous regarder dans l'architecture on va ce retrouver grâce à des fichier au nom explicite:</p>
+        <ul>
+            <li><strong class="txt-yellow">index.sass</strong> Qui va nous permetre de centraliser nos ressources. (Bootstrap est un bon <a href="https://github.com/twbs/bootstrap/tree/main/scss" class="txt-cyan"> exemple </a> )</li>
+            <li><strong class="txt-yellow">variables.sass</strong> Qui va nous permettre de stocker nos variables</li>
+            <li><strong class="txt-yellow">border.sass</strong> Ici les bordure</li>
+            <li><strong class="txt-yellow">background.sass</strong> les background</li>
+            <li><strong class="txt-yellow">...</strong></li>
+        </ul>
+
+        <p><strong class="txt-yellow">Attention</strong> Il y a des ordres de lecture de notre code à respecter:</p>
+        <p>à ne pas faire:</p>
+        <pre class="bg-primary txt-white"> @import border // à besoin de variable mais ne peux pas le reconnaitre vu que variable sera lu après </br> @import variable // variable sera lu après border</pre>
+        <p>à faire:</p>
+        <pre class="bg-primary txt-white"> @import variable // on définit les variable </br> @import border // ensuite les variable peuvent etre utiliser dans border</pre>
+        <p>par exemple si on definit un <strong class="txt-yellow">@import variable</strong> après un <strong class="txt-yellow">@import border</strong> par exemple, vu que <strong class="txt-yellow">@import border</strong> contient des variables présentes dans <strong class="txt-yellow">@import variable</strong> votre code sera bugué !</pre>
+        
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Tuto Sass</title>
+    <!-- Import style.css -->
+    <link rel="stylesheet" href="sass/style.css">
+</head>
+
+<body id='body' class="light-mode">
+
+    <div class="cont">
+        <h1>07 Les Conditions</h1>
+        <p>Grace au condition ou va pouvoir gèrer, et/ou anticiper des comportements non voulu</p>
+    </div>
+
+    <div class="cont">
+        <button id='choiceMode' class="btn">Choice mode</button>
+    </div>
+
+    <div class="cont">
+        <h2>On pourrait creer par exemple un dark-mode ?</h2>
+        <p>Dans le sass il y a différentes manières de creer un dark-mode avec 2 style de conditions différentes</p>
+        <h3>Donc la première:</h3>
+        <p>Ou l'on va devoir mettre une couleur de base dans <strong class="txt-yellow">'$bg-color'</strong> et ensuite on va pouvoir checker la condition exemple:</p>
+        <p>  - background-color: if($bg-color == $light, $dark, $green)</p>
+
+        <h5>Comment sa marche ?</h5>
+        <p>Se n'est pas compliquer en gros la condition est divisé en 3 partie <strong class="txt-yellow">if(condition, if true, if false)</strong></p>
+        <p>Donc si on décompose notre condition sa donne:</p>
+        <p><strong class="txt-yellow">Si($bg-color est egale à $light, oui alors $dark, sinon $green)</strong> donc la nouvelle valeur de notre background sera $dark ou $green selon la valeur de $bg-color</p>
+
+        <div class="row">
+            <div class="w-50 mx-10">
+                <h4 class="txt-center">Le SASS</h4>
+                <pre class="bg-primary bdr-radius">
+
+    $bg-color: $light
+
+    body
+        background-color: if($bg-color == $light, $dark, $green)
+        color: if($bg-color == $light, $light, $dark)
+
+        h1, h2, h3, h4, h5, h6
+            color: if($bg-color == $light, $green, $light)
+
+        .dark-mode
+            background-color: $dark
+            color: $light
+            h1, h2, h3, h4, h5, h6
+            color: $green
+            .bg-primary
+                box-shadow: 1px 1px 2px $light, 0 0 25px $light, 0 0 5px $light
+
+        .light-mode
+            background-color: $green
+            color: $dark
+            h1, h2, h3, h4, h5, h6
+                color: $yellow
+            .bg-primary
+                box-shadow: 1px 1px 2px $dark, 0 0 25px $dark, 0 0 5px $dark
+
+                </pre>
+            </div>
+            <div class="w-50 mx-10">
+                <h4 class="txt-center">le CSS</h4>
+                <pre class="bg-primary bdr-radius">
+
+  body {
+      background-color: #052632;
+      color: #ffffff;
+  }
+  body h1, body h2, body h3, body h4, body h5, body h6 {
+      color: #026782;
+  }
+  body .dark-mode {
+      background-color: #052632;
+      color: #ffffff;
+  }
+  body .dark-mode h1, body .dark-mode h2, body .dark-mode h3,
+  body .dark-mode h4,body .dark-mode h5, body .dark-mode h6 {
+      color: #026782;
+  }
+  body .dark-mode .bg-primary {
+      box-shadow: 1px 1px 2px #ffffff, 0 0 25px #ffffff, 0 0 5px #ffffff;
+  }
+                      
+  .light-mode {
+      background-color: #026782;
+      color: #052632;
+  }
+  .light-mode h1, .light-mode h2, .light-mode h3, .light-mode h4,
+  .light-mode h5, .light-mode h6 {
+      color: #f7cd50;
+  }
+  .light-mode .bg-primary {
+      box-shadow: 1px 1px 2px #052632, 0 0 25px #052632, 0 0 5px #052632;
+  }
+
+                </pre>
+            </div>
+        </div>
+    </div>
+
+    <div class="cont">
+        <h3>Donc la deuxieme:</h3>
+        <p>On voit que les conditions sont directement gèrer dans la mixin ce qui est je trouve beaucoup plus lisible</p>
+        <p>Ensuite nous avons qu'a préciser quel genre de couleur (variable) que nous voulons utilisé</p>
+        <h4>Comment sa marche ?</h4>
+        <p>Et bien ce n'ai pas compliquer par exemple:</p>
+        <p>On voit que notre <strong class="txt-yellow">mixin</strong> prend <strong class="txt-yellow">un parametre</strong> (de la même manière qu'une fonction)</p>
+        <p>Ensuite dans notre <strong class="txt-yellow">body</strong> on vient utiliser notre mixin grace à <strong class="txt-yellow">@include</strong> et on lui donne le parametre que l'on veux envoyer</p>
+        <p>Ensuite la <strong class="txt-yellow">condition</strong> check si la <strong class="txt-yellow">couleur envoyer</strong> (dans notre cas) est <strong class="txt-yellow">la même</strong> ou pas !</p>
+        <p>Il faut bien comprendre que la condition ne check pas vraiment la variable, mais bien la valeur de la variable (donc: #052632)</p>
+
+        <div class="row">
+            <div class="w-50 mx-10">
+                <h4 class="txt-center">Le SASS</h4>
+                <pre class="bg-primary bdr-radius">
+
+    @mixin mode($color)
+        @if ($color == $dark)
+            background-color: $dark
+            color: $light
+            h1, h2, h3, h4, h5, h6
+            color: $yellow
+        @else
+            background-color: $green
+            color: $dark
+            h1, h2, h3, h4, h5, h6
+            color: $dark
+        
+    body
+        @include mode($color: $dark)
+        
+        .dark-mode
+            background-color: $dark
+            color: $light
+            .bg-primary
+                box-shadow: 1px 1px 2px $light, 0 0 25px $light, 0 0 5px $light
+        
+        
+        .light-mode
+            background-color: $green
+            color: $dark
+            .bg-primary
+                box-shadow: 1px 1px 2px $dark, 0 0 25px $dark, 0 0 5px $dark
+
+                </pre>
+            </div>
+            <div class="w-50 mx-10">
+                <h4 class="txt-center">le CSS</h4>
+                <pre class="bg-primary bdr-radius">
+
+    body {
+        background-color: #052632;
+        color: #ffffff;
+    }
+    body h1, body h2, body h3, body h4, body h5, body h6 {
+        color: #f7cd50;
+    }
+        
+    .dark-mode {
+        background-color: #052632;
+        color: #ffffff;
+    }
+    .dark-mode .bg-primary {
+        box-shadow: 1px 1px 2px #ffffff, 0 0 25px #ffffff, 0 0 5px #ffffff;
+    }
+        
+    .light-mode {
+        background-color: #026782;
+        color: #052632;
+    }
+    .light-mode .bg-primary {
+        box-shadow: 1px 1px 2px #052632, 0 0 25px #052632, 0 0 5px #052632;
+    }
+
+                </pre>
+            </div>
+        </div>
+    </div>
+
+    <div class="cont">
+        <h2>Petit + la fonction Javascript qui nous permet de changer de mode</h2>
+        <button id='choiceMode' class="btn">Choice mode</button>
+        <div class="row">
+            <div class="w-50 mx-10">
+                <h4 class="txt-center">Le JS</h4>
+                <pre class="bg-primary bdr-radius">
+
+    // On definit nos variable pour travailler (le boutton, et la balise body)
+    const choice = document.getElementById('choiceMode')
+    const body = document.getElementById('body')
+
+    // On ajoute un evenement a notre boutton qui sera lancer au click
+    choice.addEventListener('click', () => {
+        // On creer une boucle pour rechercher les classe dans notre balise bosy
+        body.classList.forEach(c => {
+            // Si la classe 'light-mode' est présente alors on lance la function changeMode(params1, params2)
+            if (c === 'light-mode') changeMode('light-mode', 'dark-mode')
+            // Sinon si meme procedure que au-dessus
+            else if (c === 'dark-mode') changeMode('dark-mode', 'light-mode')
+        })
+    })
+
+    // Ici on a la fonction changeMode qui prend 2 parametre:
+    //     - before qui sera la classe d'avant
+    //     - after qui sera la classe d'après
+    function changeMode (before, after) {
+        // On demande a supprimer la class (before) de notre balise 'body'
+        body.classList.remove(before)
+        // On demande a ajouter la class (after) de notre balise 'body'
+        body.classList.add(after)
+    }
+
+                </pre>
+            </div>
+            <div class="w-50 mx-10">
+                <h4 class="txt-center">Le HTML</h4>
+                <pre class="bg-primary bdr-radius">
+
+  // Ici On definit notre boutton avec un id que l'on va utiliser avec le JS
+  &ltbutton id='choiceMode' class="btn"&gt; Choice mode &lt/button&gt;
+
+  // On définit un id sur notre balise body et de plus on va ajouter la classe par default
+  &ltbody id='body' class="light-mode"&gt;
+
+                </pre>
+            </div>
+        </div>
+    </div>
+
+    
+
+</body>
+<script>
+    // On definit nos variable pour travailler (le boutton, et la balise body)
+    const choice = document.getElementById('choiceMode')
+    const body = document.getElementById('body')
+
+    // On ajoute un evenement a notre boutton qui sera lancer au click
+    choice.addEventListener('click', () => {
+        // On creer une boucle pour rechercher les classe dans notre balise bosy
+        body.classList.forEach(c => {
+            // Si la classe 'light-mode' est présente dans body alors on lance la function changeMode()
+            if (c === 'light-mode') changeMode('light-mode', 'dark-mode')
+            // Sinon si meme procedure que au-dessus
+            else if (c === 'dark-mode') changeMode('dark-mode', 'light-mode')
+        })
+    })
+
+    // Ici on a la fonction changeMode qui prend 2 parametre:
+    //     - before qui sera la classe d'avant
+    //     - after qui sera la classe d'après
+    function changeMode (before, after) {
+        // On demande a supprimer la class (before) de notre balise 'body'
+        body.classList.remove(before)
+        // On demande a ajouter la class (after) de notre balise 'body'
+        body.classList.add(after)
+    }
+</script>
+</html>

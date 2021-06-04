@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>(SASS) 01 Variable</title>
+    <!-- Import style.css -->
+    <link rel="stylesheet" href="sass/style.css">
+</head>
+
+<body>
+
+    <div class="cont">
+
+        <h1>Tuto Sass</h1>
+        <p>Je vais vous faire des courte descriptions sinon des liens sont dans les <strong class="txt-yellow">README.md</strong> et sinon votre moteur de recherche préféré pourra certainement vous aidez !</p>
+        <p><strong class="txt-yellow">PS:</strong> Cela marche aussi bien avec des fichiers <strong class="txt-yellow">scss</strong></p>
+        <h2>Comment installer sass ?</h2>
+        <p>Biensur vous devez avoir node et npm d'installer sur votre machine pour suivre la commande si dessous</p>
+        <pre class="bg-primary txt-white"><strong>sudo npm -g sass</strong></pre>
+        <p>Voici un petit liens qui devrait vous aidez: <a href="https://sass-lang.com/install" class="txt-cyan"> >> ICI << </a></p>
+
+        <h2>Comment compiler un ou plusieurs fichiers sass ?</h2>
+        <p>Vous avez 2 manière principal de compiler votre sass, soit en <strong class="txt-yellow">ligne de commande</strong> (se que nous allons faire), ou avec des petites <strong class="txt-yellow">extensions</strong> du genre sass-compiler sur visual studio code, ou autre, sinon avec des architectures plus complexe du style avec webpack ce que nous aborderont pas ici !</p>
+
+        <p>Pour <strong class="txt-yellow">un seul fichiers</strong> il va falloir un fichier .sass ou .scss</p>
+        <p>Par exemple pour se dossier ce rendre dans le dossier sass et executer la commande suivante</p>
+        <pre class="bg-primary txt-white"><strong>sass --watch index.sass:style.scss</strong></pre>
+        <p>Se qui va vous permettre d'avoir le fichier <strong class="txt-yellow">index.sass</strong> en entrée (input) et de vous sortir un fichier <strong class="txt-yellow">style.css</strong> (output)</p>
+        <p>Voici un petit liens qui devrait vous aidez: <a href="https://sass-lang.com/guide" class="txt-cyan"> >> ICI << </a></p>
+        <p>Pour compiler <strong class="txt-yellow">plusieurs fichier</strong> sass/scss dans un seul fichier css vous allez juste devoir importer vos fichiers sass dans un seul et tout ce compilera depuis le fichier mère. (nous aborderont l'import de l'exercice suivant)</p>
+        <p>par exemple j'ai un fichier index.sass et un fichier variable.sass</p>
+        <p>alors je vais importer le fichier <strong class="txt-yellow">variable.sass</strong> dans le fichier <strong class="txt-yellow">index.sass</strong> ce qui nous laissera l'opportunité de compiler le fichier index.sass seulement vu qui importera le fichier variable.sass et nous sortira que un seul fichier <strong class="txt-yellow">style.css</strong></p>
+
+        <h2>01 Les variables </h2>
+        <p>Vous pouvez dès maintenant allez voir dans le fichier <strong class="txt-yellow">index.sass</strong> pour voir comment sont définit les variable et comment les utiliser</p>
+
+        <p>On définit une variable ainsi <strong class="txt-yellow">"$green: #026782"</strong></p>
+        <p>Et on l'utilise ainsi <strong class="txt-yellow">"color: $green"</strong></p>
+        <p>On peux biensur faire utiliser une variable à une variable <strong class="txt-yellow">"$primary-color: $green"</strong></p>
+
+    </div>
+
+</body>
+
+</html>

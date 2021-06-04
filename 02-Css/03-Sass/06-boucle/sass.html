@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>(SASS) 06 Fonctions</title>
+    <!-- Import style.css -->
+    <link rel="stylesheet" href="sass/style.css">
+    <link rel="stylesheet" href="sass/style2.css">
+</head>
+
+<body>
+
+
+    <div class="cont">
+        <h1>06 Les Boucles</h1>
+        <p>Pour les boucles c'est pareil que les fonctions, le principe est le même que en javascript donc vous allez
+            profiter du language CSS afin de comprendre vos premières mécanique logique.</p>
+        <p>Le But est d'éviter les répétitions afin que notre code soit plus facile à écrire mais que le résultat de
+            notre css soit le même (sans les répétition)</p>
+    </div>
+
+    <div class="cont">
+        <h2>Petit cas pratique ?</h2>
+        <p>Donc ici on voit que l'on a 2 boucle, <strong class="txt-yellow">1 pour les padding Y</strong> et <strong
+                class="txt-yellow">1 pour les margin X</strong></p>
+        <p>Mais concrètement, on va écrire que <strong class="txt-yellow">3 ligne de SASS</strong> pour avoir <strong
+                class="txt-yellow">25 classe</strong> de creer</p>
+        <div class="row">
+            <div class="w-50 mx-10">
+                <h4 class="txt-center">Boucle SASS</h4>
+                <pre class="bg-primary bdr-radius">
+
+    // Padding de l'axe Y (haut et bas)
+    @for $i from 1 to (25 + 1)
+        // On declare notre classe
+        .py-#{$i}
+            // et le comportement de la classe
+            padding: #{$i}px 0 #{$i}px 0
+                    
+    // Margin de l'axe X (gauche é droite)
+    @for $i from 1 to (25 + 1)
+        // On declare notre classe
+        .mx-#{$i}
+            // et le comportement de la classe
+            padding: 0 #{$i}px 0 #{$i}px
+    
+                </pre>
+            </div>
+            <div class="w-50 mx-10">
+                <h4 class="txt-center">le CSS</h4>
+                <pre class="bg-primary bdr-radius">
+
+    .py-1 {
+        padding: 1px 0 1px 0;
+    }
+                      
+    .py-2 {
+        padding: 2px 0 2px 0;
+    }
+                      
+        ...
+    
+    .py-24 {
+        padding: 24px 0 24px 0;
+    }
+                      
+    .py-25 {
+        padding: 25px 0 25px 0;
+    }
+
+                </pre>
+            </div>
+        </div>
+
+        <h2>Ici on rajoute de la logique au container</h2>
+
+        <div class="row">
+            <div class="w-50 mx-10">
+                <h4 class="txt-center">la function col-x</h4>
+                <pre class="bg-primary bdr-radius">
+
+        // On definit le nombre de column de notre width total
+        $column-count: 12
+        // On declare notre fonction qui prend en parametre un nombre
+        @function column-width($num)
+            // On retourne la valeur de la taille de notre container
+            @return $num * 100% / $column-count
+                    
+        // Ici notre boucle va faire 12 tour
+        @for $i from 1 to ($column-count + 1)
+        // On parametre le debut de notre classe avec le $i
+            .col-#{$i}
+            // On utilise la fonction dans notre boucle
+            width: column-width($i) 
+
+                </pre>
+            </div>
+            <div class="w-50 mx-10">
+                <h4 class="txt-center">les classe col-x en CSS</h4>
+                <pre class="bg-primary bdr-radius">
+
+        .col-1 {
+            width: 8.3333333333%;
+        }
+
+        .col-2 {
+            width: 16.6666666667%;
+        }
+
+        ...
+
+        .col-11 {
+            width: 91.6666666667%;
+        }
+
+        .col-12 {
+            width: 100%;
+        }
+                </pre>
+            </div>
+        </div>
+    </div>
+
+    <div class="cont">
+        <div class="col-2 txt-center">
+            <div class="bdr-yellow">col-2</div>
+        </div>
+        <div class="col-4 txt-center">
+            <div class="bdr-yellow">col-4</div>
+        </div>
+        <div class="col-6 txt-center">
+            <div class="bdr-yellow">col-6</div>
+        </div>
+        <div class="col-8 txt-center">
+            <div class="bdr-yellow">col-8</div>
+        </div>
+        <div class="col-10 txt-center">
+            <div class="bdr-yellow">col-10</div>
+        </div>
+        <div class="col-12 txt-center">
+            <div class="bdr-yellow">col-12</div>
+        </div>
+    </div>
+
+    <div class="cont">
+        <h2>On pourrait aussi jouer avec image ?</h2>
+        <p>Ici on joue avec le nom des classe pour allez chercher nos images, mais il existe aussi d'autre logique, (key: value, key2: value2, ...) par exemple, ici on utilise la première méthode</p>
+        <p>Voici la doc pour la second solution, <a href="https://sass-lang.com/documentation/values/maps#look-up-a-value"> >> ICI << </a></p>
+
+        <div class="row">
+            <div class="w-50 mx-10">
+                <h4 class="txt-center">Le SASS</h4>
+                <pre class="bg-primary bdr-radius">
+
+    // Ici est creer notre liste d'item
+    $list: arrr btc doge eth kmd
+    // Notre boucle avec les élément de la liste
+    @each $i in $list
+        // notre classe à creer avec la liste
+        .img-#{$i}
+            height: 500px
+            width: 500px
+            background: no-repeat
+            // on va chercher l'image avec le même nom que l'index de la boucle
+            background-image: url("../images/#{$i}.png")
+
+                </pre>
+            </div>
+            <div class="w-50 mx-10">
+                <h4 class="txt-center">les classe col-x en CSS</h4>
+                <pre class="bg-primary bdr-radius">
+
+    .img-arrr {
+        height: 500px;
+        width: 500px;
+        background: no-repeat;
+        background-image: url("../images/arrr.png");
+    }
+                      
+    .img-btc {
+        height: 500px;
+        width: 500px;
+        background: no-repeat;
+        background-image: url("../images/btc.png");
+    }
+
+        ...
+ 
+    .img-kmd {
+        height: 500px;
+        width: 500px;
+        background: no-repeat;
+        background-image: url("../images/kmd.png");
+    }
+                </pre>
+            </div>
+        </div>
+    </div>
+
+    <div class="cont row">
+        <div class="img-arrr"></div>
+        <div class="img-btc"></div>
+        <div class="img-doge"></div>
+        <div class="img-eth"></div>
+        <div class="img-kmd"></div>
+    </div>
+
+</body>
+
+</html>

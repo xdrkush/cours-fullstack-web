@@ -1,0 +1,24 @@
+// @import "variables.sass"
+
+// @for $i from 1 through 4
+//   .width-#{$i}
+//     width: 10em + $i
+
+// @for $i from 1 to 4
+//   .height-#{$i}
+//     height: 25em * $i
+
+$list: arrr btc doge eth kmd
+@each $i in $list
+  .img-#{$i}
+    height: 500px
+    width: 500px
+    background: no-repeat
+    background-image: url("../images/#{$i}.png")
+
+// Ici notre boucle va faire 12 tour
+@for $i from 1 to ($column-count + 1)
+  // On parametre le debut de notre classe avec le $i
+  .col-#{$i}
+    // La taille sera egal à notre index ($i) de boucle passer dans la fonction
+    width: column-width($i)
