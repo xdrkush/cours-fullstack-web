@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>(Sass) 08-Exemple</title>
     <!-- import css -->
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- import Font Awesome -->
@@ -95,13 +95,16 @@
             </li>
         </ul>
     </div>
+
     <div class="cont main bg-yellow">
         <h2>Main</h2>
     </div>
-    <div class="cont newslater bg-blue">
+
+    <!-- Newslater -->
+    <div class="cont newslater bg-green">
         <h2>Newslater</h2>
-        <ul class="list-news bg-purple wrap">
-            <li class="card-news bg-yellow">
+        <ul class="list-news row flx-center bg-purple">
+            <li class="card bg-yellow">
                 <img class="ratio" src="./assets/images/news/blockchain.jpg" alt="">
                 <a class="">
                     <div class="title">Title Card</div>
@@ -112,7 +115,7 @@
                     </div>
                 </a>
             </li>
-            <li class="card-news bg-yellow">
+            <li class="card bg-yellow">
                 <img class="ratio" src="./assets/images/news/blockchain.jpg" alt="">
                 <a class="">
                     <div class="title">Title Card</div>
@@ -123,7 +126,7 @@
                     </div>
                 </a>
             </li>
-            <li class="card-news bg-yellow">
+            <li class="card bg-yellow">
                 <img class="ratio" src="./assets/images/news/blockchain.jpg" alt="">
                 <a class="">
                     <div class="title">Title Card</div>
@@ -134,7 +137,7 @@
                     </div>
                 </a>
             </li>
-            <li class="card-news bg-yellow">
+            <li class="card bg-yellow">
                 <img class="ratio" src="./assets/images/news/blockchain.jpg" alt="">
                 <a class="">
                     <div class="title">Title Card</div>
@@ -145,7 +148,7 @@
                     </div>
                 </a>
             </li>
-            <li class="card-news bg-yellow">
+            <li class="card bg-yellow">
                 <img class="ratio" src="./assets/images/news/blockchain.jpg" alt="">
                 <a class="">
                     <div class="title">Title Card</div>
@@ -159,12 +162,16 @@
 
         </ul>
     </div>
-    <div class="cont contact bg-pink">
+    <!-- /Newslater -->
+
+    <!-- Contact -->
+    <div class="cont bg-yellow txt-center ">
         <h2>Contact</h2>
-        <div class="row al-ctnt-space-around">
-            <div class="txt-center form-contact bg-green">
+        <div class="row contact w-100">
+            <!-- Formulaire -->
+            <div class="w-45 bg-green sm-100">
                 <h4>Formulaire</h4>
-                <form action="" class="txt-center">
+                <form action="" class="txt-center px-10">
                     <label class="ratio" for="">Nom</label>
                     <input class="ratio" type="text" placeholder="Entrez votre nom ici">
                     <label class="ratio" for="">Prénom</label>
@@ -176,7 +183,8 @@
                     <button type="submit" value="">Envoyer</button>
                 </form>
             </div>
-            <div class="cont txt-center map-contact bg-green">
+            <!-- Map -->
+            <div class="map txt-center w-45 bg-green sm-100">
                 <h4>Map</h4>
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1546.0593674425786!2d0.16301560620036734!3d47.970096339736564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e28587cd767145%3A0x115067542f152bbf!2sMaison%20des%20arts%20Paul%20Fort!5e1!3m2!1sfr!2sfr!4v1575756254783!5m2!1sfr!2sfr"
@@ -184,6 +192,8 @@
             </div>
         </div>
     </div>
+    <!-- /Contact -->
+
     <div class="footer bg-green">
         <h2>Footer</h2>
     </div>

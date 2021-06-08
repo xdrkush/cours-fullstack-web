@@ -1,0 +1,39 @@
+/* Margin */
+@for $i from 1 to (25 + 1)
+  .my-#{$i}
+    margin: 0 #{$i}px
+
+@for $i from 1 to (25 + 1)
+  .mx-#{$i}
+    margin: #{$i}px 0
+
+@for $i from 1 to (25 + 1)
+  .mt-#{$i}
+    margin-top: #{$i}px
+
+@for $i from 1 to (25 + 1)
+  .mb-#{$i}
+    margin-bottom: #{$i}px
+
+/* Padding */
+@for $i from 1 to (25 + 1)
+  .py-#{$i}
+    padding: 0 #{$i}px
+
+@for $i from 1 to (25 + 1)
+  .px-#{$i}
+    padding: #{$i}px 0
+
+@for $i from 1 to (25 + 1)
+  .pt-#{$i}
+    padding-top: #{$i}px
+
+@for $i from 1 to (25 + 1)
+  .pb-#{$i}
+    padding-bottom: #{$i}px
+
+/* Width */
+$list-width: 0 5 10 15 20 25 30 35 40 45 50 55 60 65 70 75 80 85 90 95 100
+@each $i in $list-width
+  .w-#{$i}
+    width: ($i * 1%)
