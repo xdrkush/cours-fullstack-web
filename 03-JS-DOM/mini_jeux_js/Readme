@@ -1,0 +1,35 @@
+https://www.sebastienadam.be/connaissances/exercices/javascript/nombre_aleatoire.php
+
+https://www.youtube.com/watch?v=ZIGs1qAU4gA
+
+
+
+
+
+
+
+************************************************************************
+
+
+// Fonction pour générer un nombre aléatoire entre (x, y)
+
+/*
+    Exemple fonction
+*
+
+// Déclaration de la fonction
+// function addition (x, y) {
+//     return x + y
+// }
+// function soustraction (x, y) {
+//     return x - y
+// }
+
+// Appel de la fonction
+// addition(2, 5)
+// soustraction(5, 3)
+
+// console.log('addition', addition(3, 5))
+// console.log('addition', addition(32, 5))
+// console.log('addition', addition(3, 55))
+// console.log('addition', addition(34, 55))
