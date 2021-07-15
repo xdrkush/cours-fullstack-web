@@ -1,0 +1,10 @@
+body {
+  font: 14px/18px Arial;
+  padding: 30px;
+  background: gray;
+}
+
+table#dataTable {
+  margin-top: 10px;
+  color: white;
+}

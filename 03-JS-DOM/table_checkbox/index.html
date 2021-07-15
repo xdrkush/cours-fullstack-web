@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Checkbox</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <h1>Table & check box</h1>
+
+    <!-- Nos bouttons -->
+    <input type="button" value="Add Row" onclick="addRow ('dataTable')" />
+    <input type="button" value="Delete Row" onclick="deleteRow ('dataTable', false)" />
+    <button onclick="deleteRow ('dataTable', true)">HTTP Delete</button>
+
+    <!-- Table -->
+    <table id="dataTable" cellPadding="5" cellSpacing="0" border="1" rules="all">
+        <tr>
+            <th>
+                <input type="checkbox" onchange="checkAll ('dataTable')" name="chk[]" />
+            </th>
+            <th>ID</th>
+            <th>Model</th>
+            <th>Description</th>
+            <th>Start Year</th>
+            <th>End Year</th>
+        </tr>
+    </table>
+    
+</body>
+
+<script src="index.js"></script>
+
+</html>
