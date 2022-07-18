@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body onload="preLoad()">
+    <!-- Injection JS -->
+    <div id="kush"></div>
+
+    <script>
+        console.log("krashtest")
+
+        // Style CSS
+        const root = document.querySelector(':root')
+        root.style.setProperty('--white', '#ffffff');
+        root.style.setProperty('--light', '#2A8C82');
+        root.style.setProperty('--dark', '#023535');
+        const colors = {
+            white: getComputedStyle(root).getPropertyValue('--white'),
+            light: getComputedStyle(root).getPropertyValue('--light'),
+            dark: getComputedStyle(root).getPropertyValue('--dark')
+        }
+
+        // Listen storage
+        const originalSetItem = localStorage.setItem;
+        localStorage.setItem = function () {
+            document.createEvent('Event').initEvent('itemInserted', true, true);
+            originalSetItem.apply(this, arguments);
+            if (this.dark === 'true') {
+                document.body.style.color = colors.white;
+                document.body.style.backgroundColor = colors.dark;
+            } else if (this.dark === 'false') {
+                document.body.style.color = colors.white;
+                document.body.style.backgroundColor = colors.light;
+            } else return
+        }
+
+        // Loading page
+        const preLoad = () => {
+            // Meta
+            document.title = "Mon super titre";
+
+            // Style global
+            if (localStorage.getItem('dark') === 'true') {
+                document.body.style.color = colors.white;
+                document.body.style.backgroundColor = colors.dark;
+            } else {
+                document.body.style.color = colors.white;
+                document.body.style.backgroundColor = colors.light;
+            }
+        }
+
+        // Parent global
+        const kush = document.getElementById('kush')
+
+        // Create h1
+        const h1 = document.createElement('h1')
+        h1.textContent = "Hello world !"
+        h1.style.color = "#9BF2EA"
+        h1.style.textAlign = 'center'
+
+        // Create btn (dark-mode)
+        const btn = document.createElement('button')
+        btn.textContent = "Mode Dark"
+        btn.style.backgroundColor = "#9BF2EA"
+        btn.style.borderRadius = "30px"
+        btn.style.border = 'solid 2px #260101'
+        btn.style.textAlign = 'center'
+        btn.addEventListener('click', () => {
+            const ls_dark = localStorage.getItem('dark')
+            localStorage.setItem('dark', !ls_dark || ls_dark === 'false' 
+                ? true 
+                : false
+            )
+        }, false)
+
+        // Assign h1 to child kush
+        kush.appendChild(h1)
+        kush.appendChild(btn)
+
+    </script>
+</body>
+
+</html>

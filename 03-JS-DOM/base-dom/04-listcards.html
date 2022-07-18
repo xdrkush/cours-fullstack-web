@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body onload="preLoad()">
+    <!-- Injection JS -->
+    <div id="kush"></div>
+
+    <script>
+        console.log("krashtest")
+        // Data
+        const website = {
+            title: 'Mon super titre',
+            description: "Ma super description",
+            actionsHeaders: [{
+                    id: 0,
+                    name: 'started',
+                    title: "Get Started !",
+                    link: "#",
+                    color: 'primary'
+                },
+                {
+                    id: 0,
+                    name: 'contact',
+                    title: "Contact us !",
+                    link: "#",
+                    color: 'accent'
+                },
+            ],
+            categories: [{
+                    id: 0,
+                    name: 'home',
+                    title: "Acceuil"
+                },
+                {
+                    id: 1,
+                    name: 'contact',
+                    title: "Contactez-nous"
+                }
+            ],
+            listCard: [{
+                id: 0,
+                name: 'card-1',
+                title: "title 1",
+                description: "Ma super description de ma card"
+            }, {
+                id: 1,
+                name: 'card-2',
+                title: "title 2",
+                description: "Ma super description de ma card"
+            }, {
+                id: 2,
+                name: 'card-3',
+                title: "title 3",
+                description: "Ma super description de ma card"
+            }]
+        }
+
+        // Parent global
+        const kush = document.getElementById('kush')
+
+        // Style CSS
+        const root = document.querySelector(':root')
+        root.style.setProperty('--primary', '#008F8C');
+        root.style.setProperty('--secondary', '#015958');
+        root.style.setProperty('--white', '#ffffff');
+        root.style.setProperty('--accent', '#260101');
+        root.style.setProperty('--light', '#D8FFDB');
+        root.style.setProperty('--dark', '#023535');
+        const colors = {
+            primary: getComputedStyle(root).getPropertyValue('--primary'),
+            secondary: getComputedStyle(root).getPropertyValue('--secondary'),
+            white: getComputedStyle(root).getPropertyValue('--white'),
+            light: getComputedStyle(root).getPropertyValue('--light'),
+            accent: getComputedStyle(root).getPropertyValue('--accent'),
+            dark: getComputedStyle(root).getPropertyValue('--dark')
+        }
+
+        // Fn darkmode global
+        const fnDarkMode = (themeDark) => {
+            const theme = (themeDark === 'true') ? true : false;
+
+            document.body.style.color = theme ? colors.light : colors.dark;
+            document.body.style.backgroundColor = theme ? colors.dark : colors.light;
+
+            // All Buttons
+            // const btns = document.querySelectorAll('button');
+            // btns.forEach(i => {
+            //     i.style.backgroundColor = theme ? colors.light : colors.dark;
+            //     i.style.color = theme ? colors.accent : colors.light;
+            // })
+
+            // Btn Dark Mode
+            const btnDarkMode = document.getElementById('btn-dark-mode');
+            btnDarkMode.style.backgroundColor = theme ? colors.light : colors.dark;
+            btnDarkMode.style.color = theme ? colors.accent : colors.light;
+
+        }
+
+        // Listen storage (Dark mode)
+        const originalSetItem = localStorage.setItem;
+        localStorage.setItem = function () {
+            document.createEvent('Event').initEvent('itemInserted', true, true);
+            originalSetItem.apply(this, arguments);
+            // Call fnDarkMode
+            fnDarkMode(this.dark)
+        }
+
+        // Loading page
+        const preLoad = () => {
+            // Meta
+            document.title = website.title;
+
+            // Style global
+            document.body.style.margin = 0;
+            document.body.style.padding = 0;
+
+            // Call fnDarkMode
+            fnDarkMode(localStorage.getItem('dark'))
+        }
+
+        // Create navbar
+        const navbar = document.createElement('nav')
+        const link_title_nav = document.createElement('a')
+        const title_nav = document.createElement('h2')
+        const listitem_nav = document.createElement('ul')
+
+        // Nav style
+        navbar.style.backgroundColor = colors.primary
+        navbar.style.width = '100vw'
+        navbar.style.height = '7vh'
+        navbar.style.display = 'flex'
+        navbar.style.justifyContent = 'space-between'
+        navbar.style.alignItems = 'center'
+        navbar.style.position = 'fixed'
+        navbar.style.boxShadow = '0px 1px 25px ' + colors.accent
+        navbar.style.borderBottom = "solid 2px " + colors.accent
+
+        // Title nav + link
+        title_nav.innerText = website.title.toUpperCase()
+
+        link_title_nav.setAttribute('href', '/')
+        link_title_nav.style.textDecoration = 'none'
+        link_title_nav.style.color = colors.light
+        link_title_nav.style.margin = '0 0 0 15px'
+        link_title_nav.style.display = 'flex'
+        link_title_nav.style.justifyContent = 'center'
+        link_title_nav.style.alignItems = 'center'
+
+        // Assign title (h2) on link (a)
+        link_title_nav.appendChild(title_nav)
+
+        // List item nav style
+        listitem_nav.style.display = 'flex'
+
+        // Item nav (item1, item2, ...)
+        website.categories.map((cat, index) => {
+            // Create item (li)
+            let item_nav = document.createElement('li')
+            item_nav.style.listStyle = 'none'
+            item_nav.style.margin = '0 25px'
+
+            // Create link (a)
+            let link = document.createElement('a')
+            link.setAttribute('href', '/' + cat.name)
+            link.style.textDecoration = 'none'
+            link.innerText = cat.name.toUpperCase()
+            link.style.color = colors.light
+
+            // Inject link on item_nav
+            item_nav.appendChild(link)
+            // Injection des items dans la nav
+            listitem_nav.appendChild(item_nav)
+        })
+
+        // Assign title_nav on navbar to in child kush
+        kush.appendChild(navbar).appendChild(link_title_nav)
+        // Assign list on child navbar
+        navbar.appendChild(listitem_nav)
+
+        // Create Header
+        const header = document.createElement('header')
+        header.style.minHeight = "80vh"
+        header.style.minWidth = "100%"
+        header.style.display = "flex"
+        header.style.flexDirection = "column"
+        header.style.justifyContent = "center"
+        header.style.alignItems = "center"
+        // H1
+        const h1 = document.createElement('h1')
+        h1.textContent = website.title
+        h1.style.textAlign = 'center'
+        // H2
+        const h3 = document.createElement('h3')
+        h3.textContent = website.description
+        h3.style.textAlign = 'center'
+
+        // div (btn)
+        const divBtnHeader = document.createElement('div')
+
+        website.actionsHeaders.map(item => {
+            let btn = document.createElement('button')
+
+            btn.textContent = item.title
+            btn.style.backgroundColor = colors[item.color]
+            btn.style.color = colors.light
+            btn.className = 'btn'
+            btn.style.borderRadius = "30px"
+            btn.style.margin = "0 10px"
+            btn.style.border = 'solid 2px ' + colors.accent
+
+            divBtnHeader.appendChild(btn)
+        })
+
+        // Assign h1 to child Kush
+        kush.appendChild(header).appendChild(h1)
+        header.appendChild(h3)
+        header.appendChild(divBtnHeader)
+
+        // Create btn (dark-mode)
+        const btnDarkMode = document.createElement('button')
+        btnDarkMode.textContent = "Mode Dark"
+        btnDarkMode.setAttribute('id', "btn-dark-mode")
+        btnDarkMode.style.backgroundColor = colors.dark
+        btnDarkMode.style.color = colors.light
+        btnDarkMode.style.position = "fixed"
+        btnDarkMode.style.top = "100px"
+        btnDarkMode.style.right = "15px"
+        btnDarkMode.style.borderRadius = "30px"
+        btnDarkMode.style.border = 'solid 2px ' + colors.accent
+        btnDarkMode.style.textAlign = 'center'
+        btnDarkMode.addEventListener('click', () => {
+            const ls_dark = localStorage.getItem('dark')
+            localStorage.setItem('dark', !ls_dark || ls_dark === 'false' ?
+                true :
+                false
+            )
+        }, false)
+
+        // Assign btn () to child Kush
+        kush.appendChild(btnDarkMode)
+
+        // Liste cards
+        const listCard = document.createElement('section')
+        const title_listCard = document.createElement('h4')
+        const subtitle_listCard = document.createElement('p')
+        const divListcard = document.createElement('div')
+
+        listCard.style.textAlign = 'center'
+        listCard.style.maxWidth = '100vw'
+        listCard.style.minHeight = '50vh'
+
+        title_listCard.textContent = "Title list cards"
+        subtitle_listCard.textContent = "ma super description de ma liste de cards."
+
+        divListcard.style.display = 'flex'
+        divListcard.style.justifyContent = 'space-around'
+        divListcard.style.alignItems = 'center'
+        divListcard.style.flexWrap = 'wrap'
+        divListcard.style.maxWidth = '100%'
+
+        listCard.appendChild(title_listCard)
+        listCard.appendChild(subtitle_listCard)
+
+        website.listCard.map(item => {
+            const card = document.createElement('div')
+            const title_card = document.createElement('h6')
+            const description_card = document.createElement('p')
+
+            card.style.width = "30%"
+            card.style.minWidth = "320px"
+            card.style.margin = "10px"
+            card.style.backgroundColor = colors.primary
+            card.style.border = "solid 2px " + colors.accent
+            card.style.boxShadow = "0 1px 25px" + colors.accent
+            title_card.textContent = item.title
+            description_card.textContent = item.description
+
+            card.appendChild(title_card)
+            card.appendChild(description_card)
+            divListcard.appendChild(card)
+        })
+        // Inject ListCard in kush
+        listCard.appendChild(divListcard)
+        kush.appendChild(listCard)
+    </script>
+</body>
+
+</html>
