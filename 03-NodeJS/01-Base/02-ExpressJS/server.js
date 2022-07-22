@@ -14,7 +14,7 @@ app.get('/', function (req, res) {
 // création de la page (mapage)
 app.get('/mapage', function (req, res) {
   // on envoi grace à res.send la chaine de charactère 'Ma page'
-  res.send('Ma Page')
+  res.sendFile(__dirname + '/public/index.html')
 })
 
 // on demande à notre aaplication d'écouter le port 3000

@@ -1,0 +1,19 @@
+{
+    "articles": [{
+        "id": 1,
+        "name": "America",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    }, {
+        "id": 2,
+        "name": "Asia",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    }, {
+        "id": 3,
+        "name": "Oceania",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    }, {
+        "id": 4,
+        "name": "Africa",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    }]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "01-node-mongodb",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node .",
+    "dev": "nodemon ."
+  },
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "mongoose": "^6.4.6"
+  }
+}

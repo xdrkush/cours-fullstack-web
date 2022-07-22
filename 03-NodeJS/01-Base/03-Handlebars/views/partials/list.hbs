@@ -1,0 +1,14 @@
+<div>
+    <h5>list</h5>
+    <div>
+        {{#each (limitArray list 3) }}
+
+        <div>
+            <p>index: {{ @index }}</p>
+            <p>name: {{ upper name }}</p>
+            <p>description: {{ description }}</p>
+        </div>
+
+        {{/each }}
+    </div>
+</div>
