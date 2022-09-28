@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body onload="preLoad()">
+    <!-- Injection JS -->
+    <div id="kush"></div>
+
+    <script>
+        console.log("krashtest")
+        // Data
+        const website = {
+            title: 'Mon super titre',
+            categories: [{
+                    id: 0,
+                    name: 'home',
+                    title: "Acceuil"
+                },
+                {
+                    id: 1,
+                    name: 'contact',
+                    title: "Contactez-nous"
+                }
+            ]
+        }
+
+        // Parent global
+        const kush = document.getElementById('kush')
+
+        // Style CSS
+        const root = document.querySelector(':root')
+        root.style.setProperty('--primary', '#008F8C');
+        root.style.setProperty('--secondary', '#015958');
+        root.style.setProperty('--white', '#ffffff');
+        root.style.setProperty('--light', '#D8FFDB');
+        root.style.setProperty('--dark', '#023535');
+        const colors = {
+            primary: getComputedStyle(root).getPropertyValue('--primary'),
+            secondary: getComputedStyle(root).getPropertyValue('--secondary'),
+            white: getComputedStyle(root).getPropertyValue('--white'),
+            light: getComputedStyle(root).getPropertyValue('--light'),
+            dark: getComputedStyle(root).getPropertyValue('--dark')
+        }
+
+        // Listen storage (Dark mode)
+        const originalSetItem = localStorage.setItem;
+        localStorage.setItem = function () {
+            document.createEvent('Event').initEvent('itemInserted', true, true);
+            originalSetItem.apply(this, arguments);
+            if (this.dark === 'true') {
+                document.body.style.color = colors.primary;
+                document.body.style.backgroundColor = colors.dark;
+            } else if (this.dark === 'false') {
+                document.body.style.color = colors.dark;
+                document.body.style.backgroundColor = colors.light;
+            }
+        }
+
+        // Loading page
+        const preLoad = () => {
+            // Meta
+            document.title = website.title;
+
+            // Style global
+            document.body.style.margin = 0;
+            document.body.style.padding = 0;
+
+            // Default theme (reload)
+            if (localStorage.getItem('dark') === 'true') {
+                document.body.style.color = colors.primary;
+                document.body.style.backgroundColor = colors.dark;
+            } else {
+                document.body.style.color = colors.primary;
+                document.body.style.backgroundColor = colors.light;
+            }
+        }
+
+        // Create h1
+        const h1 = document.createElement('h1')
+        h1.textContent = website.title
+        h1.style.textAlign = 'center'
+
+        // Create btn (dark-mode)
+        const btn = document.createElement('button')
+        btn.textContent = "Mode Dark"
+        btn.style.backgroundColor = "#9BF2EA"
+        btn.style.borderRadius = "30px"
+        btn.style.border = 'solid 2px #260101'
+        btn.style.textAlign = 'center'
+        btn.addEventListener('click', () => {
+            const ls_dark = localStorage.getItem('dark')
+            localStorage.setItem('dark', !ls_dark || ls_dark === 'false' ?
+                true :
+                false
+            )
+        }, false)
+
+        // Create navbar
+        const navbar = document.createElement('nav')
+        const link_title_nav = document.createElement('a')
+        const title_nav = document.createElement('h2')
+        const listitem_nav = document.createElement('ul')
+
+        // Nav style
+        navbar.style.backgroundColor = colors.primary
+        navbar.style.width = '100vw'
+        navbar.style.height = '7vh'
+        navbar.style.display = 'flex'
+        navbar.style.justifyContent = 'space-between'
+        navbar.style.alignItems = 'center'
+
+        // Title nav + link
+        title_nav.innerText = website.title.toUpperCase()
+
+        link_title_nav.setAttribute('href', '/')
+        link_title_nav.style.textDecoration = 'none'
+        link_title_nav.style.color = colors.light
+        link_title_nav.style.margin = '0 0 0 10px'
+        link_title_nav.style.display = 'flex'
+        link_title_nav.style.justifyContent = 'center'
+        link_title_nav.style.alignItems = 'center'
+
+        // Assign title (h2) on link (a)
+        link_title_nav.appendChild(title_nav)
+
+        // List item nav style
+        listitem_nav.style.display = 'flex'
+
+        // Item nav (item1, item2, ...)
+        website.categories.map((cat, index) => {
+            // Create link (a)
+            let link = document.createElement('a')
+            link.setAttribute('href', '/' + cat.name)
+            link.style.textDecoration = 'none'
+            link.innerText = cat.name.toUpperCase()
+            link.style.color = colors.light
+
+            // Create item (li)
+            let item_nav = document.createElement('li')
+            item_nav.style.listStyle = 'none'
+            item_nav.style.margin = '0 10px'
+
+            // Inject link on item_nav
+            item_nav.appendChild(link)
+            // Injection des items dans la nav
+            listitem_nav.appendChild(item_nav)
+        })
+
+        // Assign title_nav on navbar to in child kush
+        kush.appendChild(navbar).appendChild(link_title_nav)
+        // Assign list on child navbar
+        navbar.appendChild(listitem_nav)
+
+        // Assign h1 to child Kush
+        kush.appendChild(h1)
+        // Assign btn to child Kush
+        kush.appendChild(btn)
+        
+    </script>
+</body>
+
+</html>
